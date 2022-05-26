@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 20px;
+  padding: 10px;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.profile-img {
+  height: 200px;
+  filter: grayscale(100%);
+}

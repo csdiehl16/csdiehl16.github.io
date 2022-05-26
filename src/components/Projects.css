@@ -1,0 +1,19 @@
+.tileContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 400px);
+  grid-gap: 15px;
+}
+
+.container {
+  width: calc(100% - 40px);
+  margin: auto;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
