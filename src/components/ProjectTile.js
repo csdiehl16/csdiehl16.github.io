@@ -14,13 +14,15 @@ const ProjectTile = (props) => {
         alt={props.title}
       ></img>
       <div className={classes.tag}>{props.tag}</div>
-      {props.languageTag.map((t) => {
-        return (
-          <div className={classes.languageTag} key={Math.random()}>
-            {t}
-          </div>
-        );
-      })}
+      <div className={classes.langTagContainer}>
+        {props.languageTag.map((t) => {
+          return (
+            <div className={classes.languageTag} key={Math.random()}>
+              {t}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };

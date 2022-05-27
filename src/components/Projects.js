@@ -112,7 +112,13 @@ const Projects = () => {
         </div>
       </div>
       <div className="container">
-        {showModal && <Modal tileInfo={activeTile} closeHandler={closeModal} />}
+        {showModal && (
+          <Modal
+            tileInfo={activeTile}
+            closeHandler={closeModal}
+            open={showModal}
+          />
+        )}
         <div className="tileContainer">{tiles}</div>
       </div>
     </div>

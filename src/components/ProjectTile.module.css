@@ -1,6 +1,11 @@
+:root {
+  --tag-padding: 10px;
+  --tag-position: 20px;
+}
+
 .tile {
   border-radius: 10px;
-  padding: 10px;
+  padding: var(--tag-padding);
   position: relative;
   background-color: rgba(255, 255, 255, 0.1);
 }
@@ -18,12 +23,13 @@
   background-color: #121212;
   opacity: 0.7;
   color: #fff;
-  padding: 10px;
+  padding: var(--tag-padding);
   width: 30%;
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: var(--tag-position);
+  left: var(--tag-position);
   z-index: 5;
+  border: 1px solid #fff;
 }
 
 .languageTag {
@@ -32,8 +38,13 @@
   opacity: 0.7;
   padding: 10px;
   color: #fff;
-  width: 20%;
+  border: 1px solid #fff;
+}
+
+.langTagContainer {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  bottom: var(--tag-position);
+  left: var(--tag-position);
+  display: flex;
+  gap: 10px;
 }

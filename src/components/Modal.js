@@ -8,7 +8,13 @@ const Modal = (props) => {
         className={classes.modalbackground}
         onClick={props.closeHandler}
       ></div>
-      <div className={classes.modal}>
+      <div
+        className={
+          props.open
+            ? `${classes.modal} ${classes.modalOpen}`
+            : `${classes.modal} ${classes.modalClosed}`
+        }
+      >
         <h2>{props.tileInfo.name}</h2>
         <img
           className={classes["modal-image"]}
