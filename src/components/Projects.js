@@ -10,6 +10,14 @@ const projectList = [
     imageLink: "/WMATA_web_app.png",
     languages: ["Javascript", "Python"],
     tag: ["Data Visualization"],
+    description:
+      "Interactive dashboard to visualize smart card data for Washington D.C. Metropolitan Transit Authority",
+    otherImages: [
+      "/wmata_1.png",
+      "/wmata_2.png",
+      "/wmata_3.png",
+      "/wmata_4.png",
+    ],
   },
   {
     name: "Spotify Reccomendation Engine",
