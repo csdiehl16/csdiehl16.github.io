@@ -7,6 +7,7 @@ const ProjectTile = (props) => {
 
   return (
     <div className={classes.tile}>
+      <h3 className={classes["project-title"]}>{props.title}</h3>
       <img
         onClick={clickHandler}
         className={classes["tile-img"]}

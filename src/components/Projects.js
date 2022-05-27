@@ -9,7 +9,7 @@ const projectList = [
     link: "https://github.com/csdiehl/smart-card-data-dashboard#readme",
     imageLink: "/WMATA_web_app.png",
     languages: ["Javascript", "Python"],
-    tag: "Data Visualization",
+    tag: ["Data Visualization"],
   },
   {
     name: "Spotify Reccomendation Engine",
@@ -23,7 +23,7 @@ const projectList = [
     link: "https://observablehq.com/@csdiehl/protests-analysis",
     imageLink: "/protests.png",
     languages: ["Javascript / React"],
-    tag: ["Web Development"],
+    tag: ["Data Visualization"],
   },
   {
     name: "Climbing Logbook",
@@ -37,6 +37,41 @@ const projectList = [
     link: "https://cse512-21s.github.io/FP-Transit_System/",
     imageLink: "/orcaviz.png",
     languages: ["Javascript / React"],
+    tag: ["Data Visualization"],
+  },
+  {
+    name: "Type Cast",
+    link: "https://csdiehl.github.io/type_scale/",
+    imageLink: "/type_scale.png",
+    languages: ["Javascript", "HTML / CSS"],
+    tag: ["Web Development"],
+  },
+  {
+    name: "Outdoor Access Score",
+    link: "https://rpubs.com/csdiehl/outdoor-access",
+    imageLink: "/outdoor_access.png",
+    languages: ["Python", "R"],
+    tag: ["Data Visualization"],
+  },
+  {
+    name: "Transit Smart Card Clustering",
+    link: "https://rpubs.com/csdiehl/transit-clusters",
+    imageLink: "/clusters.png",
+    languages: ["Python", "R"],
+    tag: ["Data Visualization"],
+  },
+  {
+    name: "Mobility in a Pandemic",
+    link: "",
+    imageLink: "/covid_mobility.jpg",
+    languages: ["Python", "R"],
+    tag: ["Data Visualization"],
+  },
+  {
+    name: "Early Retirement Calculator",
+    link: "https://csdiehl.github.io/early-retirement-calculator/",
+    imageLink: "/fire_calculator.png",
+    languages: ["Javascript / React", "HTML / CSS"],
     tag: ["Web Development"],
   },
 ];
@@ -108,6 +143,8 @@ const Projects = () => {
             <option value="Javascript / React">Javascript / React</option>
             <option value="Javascript">Javascript</option>
             <option value="Python">Python</option>
+            <option value="HTML / CSS">HTML / CSS</option>
+            <option value="R">R</option>
           </select>
         </div>
       </div>

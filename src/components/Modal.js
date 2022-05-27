@@ -19,6 +19,7 @@ const Modal = (props) => {
         <img
           className={classes["modal-image"]}
           src={props.tileInfo.imageLink}
+          alt={props.tileInfo.imageLink}
         />
       </div>
     </Fragment>
