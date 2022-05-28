@@ -30,7 +30,11 @@ const Modal = (props) => {
             alt={props.tileInfo.imageLink}
           />
           <div>
-            <a href={props.tileInfo.link} target="_blank">
+            <a
+              className={classes.viewBtn}
+              href={props.tileInfo.link}
+              target="_blank"
+            >
               View Project
             </a>
             <p>{props.tileInfo.description}</p>

@@ -1,6 +1,6 @@
 import ProjectTile from "./ProjectTile";
 import "./Projects.css";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import Modal from "./Modal";
 
 const projectList = [
@@ -51,7 +51,7 @@ const projectList = [
     name: "Type Cast",
     link: "https://csdiehl.github.io/type_scale/",
     imageLink: "/type_scale.png",
-    languages: ["Javascript", "HTML / CSS"],
+    languages: ["Javascript", "HTML5 / CSS"],
     tag: ["Web Development"],
   },
   {
@@ -79,7 +79,7 @@ const projectList = [
     name: "Early Retirement Calculator",
     link: "https://csdiehl.github.io/early-retirement-calculator/",
     imageLink: "/fire_calculator.png",
-    languages: ["Javascript / React", "HTML / CSS"],
+    languages: ["Javascript / React", "HTML5 / CSS"],
     tag: ["Web Development"],
   },
 ];
@@ -88,12 +88,9 @@ const Projects = () => {
   const [showModal, setShowModal] = useState(false);
   const [activeTile, setActiveTile] = useState(projectList[0]);
   const [filters, setFilters] = useState({
-    type: "all",
-    language: "all",
+    type: "All Types",
+    language: "All Languages",
   });
-
-  const typeRef = useRef();
-  const languageRef = useRef();
 
   const tileClicked = (name) => {
     setActiveTile(projectData.filter((o) => o.name === name)[0]);
@@ -104,21 +101,19 @@ const Projects = () => {
     setShowModal(false);
   };
 
-  const handleSelect = () => {
-    setFilters({ ...filters, type: typeRef.current.value });
-  };
-
-  const handleLangSelect = () => {
-    setFilters({ ...filters, language: languageRef.current.value });
+  const handleSelect = (event) => {
+    const value = event.target.value;
+    const name = event.target.name;
+    setFilters({ ...filters, [name]: value });
   };
 
   const projectsTypeFiltered =
-    filters.type === "all"
+    filters.type === "All Types"
       ? projectList
       : projectList.filter((p) => p.tag.includes(filters.type));
 
   const projectData =
-    filters.language === "all"
+    filters.language === "All Languages"
       ? projectsTypeFiltered
       : projectsTypeFiltered.filter((p) =>
           p.languages.includes(filters.language)
@@ -136,24 +131,56 @@ const Projects = () => {
     />
   ));
 
+  const languages = [
+    "All Languages",
+    "Javascript / React",
+    "Javascript",
+    "Python",
+    "HTML5 / CSS",
+    "R",
+  ];
+
+  const types = ["All Types", "Web Development", "Data Visualization"];
+
   return (
     <div>
       <div className="project-header">
         <h2>Projects</h2>
         <div>
-          <select name="type" ref={typeRef} onChange={handleSelect}>
-            <option value="all">All Types</option>
-            <option value="Web Development">Web Development</option>
-            <option value="Data Visualization">Data Visualization</option>
-          </select>
-          <select name="language" ref={languageRef} onChange={handleLangSelect}>
-            <option value="all">All Languages</option>
-            <option value="Javascript / React">Javascript / React</option>
-            <option value="Javascript">Javascript</option>
-            <option value="Python">Python</option>
-            <option value="HTML / CSS">HTML / CSS</option>
-            <option value="R">R</option>
-          </select>
+          <div>
+            {types.map((t) => (
+              <button
+                className={
+                  filters.type === t
+                    ? "select-button select-button-clicked"
+                    : "select-button"
+                }
+                key={t}
+                onClick={handleSelect}
+                value={t}
+                name="type"
+              >
+                {t}
+              </button>
+            ))}
+          </div>
+          <div>
+            {languages.map((l) => (
+              <button
+                className={
+                  filters.language === l
+                    ? "select-button select-button-clicked"
+                    : "select-button"
+                }
+                key={l}
+                onClick={handleSelect}
+                value={l}
+                name="language"
+              >
+                {l}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
       <div className="container">

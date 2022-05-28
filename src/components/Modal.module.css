@@ -61,6 +61,17 @@
   z-index: 20;
 }
 
+.viewBtn {
+  padding: 15px;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.viewBtn:hover {
+  font-weight: 700;
+  border: 2px solid white;
+}
+
 @keyframes slide-in {
   from {
     transform: translateX(-100%);
