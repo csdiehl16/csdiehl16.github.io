@@ -5,6 +5,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #121212;
+  scroll-behavior: smooth;
 }
 
 code {
@@ -15,6 +16,7 @@ code {
 h1 {
   font-size: 100px;
   font-weight: 600;
+  margin-bottom: -10px;
 }
 
 h2 {
@@ -26,4 +28,10 @@ a {
   color: #fff;
   font-size: 16px;
   text-decoration: none;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
 }

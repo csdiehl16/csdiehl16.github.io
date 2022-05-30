@@ -37,7 +37,7 @@ const Modal = (props) => {
             >
               View Project
             </a>
-            <p>{props.tileInfo.description}</p>
+            <p className={classes.description}>{props.tileInfo.description}</p>
           </div>
         </div>
 

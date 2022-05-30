@@ -72,6 +72,11 @@
   border: 2px solid white;
 }
 
+.description {
+  margin-top: 30px;
+  max-width: 70%;
+}
+
 @keyframes slide-in {
   from {
     transform: translateX(-100%);

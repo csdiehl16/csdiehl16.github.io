@@ -1,6 +1,6 @@
 import ProjectTile from "./ProjectTile";
 import "./Projects.css";
-import { useState } from "react";
+import { useState, forwardRef } from "react";
 import Modal from "./Modal";
 
 const projectList = [
@@ -25,6 +25,8 @@ const projectList = [
     imageLink: "/spotify_app.png",
     languages: ["Javascript / React"],
     tag: ["Web Development"],
+    description:
+      "Allows users to connect Spotify accounts and receive music reccomendations using the Spotify Web API",
   },
   {
     name: "Protests Visualization",
@@ -32,6 +34,8 @@ const projectList = [
     imageLink: "/protests.png",
     languages: ["Javascript / React"],
     tag: ["Data Visualization"],
+    description:
+      "Interactive, Javascript-based data visualization of recent protests in the United States",
   },
   {
     name: "Climbing Logbook",
@@ -39,6 +43,8 @@ const projectList = [
     imageLink: "/climbing.png",
     languages: ["Javascript / React"],
     tag: ["Web Development"],
+    description:
+      "Full stack application where users can log recent climbs, save them in a database, and access later.",
   },
   {
     name: "Transit System Dashboard",
@@ -46,6 +52,8 @@ const projectList = [
     imageLink: "/orcaviz.png",
     languages: ["Javascript / React"],
     tag: ["Data Visualization"],
+    description:
+      "Dashboard for visualizing smart card data showing passenger journeys on Sound Transit in the Puget Sound region",
   },
   {
     name: "Type Cast",
@@ -53,6 +61,8 @@ const projectList = [
     imageLink: "/type_scale.png",
     languages: ["Javascript", "HTML5 / CSS"],
     tag: ["Web Development"],
+    description:
+      "Javascript application that creates a type heirarchy for use in documents and web design",
   },
   {
     name: "Outdoor Access Score",
@@ -84,7 +94,7 @@ const projectList = [
   },
 ];
 
-const Projects = () => {
+const Projects = forwardRef((props, ref) => {
   const [showModal, setShowModal] = useState(false);
   const [activeTile, setActiveTile] = useState(projectList[0]);
   const [filters, setFilters] = useState({
@@ -143,7 +153,7 @@ const Projects = () => {
   const types = ["All Types", "Web Development", "Data Visualization"];
 
   return (
-    <div>
+    <div ref={ref}>
       <div className="project-header">
         <h2>Projects</h2>
         <div>
@@ -195,6 +205,6 @@ const Projects = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Projects;

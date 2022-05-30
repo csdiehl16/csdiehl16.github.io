@@ -1,14 +1,21 @@
 import "./App.css";
 import Projects from "./components/Projects";
 import Profile from "./components/Profile";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Resume from "./components/Resume";
 import ContactPage from "./components/ContactPage";
+import Footer from "./components/Footer";
 
 function App() {
   const [activePage, setActivePage] = useState("Projects");
 
-  const pages = ["Projects", "Resume", "About"];
+  const projectsRef = useRef();
+
+  const scroll = () => {
+    projectsRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const pages = ["Projects", "Resume", "Contact"];
 
   const navClickHandler = (event) => {
     setActivePage(event.target.value);
@@ -16,7 +23,7 @@ function App() {
 
   return (
     <div className="App">
-      <Profile />
+      <Profile scroll={scroll} />
       <div className="nav-bar">
         {pages.map((page) => (
           <div>
@@ -33,12 +40,13 @@ function App() {
         ))}
       </div>
       {activePage === "Projects" ? (
-        <Projects />
+        <Projects ref={projectsRef} />
       ) : activePage === "Resume" ? (
         <Resume />
       ) : (
         <ContactPage />
       )}
+      <Footer />
     </div>
   );
 }
