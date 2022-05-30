@@ -28,7 +28,11 @@ function App() {
         {pages.map((page) => (
           <div>
             <button
-              className="nav-button"
+              className={
+                page === activePage
+                  ? "nav-button nav-button-clicked"
+                  : "nav-button"
+              }
               value={page}
               key={page}
               onClick={navClickHandler}

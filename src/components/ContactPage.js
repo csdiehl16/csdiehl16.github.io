@@ -2,7 +2,7 @@ import "./contactPage.css";
 
 const ContactPage = () => {
   return (
-    <div className="contact-container">
+    <div className="contact-container fade-in">
       <div className="contact-item">
         <img class="contact-img" src="./linkedin.png" />
         <a

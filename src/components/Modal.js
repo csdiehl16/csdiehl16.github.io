@@ -30,13 +30,15 @@ const Modal = (props) => {
             alt={props.tileInfo.imageLink}
           />
           <div>
-            <a
-              className={classes.viewBtn}
-              href={props.tileInfo.link}
-              target="_blank"
-            >
-              View Project
-            </a>
+            {props.tileInfo.link !== "" && (
+              <a
+                className={classes.viewBtn}
+                href={props.tileInfo.link}
+                target="_blank"
+              >
+                View Project
+              </a>
+            )}
             <p className={classes.description}>{props.tileInfo.description}</p>
           </div>
         </div>

@@ -8,6 +8,7 @@
   padding: var(--tag-padding);
   position: relative;
   background-color: rgba(255, 255, 255, 0.1);
+  animation: tile-fade 500ms ease-out;
 }
 
 .project-title {
@@ -15,6 +16,8 @@
   margin: auto;
   position: absolute;
   top: 50%;
+  left: var(--tag-position);
+  text-align: center;
 }
 
 .tile-img {
@@ -23,8 +26,7 @@
   object-fit: cover;
   display: block;
   border-radius: 5px;
-  transition: transform 1000ms;
-  transition: filter 1000ms;
+  transition: transform 700ms, filter 1000ms;
   filter: brightness(50%);
 }
 
@@ -66,4 +68,14 @@
   left: var(--tag-position);
   display: flex;
   gap: 10px;
+}
+
+@keyframes tile-fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

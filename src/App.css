@@ -42,7 +42,12 @@
 .nav-bar {
   display: flex;
   justify-content: center;
-  height: 20vh;
+  position: sticky;
+  top: 0px;
+  background-color: #121212;
+  z-index: 15;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .nav-button {
@@ -54,10 +59,14 @@
   margin: 20px;
 }
 
+.nav-button-clicked {
+  color: var(--theme-color);
+}
+
 .nav-btn-line {
   display: block;
   width: 80px;
   height: 3px;
-  background: #fff;
+  background: var(--theme-color);
   margin: auto;
 }

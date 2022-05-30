@@ -21,7 +21,7 @@ const projectList = [
   },
   {
     name: "Spotify Reccomendation Engine",
-    link: "",
+    link: "https://csdiehl.github.io/spotify-reccomendation-engine/",
     imageLink: "/spotify_app.png",
     languages: ["Javascript / React"],
     tag: ["Web Development"],
@@ -92,6 +92,13 @@ const projectList = [
     languages: ["Javascript / React", "HTML5 / CSS"],
     tag: ["Web Development"],
   },
+  {
+    name: "Visualizing Police Use of Force",
+    link: "",
+    imageLink: "/police_force.jpg",
+    languages: ["Python", "R"],
+    tag: ["Data Visualization"],
+  },
 ];
 
 const Projects = forwardRef((props, ref) => {
@@ -153,7 +160,7 @@ const Projects = forwardRef((props, ref) => {
   const types = ["All Types", "Web Development", "Data Visualization"];
 
   return (
-    <div ref={ref}>
+    <div className="fade-in" ref={ref}>
       <div className="project-header">
         <h2>Projects</h2>
         <div>
