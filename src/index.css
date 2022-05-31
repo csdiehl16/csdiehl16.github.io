@@ -68,3 +68,9 @@ a {
     transform: translateY(0);
   }
 }
+
+@media (max-width: 450px) {
+  .slide-up {
+    max-width: 90%;
+  }
+}

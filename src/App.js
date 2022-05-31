@@ -29,9 +29,7 @@ function App() {
           <div>
             <button
               className={
-                page === activePage
-                  ? "nav-button nav-button-clicked"
-                  : "nav-button"
+                page === activePage ? "nav-btn nav-btn-clicked" : "nav-btn"
               }
               value={page}
               key={page}

@@ -50,17 +50,20 @@
   margin-bottom: 20px;
 }
 
-.nav-button {
+.nav-btn {
   font-size: 20px;
   font-weight: 400;
+  font-family: "Poppins", "Helvetica Neue", sans-serif;
   text-align: center;
   background-color: #121212;
   color: #fff;
   margin: 20px;
+  border: none;
 }
 
-.nav-button-clicked {
+.nav-btn-clicked {
   color: var(--theme-color);
+  border: none;
 }
 
 .nav-btn-line {
