@@ -7,7 +7,7 @@ const projectList = [
   {
     name: "Transit Segment Priority Finder",
     link: "https://ibi-group.github.io/mbta-transit-priority-finder/",
-    imageLink: "/mbta_tool.png",
+    imageLink: "/mbta_tool.PNG",
     languages: ["Javascript / React", "Python"],
     tag: ["Data Visualization"],
     description:
