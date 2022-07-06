@@ -5,6 +5,15 @@ import Modal from "./Modal";
 
 const projectList = [
   {
+    name: "Transit Segment Priority Finder",
+    link: "https://ibi-group.github.io/mbta-transit-priority-finder/",
+    imageLink: "/mbta_tool.png",
+    languages: ["Javascript / React", "Python"],
+    tag: ["Data Visualization"],
+    description:
+      "Allows agency to filter and select stop-to-stop bus segments for transit priority measures such as bus-only lanes. Users can adjust the weights as needed to calculate a new weighted average score based on their priorities.",
+  },
+  {
     name: "WMATA Dashboard",
     link: "https://github.com/csdiehl/smart-card-data-dashboard#readme",
     imageLink: "/WMATA_web_app.png",
