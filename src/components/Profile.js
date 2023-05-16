@@ -1,22 +1,29 @@
-import classes from "./Profile.module.css";
+import classes from "./Profile.module.css"
 
 const Profile = (props) => {
   const scroll = () => {
-    props.scroll();
-  };
+    props.scroll()
+  }
 
   return (
     <div className={classes.container}>
       <div className={classes.description}>
-        <h1>Caleb Diehl</h1>
-        <h2>Web Development. Data Visualization. Design.</h2>
-        <button className={classes["view-btn"]} onClick={scroll}>
-          View Projects
-        </button>
+        <h1 className={classes.header}>
+          Hi I'm<br></br> Caleb Diehl
+        </h1>
+        <h2 className={classes.subhead}>
+          Data Visualization<br></br> Developer
+        </h2>
       </div>
-      <img className={classes["profile-img"]} src="/profile.png" />
-    </div>
-  );
-};
 
-export default Profile;
+      <div className={classes["image-container"]}>
+        <img
+          className={classes["profile-img"]}
+          src="/profile_transparent.png"
+        />
+      </div>
+    </div>
+  )
+}
+
+export default Profile

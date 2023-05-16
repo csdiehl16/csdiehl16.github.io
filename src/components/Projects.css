@@ -13,13 +13,7 @@
 }
 
 .project-header {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.1);
-  margin: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  margin: 16px;
 }
 
 .select-button {
@@ -32,17 +26,11 @@
   min-width: 100px;
   transition: color 1s;
   transition: background-color 1s;
+  cursor: pointer;
 }
 
 .select-button-clicked {
   background-color: #fff;
   color: #121212;
   font-weight: 600;
-}
-
-@media (max-width: 450px) {
-  .project-header {
-    display: flex;
-    flex-direction: column;
-  }
 }
