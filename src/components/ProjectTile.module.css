@@ -1,23 +1,27 @@
 :root {
-  --tag-padding: 10px;
-  --tag-position: 20px;
+  --tag-padding: 8px;
+  --tag-position: 8px;
 }
 
 .tile {
-  border-radius: 10px;
-  padding: var(--tag-padding);
+  border-radius: 5px;
   position: relative;
-  background-color: rgba(255, 255, 255, 0.1);
   animation: tile-fade 500ms ease-out;
+  cursor: pointer;
 }
 
 .project-title {
   z-index: 10;
-  margin: auto;
+  transform: translate3d(-50%, -50%, 0);
   position: absolute;
   top: 50%;
-  left: var(--tag-position);
+  left: 50%;
   text-align: center;
+  visibility: hidden;
+}
+
+.tile:hover .project-title {
+  visibility: visible;
 }
 
 .tile-img {
@@ -27,30 +31,11 @@
   display: block;
   border-radius: 5px;
   transition: transform 700ms, filter 1000ms;
-  filter: brightness(50%);
 }
 
 .tile-img:hover {
   transform: scale(1.05);
-  filter: brightness(100%);
-}
-
-.tile:hover .project-title {
-  visibility: hidden;
-}
-
-.tag {
-  border-radius: 5px;
-  background-color: #121212;
-  opacity: 0.7;
-  color: #fff;
-  padding: var(--tag-padding);
-  width: 30%;
-  position: absolute;
-  top: var(--tag-position);
-  left: var(--tag-position);
-  z-index: 5;
-  border: 1px solid #fff;
+  filter: brightness(50%);
 }
 
 .languageTag {
@@ -60,6 +45,7 @@
   padding: 10px;
   color: #fff;
   border: 1px solid #fff;
+  visibility: hidden;
 }
 
 .langTagContainer {

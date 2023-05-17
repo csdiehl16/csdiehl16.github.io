@@ -1,29 +1,34 @@
-import "./App.css";
-import Projects from "./components/Projects";
-import Profile from "./components/Profile";
-import { useState, useRef } from "react";
-import Resume from "./components/Resume";
-import ContactPage from "./components/ContactPage";
-import Footer from "./components/Footer";
+import "./App.css"
+import Projects from "./components/Projects"
+import Profile from "./components/Profile"
+import { useState, useRef } from "react"
+import Resume from "./components/Resume"
+import ContactPage from "./components/ContactPage"
+import Footer from "./components/Footer"
+
+const pages = ["Projects", "Resume", "Contact"]
 
 function App() {
-  const [activePage, setActivePage] = useState("Projects");
+  const [activePage, setActivePage] = useState("Projects")
 
-  const projectsRef = useRef();
+  const projectsRef = useRef()
 
   const scroll = () => {
-    projectsRef.current.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const pages = ["Projects", "Resume", "Contact"];
+    projectsRef.current.scrollIntoView({ behavior: "smooth" })
+  }
 
   const navClickHandler = (event) => {
-    setActivePage(event.target.value);
-  };
+    setActivePage(event.target.value)
+  }
 
   return (
     <div className="App">
-      <Profile scroll={scroll} />
+      <Profile
+        setActivePage={setActivePage}
+        activePage={activePage}
+        scroll={scroll}
+      />
+
       <div className="nav-bar">
         {pages.map((page) => (
           <div>
@@ -41,6 +46,7 @@ function App() {
           </div>
         ))}
       </div>
+
       {activePage === "Projects" ? (
         <Projects ref={projectsRef} />
       ) : activePage === "Resume" ? (
@@ -50,7 +56,7 @@ function App() {
       )}
       <Footer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

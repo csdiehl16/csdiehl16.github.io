@@ -1,9 +1,9 @@
-import classes from "./ProjectTile.module.css";
+import classes from "./ProjectTile.module.css"
 
 const ProjectTile = (props) => {
   const clickHandler = () => {
-    props.tileClicked(props.title);
-  };
+    props.tileClicked(props.title)
+  }
 
   return (
     <div className={classes.tile}>
@@ -14,18 +14,17 @@ const ProjectTile = (props) => {
         src={props.image}
         alt={props.title}
       ></img>
-      <div className={classes.tag}>{props.tag}</div>
       <div className={classes.langTagContainer}>
         {props.languageTag.map((t) => {
           return (
             <div className={classes.languageTag} key={Math.random()}>
               {t}
             </div>
-          );
+          )
         })}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ProjectTile;
+export default ProjectTile

@@ -1,14 +1,14 @@
-import ProjectTile from "./ProjectTile";
-import "./Projects.css";
-import { useState, forwardRef } from "react";
-import Modal from "./Modal";
+import ProjectTile from "./ProjectTile"
+import "./Projects.css"
+import { useState, forwardRef } from "react"
+import Modal from "./Modal"
 
 const projectList = [
   {
     name: "Transit Segment Priority Finder",
     link: "https://ibi-group.github.io/mbta-transit-priority-finder/",
     imageLink: "/mbta_tool.PNG",
-    languages: ["Javascript / React", "Python"],
+    languages: ["React.js", "Python"],
     tag: ["Data Visualization"],
     description:
       "Allows agency to filter and select stop-to-stop bus segments for transit priority measures such as bus-only lanes. Users can adjust the weights as needed to calculate a new weighted average score based on their priorities.",
@@ -32,8 +32,8 @@ const projectList = [
     name: "Spotify Reccomendation Engine",
     link: "https://csdiehl.github.io/spotify-reccomendation-engine/",
     imageLink: "/spotify_app.png",
-    languages: ["Javascript / React"],
-    tag: ["Web Development"],
+    languages: ["React.js"],
+    tag: ["Front-end Development"],
     description:
       "Allows users to connect Spotify accounts and receive music reccomendations using the Spotify Web API",
   },
@@ -41,7 +41,7 @@ const projectList = [
     name: "Protests Visualization",
     link: "https://observablehq.com/@csdiehl/protests-analysis",
     imageLink: "/protests.png",
-    languages: ["Javascript / React"],
+    languages: ["React.js"],
     tag: ["Data Visualization"],
     description:
       "Interactive, Javascript-based data visualization of recent protests in the United States",
@@ -50,8 +50,8 @@ const projectList = [
     name: "Climbing Logbook",
     link: "http://csdiehl.pythonanywhere.com/",
     imageLink: "/climbing.png",
-    languages: ["Javascript / React"],
-    tag: ["Web Development"],
+    languages: ["React.js"],
+    tag: ["Front-end Development"],
     description:
       "Full stack application where users can log recent climbs, save them in a database, and access later.",
   },
@@ -59,7 +59,7 @@ const projectList = [
     name: "Transit System Dashboard",
     link: "https://cse512-21s.github.io/FP-Transit_System/",
     imageLink: "/orcaviz.png",
-    languages: ["Javascript / React"],
+    languages: ["React.js"],
     tag: ["Data Visualization"],
     description:
       "Dashboard for visualizing smart card data showing passenger journeys on Sound Transit in the Puget Sound region",
@@ -69,7 +69,7 @@ const projectList = [
     link: "https://csdiehl.github.io/type_scale/",
     imageLink: "/type_scale.png",
     languages: ["Javascript", "HTML5 / CSS"],
-    tag: ["Web Development"],
+    tag: ["Front-end Development"],
     description:
       "Javascript application that creates a type heirarchy for use in documents and web design",
   },
@@ -98,8 +98,8 @@ const projectList = [
     name: "Early Retirement Calculator",
     link: "https://csdiehl.github.io/early-retirement-calculator/",
     imageLink: "/fire_calculator.png",
-    languages: ["Javascript / React", "HTML5 / CSS"],
-    tag: ["Web Development"],
+    languages: ["React.js", "HTML5 / CSS"],
+    tag: ["Front-end Development"],
   },
   {
     name: "Visualizing Police Use of Force",
@@ -108,42 +108,42 @@ const projectList = [
     languages: ["Python", "R"],
     tag: ["Data Visualization"],
   },
-];
+]
 
 const Projects = forwardRef((props, ref) => {
-  const [showModal, setShowModal] = useState(false);
-  const [activeTile, setActiveTile] = useState(projectList[0]);
+  const [showModal, setShowModal] = useState(false)
+  const [activeTile, setActiveTile] = useState(projectList[0])
   const [filters, setFilters] = useState({
     type: "All Types",
     language: "All Languages",
-  });
+  })
 
   const tileClicked = (name) => {
-    setActiveTile(projectData.filter((o) => o.name === name)[0]);
-    setShowModal(true);
-  };
+    setActiveTile(projectData.filter((o) => o.name === name)[0])
+    setShowModal(true)
+  }
 
   const closeModal = () => {
-    setShowModal(false);
-  };
+    setShowModal(false)
+  }
 
   const handleSelect = (event) => {
-    const value = event.target.value;
-    const name = event.target.name;
-    setFilters({ ...filters, [name]: value });
-  };
+    const value = event.target.value
+    const name = event.target.name
+    setFilters({ ...filters, [name]: value })
+  }
 
   const projectsTypeFiltered =
     filters.type === "All Types"
       ? projectList
-      : projectList.filter((p) => p.tag.includes(filters.type));
+      : projectList.filter((p) => p.tag.includes(filters.type))
 
   const projectData =
     filters.language === "All Languages"
       ? projectsTypeFiltered
       : projectsTypeFiltered.filter((p) =>
           p.languages.includes(filters.language)
-        );
+        )
 
   const tiles = projectData.map((p) => (
     <ProjectTile
@@ -155,25 +155,24 @@ const Projects = forwardRef((props, ref) => {
       languageTag={p.languages}
       tileClicked={tileClicked}
     />
-  ));
+  ))
 
   const languages = [
     "All Languages",
-    "Javascript / React",
+    "React.js",
     "Javascript",
     "Python",
     "HTML5 / CSS",
     "R",
-  ];
+  ]
 
-  const types = ["All Types", "Web Development", "Data Visualization"];
+  const types = ["All Types", "Front-end Development", "Data Visualization"]
 
   return (
     <div className="fade-in" ref={ref}>
       <div className="project-header">
-        <h2>Projects</h2>
         <div>
-          <div>
+          <div className="types-buttons">
             {types.map((t) => (
               <button
                 className={
@@ -190,7 +189,7 @@ const Projects = forwardRef((props, ref) => {
               </button>
             ))}
           </div>
-          <div>
+          <div className="lang-buttons">
             {languages.map((l) => (
               <button
                 className={
@@ -220,7 +219,7 @@ const Projects = forwardRef((props, ref) => {
         <div className="tileContainer">{tiles}</div>
       </div>
     </div>
-  );
-});
+  )
+})
 
-export default Projects;
+export default Projects

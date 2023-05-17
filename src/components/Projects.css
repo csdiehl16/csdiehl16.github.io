@@ -3,6 +3,14 @@
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   grid-auto-rows: 400px;
   grid-gap: 15px;
+  max-width: 1200px;
+  margin: 0 auto; /* center the grid horizontally */
+}
+
+@media (max-width: 767px) {
+  .tileContainer {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  }
 }
 
 .container {
@@ -16,16 +24,31 @@
   margin: 16px;
 }
 
+.types-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+.lang-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
 .select-button {
   color: #fff;
   background-color: #121212;
-  border: 1px solid white;
-  padding: 10px;
-  border-radius: 10px;
-  margin: 5px;
+  border: 1px solid #333;
+  padding: 8px;
+  border-radius: 5px;
   min-width: 100px;
-  transition: color 1s;
-  transition: background-color 1s;
+  transition: color 500ms;
+  transition: background-color 500ms;
   cursor: pointer;
 }
 

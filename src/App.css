@@ -29,14 +29,23 @@
 }
 
 .nav-bar {
+  height: 68px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
   position: sticky;
   top: 0px;
   background-color: #121212;
   z-index: 15;
   width: 100%;
-  margin-bottom: 20px;
+  grid-area: nav;
+}
+
+@media (min-width: 768px) {
+  .nav-bar {
+    justify-content: center;
+    gap: 16px;
+  }
 }
 
 .nav-btn {
@@ -46,7 +55,6 @@
   text-align: center;
   background-color: #121212;
   color: #fff;
-  margin: 20px;
   border: none;
 }
 
