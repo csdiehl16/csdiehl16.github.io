@@ -9,8 +9,8 @@ body {
   font-family: "Poppins", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #121212;
   scroll-behavior: smooth;
+  background-color: #121212;
 }
 
 code {

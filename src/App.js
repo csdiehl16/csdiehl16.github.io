@@ -28,33 +28,44 @@ function App() {
         activePage={activePage}
         scroll={scroll}
       />
+      <div
+        style={{ height: "calc(100vh - 68px)", background: "transparent" }}
+      ></div>
+      <div
+        style={{
+          background: "#121212",
+          zIndex: 10,
+          position: "relative",
+          transform: "translate3d(0, 0, 0)",
+        }}
+      >
+        <div className="nav-bar">
+          {pages.map((page) => (
+            <div>
+              <button
+                className={
+                  page === activePage ? "nav-btn nav-btn-clicked" : "nav-btn"
+                }
+                value={page}
+                key={page}
+                onClick={navClickHandler}
+              >
+                {page}
+              </button>
+              {activePage === page && <div className="nav-btn-line"></div>}
+            </div>
+          ))}
+        </div>
 
-      <div className="nav-bar">
-        {pages.map((page) => (
-          <div>
-            <button
-              className={
-                page === activePage ? "nav-btn nav-btn-clicked" : "nav-btn"
-              }
-              value={page}
-              key={page}
-              onClick={navClickHandler}
-            >
-              {page}
-            </button>
-            {activePage === page && <div className="nav-btn-line"></div>}
-          </div>
-        ))}
+        {activePage === "Projects" ? (
+          <Projects ref={projectsRef} />
+        ) : activePage === "Resume" ? (
+          <Resume />
+        ) : (
+          <ContactPage />
+        )}
+        <Footer />
       </div>
-
-      {activePage === "Projects" ? (
-        <Projects ref={projectsRef} />
-      ) : activePage === "Resume" ? (
-        <Resume />
-      ) : (
-        <ContactPage />
-      )}
-      <Footer />
     </div>
   )
 }

@@ -4,12 +4,14 @@ const Profile = ({ scroll, setActivePage, activePage }) => {
   return (
     <div className={classes.container}>
       <div className={classes.description}>
-        <h1 className={classes.header}>
-          Hi I'm<br></br> Caleb Diehl
-        </h1>
-        <h2 className={classes.subhead}>
-          Data Visualization<br></br> Developer
-        </h2>
+        <div>
+          <h1 className={classes.header}>
+            Hi, I'm<br></br> Caleb Diehl
+          </h1>
+          <h2 className={classes.subhead}>
+            Data Visualization<br></br> Developer
+          </h2>
+        </div>
       </div>
 
       <div className={classes["image-container"]}>
