@@ -1,6 +1,7 @@
 import ProjectTile from "./ProjectTile"
 import "./Projects.css"
 import { useState, forwardRef } from "react"
+import LazyLoad from "react-lazy-load"
 
 const projectList = [
   {
@@ -196,8 +197,11 @@ const Projects = forwardRef((props, ref) => {
           </div>
         </div>
       </div>
+
       <div className="container">
-        <div className="tileContainer">{tiles}</div>
+        <LazyLoad>
+          <div className="tileContainer">{tiles}</div>
+        </LazyLoad>
       </div>
     </div>
   )

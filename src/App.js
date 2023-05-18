@@ -2,11 +2,10 @@ import "./App.css"
 import Projects from "./components/Projects"
 import Profile from "./components/Profile"
 import { useState, useRef } from "react"
-import Resume from "./components/Resume"
 import ContactPage from "./components/ContactPage"
 import Footer from "./components/Footer"
 
-const pages = ["Projects", "Resume", "Contact"]
+const pages = ["Projects", "About Me"]
 
 function App() {
   const [activePage, setActivePage] = useState("Projects")
@@ -60,8 +59,6 @@ function App() {
 
         {activePage === "Projects" ? (
           <Projects ref={projectsRef} />
-        ) : activePage === "Resume" ? (
-          <Resume />
         ) : (
           <ContactPage />
         )}
