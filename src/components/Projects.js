@@ -1,15 +1,43 @@
 import ProjectTile from "./ProjectTile"
 import "./Projects.css"
 import { useState, forwardRef } from "react"
-import Modal from "./Modal"
 
 const projectList = [
+  {
+    name: "Ski resorts are embracing a new role: climate activist",
+    link: "https://apnews.com/article/climate-change-activism-ski-industry-028d83e19543db5d7633ea83932bdde3",
+    imageLink: "/skiing.png",
+    languages: ["React.js"],
+    tag: ["Data Visualization", "Web Development", "Data Journalism"],
+    description: "",
+  },
+  {
+    name: "AP 2022 Climate Photography Showcase",
+    link: "https://apnews.com/article/2022-climate-change-photos-3d0d1a338bf8995048bddae11ad17eb2",
+    imageLink: "./climate.png",
+    languages: ["React.js"],
+    tag: ["Web Development"],
+    description: "",
+  },
+  {
+    name: "Death and Regrowth on the Great Barrier Reef",
+    link: "https://apnews.com/article/Death-regrowth-on-Great-Barrier-Reef-081570270011",
+    imageLink: "./GBR.png",
+    languages: ["React.js", "Python"],
+    tag: [
+      "Web Development",
+      "Geospatial Analysis",
+      "Data Visualization",
+      "Data Journalism",
+    ],
+    description: "",
+  },
   {
     name: "Transit Segment Priority Finder",
     link: "https://ibi-group.github.io/mbta-transit-priority-finder/",
     imageLink: "/mbta_tool.PNG",
     languages: ["React.js", "Python"],
-    tag: ["Data Visualization"],
+    tag: ["Data Visualization", "Geospatial Analysis"],
     description:
       "Allows agency to filter and select stop-to-stop bus segments for transit priority measures such as bus-only lanes. Users can adjust the weights as needed to calculate a new weighted average score based on their priorities.",
   },
@@ -18,7 +46,7 @@ const projectList = [
     link: "https://github.com/csdiehl/smart-card-data-dashboard#readme",
     imageLink: "/WMATA_web_app.png",
     languages: ["Javascript", "Python"],
-    tag: ["Data Visualization"],
+    tag: ["Data Visualization", "Geospatial Analysis"],
     description:
       "Interactive dashboard to visualize smart card data for Washington D.C. Metropolitan Transit Authority",
     otherImages: [
@@ -33,7 +61,7 @@ const projectList = [
     link: "https://csdiehl.github.io/spotify-reccomendation-engine/",
     imageLink: "/spotify_app.png",
     languages: ["React.js"],
-    tag: ["Front-end Development"],
+    tag: ["Front-end Development", "Data Visualization"],
     description:
       "Allows users to connect Spotify accounts and receive music reccomendations using the Spotify Web API",
   },
@@ -42,25 +70,16 @@ const projectList = [
     link: "https://observablehq.com/@csdiehl/protests-analysis",
     imageLink: "/protests.png",
     languages: ["React.js"],
-    tag: ["Data Visualization"],
+    tag: ["Data Visualization", "Data Journalism"],
     description:
       "Interactive, Javascript-based data visualization of recent protests in the United States",
-  },
-  {
-    name: "Climbing Logbook",
-    link: "http://csdiehl.pythonanywhere.com/",
-    imageLink: "/climbing.png",
-    languages: ["React.js"],
-    tag: ["Front-end Development"],
-    description:
-      "Full stack application where users can log recent climbs, save them in a database, and access later.",
   },
   {
     name: "Transit System Dashboard",
     link: "https://cse512-21s.github.io/FP-Transit_System/",
     imageLink: "/orcaviz.png",
     languages: ["React.js"],
-    tag: ["Data Visualization"],
+    tag: ["Data Visualization", "Geospatial Analysis"],
     description:
       "Dashboard for visualizing smart card data showing passenger journeys on Sound Transit in the Puget Sound region",
   },
@@ -78,21 +97,21 @@ const projectList = [
     link: "https://rpubs.com/csdiehl/outdoor-access",
     imageLink: "/outdoor_access.png",
     languages: ["Python", "R"],
-    tag: ["Data Visualization"],
+    tag: ["Data Visualization", "Geospatial Analysis"],
   },
   {
     name: "Transit Smart Card Clustering",
     link: "https://rpubs.com/csdiehl/transit-clusters",
     imageLink: "/clusters.png",
     languages: ["Python", "R"],
-    tag: ["Data Visualization"],
+    tag: ["Data Visualization", "Geospatial Analysis"],
   },
   {
     name: "Mobility in a Pandemic",
     link: "",
     imageLink: "/covid_mobility.jpg",
     languages: ["Python", "R"],
-    tag: ["Data Visualization"],
+    tag: ["Data Visualization", "UI / UX Design"],
   },
   {
     name: "Early Retirement Calculator",
@@ -106,26 +125,15 @@ const projectList = [
     link: "",
     imageLink: "/police_force.jpg",
     languages: ["Python", "R"],
-    tag: ["Data Visualization"],
+    tag: ["Data Visualization", "UI / UX Design"],
   },
 ]
 
 const Projects = forwardRef((props, ref) => {
-  const [showModal, setShowModal] = useState(false)
-  const [activeTile, setActiveTile] = useState(projectList[0])
   const [filters, setFilters] = useState({
     type: "All Types",
     language: "All Languages",
   })
-
-  const tileClicked = (name) => {
-    setActiveTile(projectData.filter((o) => o.name === name)[0])
-    setShowModal(true)
-  }
-
-  const closeModal = () => {
-    setShowModal(false)
-  }
 
   const handleSelect = (event) => {
     const value = event.target.value
@@ -153,20 +161,17 @@ const Projects = forwardRef((props, ref) => {
       link={p.link}
       image={p.imageLink}
       languageTag={p.languages}
-      tileClicked={tileClicked}
     />
   ))
 
-  const languages = [
-    "All Languages",
-    "React.js",
-    "Javascript",
-    "Python",
-    "HTML5 / CSS",
-    "R",
+  const types = [
+    "All Types",
+    "Front-end Development",
+    "Data Visualization",
+    "Geospatial Analysis",
+    "Data Journalism",
+    "UI / UX Design",
   ]
-
-  const types = ["All Types", "Front-end Development", "Data Visualization"]
 
   return (
     <div className="fade-in" ref={ref}>
@@ -189,33 +194,9 @@ const Projects = forwardRef((props, ref) => {
               </button>
             ))}
           </div>
-          <div className="lang-buttons">
-            {languages.map((l) => (
-              <button
-                className={
-                  filters.language === l
-                    ? "select-button select-button-clicked"
-                    : "select-button"
-                }
-                key={l}
-                onClick={handleSelect}
-                value={l}
-                name="language"
-              >
-                {l}
-              </button>
-            ))}
-          </div>
         </div>
       </div>
       <div className="container">
-        {showModal && (
-          <Modal
-            tileInfo={activeTile}
-            closeHandler={closeModal}
-            open={showModal}
-          />
-        )}
         <div className="tileContainer">{tiles}</div>
       </div>
     </div>

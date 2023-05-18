@@ -56,6 +56,7 @@
   background-color: #121212;
   color: #fff;
   border: none;
+  cursor: pointer;
 }
 
 .nav-btn-clicked {

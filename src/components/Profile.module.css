@@ -1,9 +1,9 @@
 .container {
   position: fixed;
-  transform: translate3d(0, 0, 0);
+  transform: translate3d(-50%, 0, 0);
   z-index: 0;
   top: 0;
-  left: 0;
+  left: 50%;
   text-align: left;
   display: grid;
   height: calc(100vh - 68px);
@@ -13,7 +13,6 @@
   grid-template-areas:
     "text"
     "photo";
-  margin: 0 auto;
 }
 
 .header {
@@ -24,40 +23,47 @@
 .subhead {
   font-size: 24px;
   line-height: 24px;
-  margin-top: 8px;
   color: rgba(255, 255, 255, 0.5);
+}
+
+.description {
+  box-sizing: border-box;
+  grid-area: text;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
+  padding: 32px 32px 0px;
 }
 
 @media (min-width: 768px) {
   .container {
-    grid-template-columns: 60% 40%;
-    grid-template-rows: 20% minmax(0, 1fr);
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr auto 1fr;
     grid-template-areas:
-      "text ."
-      "text photo";
+      ". ."
+      "text photo"
+      ". photo";
+    align-items: flex-end;
+    margin: 0px 32px;
   }
 
   .description {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 0;
   }
+}
 
+@media (min-width: 1024px) {
   .header {
     font-size: 6rem;
     line-height: 6rem;
   }
 
   .subhead {
-    font-size: 48px;
-    line-height: 48px;
+    font-size: 32px;
+    line-height: 32px;
   }
-}
-
-.description {
-  box-sizing: border-box;
-  grid-area: text;
-  padding: 32px;
 }
 
 .image-container {
@@ -71,5 +77,6 @@
   margin: 0 auto;
   height: 100%;
   width: 100%;
+  max-width: 500px;
   object-fit: contain;
 }

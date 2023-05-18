@@ -22,7 +22,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="App" style={{ width: "100%" }}>
       <Profile
         setActivePage={setActivePage}
         activePage={activePage}
@@ -37,6 +37,7 @@ function App() {
           zIndex: 10,
           position: "relative",
           transform: "translate3d(0, 0, 0)",
+          width: "100%",
         }}
       >
         <div className="nav-bar">
