@@ -13,6 +13,19 @@ const projectList = [
     description: "",
   },
   {
+    name: "Wildfire Risk Maps",
+    link: "https://apnews.com/article/wildfires-forest-thinning-community-risk-biden-9d77309cb9e7520069b3c575d850aadc",
+    imageLink: "./wildfire.png",
+    languages: ["React.js"],
+    tag: [
+      "Data Visualization",
+      "Web Development",
+      "Data Journalism",
+      "Geospatial Analysis",
+    ],
+    description: "",
+  },
+  {
     name: "AP 2022 Climate Photography Showcase",
     link: "https://apnews.com/article/2022-climate-change-photos-3d0d1a338bf8995048bddae11ad17eb2",
     imageLink: "./climate.png",
