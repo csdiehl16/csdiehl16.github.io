@@ -9,7 +9,7 @@ const projectList = [
     link: "https://interactives.ap.org/ap-wildfire-tracker/?sort=acres",
     imageLink: "./fire-tracker-screenshot.png",
     languages: ["React.js"],
-    tag: ["Data Visualization", "Web Development", "Data Journalism"],
+    tag: ["Data Visualization", "Front-end Development", "Data Journalism"],
     description: "",
   },
   {
@@ -17,15 +17,15 @@ const projectList = [
     link: "https://projects.apnews.com/features/2023/climate-change-disease-animals-warming-earth/index.html",
     imageLink: "./grist-disease.png",
     languages: ["React.js"],
-    tag: ["Data Visualization", "Web Development", "Data Journalism"],
+    tag: ["Data Visualization", "Front-end Development", "Data Journalism"],
     description: "",
-  }
+  },
   {
     name: "Ski resorts are embracing a new role: climate activist",
     link: "https://apnews.com/article/climate-change-activism-ski-industry-028d83e19543db5d7633ea83932bdde3",
     imageLink: "/skiing.png",
     languages: ["React.js"],
-    tag: ["Data Visualization", "Web Development", "Data Journalism"],
+    tag: ["Data Visualization", "Front-end Development", "Data Journalism"],
     description: "",
   },
   {
@@ -35,7 +35,7 @@ const projectList = [
     languages: ["React.js"],
     tag: [
       "Data Visualization",
-      "Web Development",
+      "Front-end Development",
       "Data Journalism",
       "Geospatial Analysis",
     ],
@@ -46,7 +46,7 @@ const projectList = [
     link: "https://apnews.com/article/2022-climate-change-photos-3d0d1a338bf8995048bddae11ad17eb2",
     imageLink: "./climate.png",
     languages: ["React.js"],
-    tag: ["Web Development"],
+    tag: ["Front-end Development"],
     description: "",
   },
   {
@@ -55,7 +55,7 @@ const projectList = [
     imageLink: "./GBR.png",
     languages: ["React.js", "Python"],
     tag: [
-      "Web Development",
+      "Front-end Development",
       "Geospatial Analysis",
       "Data Visualization",
       "Data Journalism",
