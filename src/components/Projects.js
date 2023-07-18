@@ -5,6 +5,22 @@ import LazyLoad from "react-lazy-load"
 
 const projectList = [
   {
+    name: "AP Wildfire Tracker",
+    link: "https://interactives.ap.org/ap-wildfire-tracker/?sort=acres",
+    imageLink: "./fire-tracker-screenshot.png",
+    languages: ["React.js"],
+    tag: ["Data Visualization", "Web Development", "Data Journalism"],
+    description: "",
+  },
+  {
+    name: "Climate and Disease",
+    link: "https://projects.apnews.com/features/2023/climate-change-disease-animals-warming-earth/index.html",
+    imageLink: "./grist-disease.png",
+    languages: ["React.js"],
+    tag: ["Data Visualization", "Web Development", "Data Journalism"],
+    description: "",
+  }
+  {
     name: "Ski resorts are embracing a new role: climate activist",
     link: "https://apnews.com/article/climate-change-activism-ski-industry-028d83e19543db5d7633ea83932bdde3",
     imageLink: "/skiing.png",
