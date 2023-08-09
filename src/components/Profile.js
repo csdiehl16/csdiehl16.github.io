@@ -1,6 +1,7 @@
 import classes from "./Profile.module.css"
+import Image from "./Image"
 
-const Profile = ({ scroll, setActivePage, activePage }) => {
+const Profile = () => {
   return (
     <div className={classes.container}>
       <div className={classes.description}>
@@ -39,10 +40,9 @@ const Profile = ({ scroll, setActivePage, activePage }) => {
       </div>
 
       <div className={classes["image-container"]}>
-        <img
-          alt="profile"
-          className={classes["profile-img"]}
-          src="/profile_transparent.png"
+        <Image
+          tag={"profile_transparent_dae5gq"}
+          classes={classes["profile-img"]}
         />
       </div>
     </div>
