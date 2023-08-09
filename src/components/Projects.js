@@ -51,7 +51,7 @@ const projectList = [
   },
   {
     name: "Death and Regrowth on the Great Barrier Reef",
-    link: "https://apnews.com/article/Death-regrowth-on-Great-Barrier-Reef-081570270011",
+    link: "https://projects.apnews.com/features/2022/coral-reef-immersive/index.html",
     imageLink: "./GBR.png",
     languages: ["React.js", "Python"],
     tag: [

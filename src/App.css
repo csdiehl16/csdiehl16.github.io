@@ -54,13 +54,13 @@
   font-family: "Poppins", "Helvetica Neue", sans-serif;
   text-align: center;
   background-color: #121212;
-  color: #fff;
+  color: #f5f5f5;
   border: none;
   cursor: pointer;
 }
 
 .nav-btn-clicked {
-  color: var(--theme-color);
+  color: #fff;
   border: none;
 }
 
