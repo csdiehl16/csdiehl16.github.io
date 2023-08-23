@@ -14,7 +14,6 @@ const ProjectTile = (props) => {
             alt={props.title}
           ></img>
         )}
-
         <h3 className={classes["project-title"]}>{props.title}</h3>
       </a>
     </div>

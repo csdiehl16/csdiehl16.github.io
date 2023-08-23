@@ -41,7 +41,7 @@ function App() {
       >
         <div className="nav-bar">
           {pages.map((page) => (
-            <div>
+            <div key={page}>
               <button
                 className={
                   page === activePage ? "nav-btn nav-btn-clicked" : "nav-btn"

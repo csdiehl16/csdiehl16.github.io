@@ -38,6 +38,7 @@
   z-index: 15;
   width: 100%;
   grid-area: nav;
+  background-color: #171717;
 }
 
 @media (min-width: 768px) {

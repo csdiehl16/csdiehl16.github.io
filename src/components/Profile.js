@@ -22,7 +22,7 @@ const Profile = () => {
               height="48px"
               width="48px"
               alt="linkedin"
-              class="contact-img"
+              className="contact-img"
               src="./linkedin.png"
             />
           </a>
@@ -32,7 +32,7 @@ const Profile = () => {
               height="48px"
               width="48px"
               alt="github"
-              class="contact-img"
+              className="contact-img"
               src="./github.png"
             />
           </a>

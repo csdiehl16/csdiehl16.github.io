@@ -38,7 +38,7 @@ const Projects = forwardRef((props, ref) => {
 
   const tiles = projectData.map((p) => (
     <ProjectTile
-      key={Math.random()}
+      key={p.link + p.name}
       tag={p.tag}
       title={p.name}
       link={p.link}
