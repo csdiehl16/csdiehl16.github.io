@@ -44,6 +44,7 @@ const Projects = forwardRef((props, ref) => {
       link={p.link}
       image={p.imageLink}
       languageTag={p.languages}
+      cloudinaryId={p?.cloudinaryId}
     />
   ))
 

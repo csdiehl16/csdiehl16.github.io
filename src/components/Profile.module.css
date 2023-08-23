@@ -77,6 +77,18 @@
   margin: 0 auto;
   height: 100%;
   width: 100%;
-  max-width: 500px;
+  max-width: 400px;
   object-fit: contain;
+  z-index: 2;
+}
+
+.background-circle {
+  height: 380px;
+  width: 380px;
+  background-color: cornflowerblue;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  bottom: -100;
+  transform: translateX(-50%);
 }

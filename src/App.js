@@ -32,7 +32,7 @@ function App() {
       ></div>
       <div
         style={{
-          background: "#121212",
+          background: "#171717",
           zIndex: 10,
           position: "relative",
           transform: "translate3d(0, 0, 0)",

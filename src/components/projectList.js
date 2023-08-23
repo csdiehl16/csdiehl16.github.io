@@ -6,6 +6,7 @@ export const projectList = [
     languages: ["React.js"],
     tag: ["Data Visualization", "Front-end Development", "Data Journalism"],
     description: "",
+    cloudinaryId: "lahaina_fqon1l",
   },
   {
     name: "AP Wildfire Tracker",
@@ -14,6 +15,7 @@ export const projectList = [
     languages: ["React.js"],
     tag: ["Data Visualization", "Front-end Development", "Data Journalism"],
     description: "",
+    cloudinaryId: "fire_tracker_ul6unw",
   },
   {
     name: "Climate and Disease",
@@ -22,6 +24,7 @@ export const projectList = [
     languages: ["React.js"],
     tag: ["Data Visualization", "Front-end Development", "Data Journalism"],
     description: "",
+    cloudinaryId: "grist-disease_ygobl1",
   },
   {
     name: "Ski resorts are embracing a new role: climate activist",
@@ -30,6 +33,7 @@ export const projectList = [
     languages: ["React.js"],
     tag: ["Data Visualization", "Front-end Development", "Data Journalism"],
     description: "",
+    cloudinaryId: "skiing_xpcioo",
   },
   {
     name: "Wildfire Risk Maps",
@@ -43,6 +47,7 @@ export const projectList = [
       "Geospatial Analysis",
     ],
     description: "",
+    cloudinaryId: "fire_thinning_bzqrtp",
   },
   {
     name: "AP 2022 Climate Photography Showcase",
@@ -51,6 +56,7 @@ export const projectList = [
     languages: ["React.js"],
     tag: ["Front-end Development"],
     description: "",
+    cloudinaryId: "climate_slcbb7",
   },
   {
     name: "Death and Regrowth on the Great Barrier Reef",
@@ -64,6 +70,7 @@ export const projectList = [
       "Data Journalism",
     ],
     description: "",
+    cloudinaryId: "GBR_yt22no",
   },
   {
     name: "Transit Segment Priority Finder",
