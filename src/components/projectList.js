@@ -1,5 +1,13 @@
 export const projectList = [
   {
+    name: "Maui Fires Timeline",
+    link: "https://interactives.ap.org/hawaii-timeline/",
+    imageLink: "./lahaina.png",
+    languages: ["React.js"],
+    tag: ["Data Visualization", "Front-end Development", "Data Journalism"],
+    description: "",
+  },
+  {
     name: "AP Wildfire Tracker",
     link: "https://interactives.ap.org/ap-wildfire-tracker/?sort=acres",
     imageLink: "./fire-tracker-screenshot.png",
