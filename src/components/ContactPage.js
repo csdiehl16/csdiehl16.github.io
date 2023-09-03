@@ -6,8 +6,21 @@ const ContactPage = () => {
       <h2>About Me</h2>
       <p>
         Data visualization combines my two passions: design and statistics. I
-        currently work at the Associated Press as a JavaScript and Python
-        developer building visualizations about climate change.
+        currently work at{" "}
+        <a href="https://apnews.com" target="_blank" rel="noreferrer">
+          The Associated Press
+        </a>{" "}
+        as a JavaScript / TypeScript and Python developer building
+        visualizations about climate change. My work has won two honorable
+        mentions for AP's best story of the week, and has been longlisted for an{" "}
+        <a
+          href="https://www.informationisbeautifulawards.com/showcase?award=2023&type=awards"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Information is Beautiful
+        </a>{" "}
+        Award.
       </p>
       <p>
         I earned a Master's in Urban Planning from the University of Washington,
@@ -23,10 +36,7 @@ const ContactPage = () => {
       <h2>Udemy Course</h2>
       <p>
         I offer a Udemy Course in Data Visualization, which you can{" "}
-        <a
-          style={{ textDecoration: "underline" }}
-          href="https://www.udemy.com/course/data-visualization-react-d3/?referralCode=A669D6D959CBDEDD134A"
-        >
+        <a href="https://www.udemy.com/course/data-visualization-react-d3/?referralCode=A669D6D959CBDEDD134A">
           find here.
         </a>
       </p>

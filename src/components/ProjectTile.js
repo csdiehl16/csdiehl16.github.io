@@ -16,6 +16,13 @@ const ProjectTile = (props) => {
         )}
         <h3 className={classes["project-title"]}>{props.title}</h3>
       </a>
+      {props.badge && (
+        <img
+          className={classes["badge"]}
+          alt="information is beautiful awards badge"
+          src={props.badge}
+        ></img>
+      )}
     </div>
   )
 }

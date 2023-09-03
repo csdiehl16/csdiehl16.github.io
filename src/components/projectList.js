@@ -25,6 +25,7 @@ export const projectList = [
     tag: ["Data Visualization", "Front-end Development", "Data Journalism"],
     description: "",
     cloudinaryId: "grist-disease_ygobl1",
+    badge: "./iib_badge.png",
   },
   {
     name: "Ski resorts are embracing a new role: climate activist",

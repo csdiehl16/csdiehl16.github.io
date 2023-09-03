@@ -11,7 +11,7 @@
 }
 
 .project-title {
-  z-index: 10;
+  z-index: 3;
   transform: translate3d(-50%, -50%, 0);
   position: absolute;
   top: 50%;
@@ -55,6 +55,15 @@
   left: var(--tag-position);
   display: flex;
   gap: 10px;
+}
+
+.badge {
+  position: absolute;
+  bottom: 0;
+  right: 0px;
+  z-index: 2;
+  width: 120px;
+  transform: translate(25%, 25%);
 }
 
 @keyframes tile-fade {
