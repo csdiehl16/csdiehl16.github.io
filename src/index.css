@@ -3,6 +3,11 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-snap-type: y mandatory;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   padding: 0;

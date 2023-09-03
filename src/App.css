@@ -71,3 +71,13 @@
   background: #fff;
   margin: auto;
 }
+
+.main-container {
+  background: #171717;
+  z-index: 10;
+  position: relative;
+  transform: translate3d(0, 0, 0);
+  width: 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+}
