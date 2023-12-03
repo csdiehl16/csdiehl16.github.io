@@ -2,7 +2,14 @@ import "./contactPage.css"
 
 const ContactPage = () => {
   return (
-    <div style={{ maxWidth: "50ch", textAlign: "left", margin: "0 auto" }}>
+    <div
+      style={{
+        maxWidth: "50ch",
+        textAlign: "left",
+        margin: "0 auto",
+        padding: "0 12px",
+      }}
+    >
       <h2>About Me</h2>
       <p>
         Data visualization combines my two passions: design and statistics. I

@@ -5,36 +5,14 @@ import LazyLoad from "react-lazy-load"
 import { projectList } from "./projectList"
 
 const Projects = forwardRef((props, ref) => {
-  const [filters, setFilters] = useState({
-    type: "All Types",
-    language: "All Languages",
-  })
+  const [viewMore, setViewMore] = useState(false)
 
-  const handleSelect = (event) => {
-    const value = event.target.value
-    const name = event.target.name
-
-    if (!document.startViewTransition) {
-      setFilters({ ...filters, [name]: value })
-      return
-    }
-
-    document.startViewTransition(() => {
-      setFilters({ ...filters, [name]: value })
-    })
-  }
-
-  const projectsTypeFiltered =
-    filters.type === "All Types"
+  const projectsFiltered =
+    props.filters === "all"
       ? projectList
-      : projectList.filter((p) => p.tag.includes(filters.type))
+      : projectList.filter((p) => p.tag.includes(props.filters))
 
-  const projectData =
-    filters.language === "All Languages"
-      ? projectsTypeFiltered
-      : projectsTypeFiltered.filter((p) =>
-          p.languages.includes(filters.language)
-        )
+  const projectData = viewMore ? projectsFiltered : projectsFiltered.slice(0, 5)
 
   const tiles = projectData.map((p) => (
     <ProjectTile
@@ -46,47 +24,28 @@ const Projects = forwardRef((props, ref) => {
       languageTag={p.languages}
       cloudinaryId={p?.cloudinaryId}
       badge={p?.badge}
+      description={p.description}
     />
   ))
 
-  const types = [
-    "All Types",
-    "Front-end Development",
-    "Data Visualization",
-    "Geospatial Analysis",
-    "Data Journalism",
-    "UI / UX Design",
-  ]
-
   return (
     <div className="fade-in" ref={ref}>
-      <div className="project-header">
-        <div>
-          <div className="types-buttons">
-            {types.map((t) => (
-              <button
-                className={
-                  filters.type === t
-                    ? "select-button select-button-clicked"
-                    : "select-button"
-                }
-                key={t}
-                onClick={handleSelect}
-                value={t}
-                name="type"
-              >
-                {t}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <div className="container">
-        <LazyLoad>
-          <div className="tileContainer">{tiles}</div>
-        </LazyLoad>
-      </div>
+      <LazyLoad>
+        <div className="tileContainer">{tiles}</div>
+      </LazyLoad>
+      <button
+        onClick={() => setViewMore((p) => !p)}
+        className="see-more-button"
+      >
+        <span>{viewMore ? "Hide" : "See more"} projects</span>
+        <img
+          className={viewMore ? "arrow-clicked" : ""}
+          alt="arrow"
+          height="24px"
+          width="24px"
+          src="./down-arrow.svg"
+        ></img>
+      </button>
     </div>
   )
 })
