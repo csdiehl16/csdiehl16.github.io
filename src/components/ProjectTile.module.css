@@ -109,6 +109,10 @@
     flex-direction: column;
   }
 
+  .tile-hidden {
+    opacity: 0.7;
+  }
+
   .tile a {
     width: 100%;
   }
