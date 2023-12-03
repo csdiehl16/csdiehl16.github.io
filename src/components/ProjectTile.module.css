@@ -11,6 +11,11 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 16px;
+  transition: opacity 500ms ease-in;
+}
+
+.tile-hidden {
+  opacity: 0;
 }
 
 .project-title {

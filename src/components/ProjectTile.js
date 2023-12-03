@@ -1,9 +1,17 @@
 import classes from "./ProjectTile.module.css"
 import Image from "./Image"
+import { useInView } from "react-intersection-observer"
 
 const ProjectTile = (props) => {
+  const { ref, inView } = useInView({ threshold: 0.6 })
+
   return (
-    <div className={classes.tile}>
+    <div
+      ref={ref}
+      className={
+        inView ? classes.tile : `${classes.tile} ${classes["tile-hidden"]}`
+      }
+    >
       <div>
         <h2 className={classes["project-title"]}>{props.title}</h2>
         <p className={classes["description"]}>{props.description}</p>
