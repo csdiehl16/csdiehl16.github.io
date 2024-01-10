@@ -1,5 +1,14 @@
 export const projectList = [
   {
+    name: "Recharts Sunburst Chart",
+    link: "https://github.com/recharts/recharts/pull/4037",
+    imageLink: "./recharts_sunburst.png",
+    languages: ["React.js", "Typescript", "D3.js"],
+    tag: ["Dashboards", "Web development"],
+    description:
+      "A new chart type for Recharts, an open-source React data visualization library with more than 173k users. The sunburst is a visually appealing variant of the treemap.",
+  },
+  {
     name: "AP Wildfire Tracker",
     link: "https://interactives.ap.org/ap-wildfire-tracker/?sort=acres",
     imageLink: "./fire-tracker-screenshot.png",
