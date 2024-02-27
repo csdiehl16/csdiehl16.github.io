@@ -10,7 +10,7 @@ const projectTypes = [
   "Web development",
 ]
 
-function App() {
+function Projects() {
   const [filters, setFilters] = useState("All")
 
   const projectsRef = useRef()
@@ -40,4 +40,4 @@ function App() {
   )
 }
 
-export default App
+export default Projects
