@@ -4,6 +4,7 @@
   "homepage": "https://csdiehl.github.io",
   "private": true,
   "dependencies": {
+    "@astrojs/react": "^3.0.10",
     "@cloudinary/react": "^1.11.2",
     "@cloudinary/url-gen": "^1.11.1",
     "@testing-library/jest-dom": "^5.16.4",
@@ -21,10 +22,10 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -b master -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "eslintConfig": {
     "extends": [
@@ -45,6 +46,7 @@
     ]
   },
   "devDependencies": {
+    "astro": "^4.4.5",
     "gh-pages": "^4.0.0"
   }
 }

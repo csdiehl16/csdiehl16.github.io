@@ -1,4 +1,5 @@
 import "./App.css"
+import "./index.css"
 import Projects from "./components/Projects"
 import Profile from "./components/Profile"
 import { useState, useRef } from "react"
