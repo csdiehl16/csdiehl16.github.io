@@ -1,13 +1,9 @@
-const ContactPage = () => {
-  return (
-    <div
-      style={{
-        maxWidth: "50ch",
-        textAlign: "left",
-        margin: "0 auto",
-        padding: "0 12px",
-      }}
-    >
+---
+import Homepage from "../layouts/Homepage.astro"
+---
+
+<Homepage>
+ <div class="container">
       <h2>About Me</h2>
       <p>
         Data visualization combines my two passions: design and statistics. I
@@ -46,7 +42,13 @@ const ContactPage = () => {
         </a>
       </p>
     </div>
-  )
-}
+</Homepage>
 
-export default ContactPage
+<style>
+    .container {
+        max-width: 75ch;
+        text-align: left;
+        margin: 0 auto 80px;
+        padding: 0 12px;
+    }
+</style>

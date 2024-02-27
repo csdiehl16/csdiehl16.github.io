@@ -1,96 +1,67 @@
-.tileContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 64px;
-  max-width: 800px;
-  padding: 0 12px;
-  margin: 0 auto; /* center the grid horizontally */
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.see-more-button {
-  margin: 80px auto;
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  position: relative;
-  cursor: pointer;
+.nav-bar {
+  height: 56px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0px;
+  z-index: 15;
+  width: 100%;
+  background: #f9f9fa;
+  margin: 0 auto;
+  gap: 16px;
+}
+
+.nav-btn {
+  all: unset;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: "Poppins", "Helvetica Neue", sans-serif;
+  text-align: center;
+  color: #333;
+}
+
+.nav-btn-clicked {
+  color: #333;
+  font-weight: 700;
+}
+
+/* TODO implement the nav line */
+.nav-line {
+  height: 2px;
+  width: 100%;
+  background: grey;
+  position: relative;
+  visibility: hidden;
+}
+
+.nav-highlight {
+  position: absolute;
+  background: black;
+  left: 0;
+  width: 50px;
+  height: 4px;
+  visibility: hidden;
+}
+
+.project-button {
+  color: #555;
   font-weight: 400;
-  gap: 8px;
-  transition: transform 300ms ease-in;
+  display: none;
 }
 
-.see-more-button img {
-  transition: transform 300ms ease-in;
-}
-
-.see-more-button:hover {
-  transform: scale(1.1);
-}
-
-.arrow-clicked {
-  transform: rotate(180deg);
-}
-
-@media (max-width: 767px) {
-  .tileContainer {
-    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
-    max-width: 300px;
+@media (min-width: 700px) {
+  .project-button {
+    display: block;
   }
-}
-@media (max-width: 1024px) {
-  .tileContainer {
-    max-width: 600px;
-  }
-}
-
-.container {
-  position: relative;
-  width: calc(100% - 40px);
-  margin: auto;
-  margin-left: 16px;
-  margin-right: 16px;
-}
-
-.project-header {
-  margin: 16px;
-}
-
-.types-buttons {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-bottom: 16px;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.lang-buttons {
-  display: flex;
-
-  gap: 8px;
-  align-items: center;
-  justify-content: center;
-}
-
-.select-button {
-  color: #fff;
-  background-color: #121212;
-  border: 1px solid #333;
-  padding: 8px;
-  border-radius: 5px;
-  min-width: 100px;
-  transition: color 500ms;
-  transition: background-color 500ms;
-  cursor: pointer;
-}
-
-.select-button-clicked {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  font-weight: 600;
 }

@@ -1,0 +1,33 @@
+---
+const pages = [{label: "About Me", link: "/contact/"}, 
+{label: "Projects", link: "/"},
+{label: "Blog", link: "/blog/"}
+]
+---
+
+<nav>
+ {pages.map((page) => (
+            <a
+              href={page.link}
+            >
+              {page.label}
+            </a>
+        ))}
+</nav>
+     
+<style>
+  nav {
+    position: sticky;
+    top: 0;
+    display: flex;
+    gap: 8px;
+    margin: 0 auto;
+    padding: 16px;
+    background: #FFF;
+    z-index: 1;
+  }
+
+  a {
+    text-decoration: none;
+  }
+</style>

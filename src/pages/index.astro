@@ -1,11 +1,11 @@
 ---
-import App from '../App.jsx';
+import Projects from '../components/Projects.jsx';
+import Homepage from '../layouts/Homepage.astro'
 ---
 
 <!-- Use a client directive to load your app -->
-<App client:load />
+<Homepage>
+    <Projects client:load />
+</Homepage>
 
 
-<style is:global>
-
-</style>

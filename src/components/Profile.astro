@@ -1,0 +1,122 @@
+---
+import Image from './Image';
+---
+
+
+<div class="container">
+    <div class="flex flex-vert">
+    <Image
+        tag={"profile_transparent_dae5gq"}
+        classes={"profile-img"}
+    />
+    <div class="flex">
+        <a
+        rel="noreferrer"
+        href="https://www.linkedin.com/in/caleb-diehl-a93a6984"
+        target="_blank"
+        >
+        <img
+            height="32px"
+            width="32px"
+            alt="linkedin"
+            class="contact-img"
+            src="/linkedin-logo.svg"
+        />
+        </a>
+
+        <a rel="noreferrer" href="https://github.com/csdiehl" target="_blank">
+        <img
+            height="32px"
+            width="32px"
+            alt="github"
+            class="contact-img"
+            src="/github-mark.svg"
+        />
+        </a>
+    </div>
+    </div>
+    <div class="description">
+    <h1 class="header">Hi, I'm Caleb Diehl</h1>
+    <h2 class="subhead">Front-end Developer</h2>
+    <p class="label">
+        I'm a front-end developer with expertise in{" "}
+        <strong>data visualization</strong> and{" "}
+        <strong>geospatial analysis.</strong> Currently, I visualize climate
+        change for The Associated Press.
+    </p>
+    </div>
+</div>
+
+
+<style>
+  .container {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 16px;
+  margin: 0 auto;
+  padding: 80px 12px 160px;
+}
+
+.label {
+    margin: 0;
+    font-size: .875rem;
+    color: #555;
+    line-height: 1rem;
+    margin-top: 16px;
+}
+
+.flex {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.flex-vert {
+    flex-direction: column;
+}
+
+.header {
+  font-size: 4rem;
+  line-height: 4.25rem;
+  text-align: left;
+}
+
+.subhead {
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  color: #555;
+  text-align: left;
+}
+
+.description {
+  box-sizing: border-box;
+  grid-area: text;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
+  max-width: 570px;
+}
+
+.image-container {
+  grid-area: photo;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+@media (max-width: 425px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header {
+    font-size: 2rem;
+    line-height: 2.25rem;
+  }
+}
+</style>
