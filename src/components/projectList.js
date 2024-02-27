@@ -9,6 +9,15 @@ export const projectList = [
       "A new chart type for Recharts, an open-source React data visualization library with more than 173k users. The sunburst is a visually appealing variant of the treemap.",
   },
   {
+    name: "AP Extreme Heat Tracker",
+    link: "https://interactives.ap.org/heat-tracker/",
+    imageLink: "./heat_tracker.png",
+    languages: ["React.js", "D3.js", "Typescript", "Mapbox GL JS", "Python"],
+    tag: ["Geospatial", "Dashboards", "Data journalism"],
+    description:
+      "A real-time heat tracking app that pulls data every day from satellites and 1,000+ weather stations across the globe, analyzes it for deviations from normal temperatures, and displays it in an interactive, searchable map and custom line chart.",
+  },
+  {
     name: "AP Wildfire Tracker",
     link: "https://interactives.ap.org/ap-wildfire-tracker/?sort=acres",
     imageLink: "./fire-tracker-screenshot.png",
