@@ -20,12 +20,12 @@ const ProjectTile = (props) => {
         </p>
         <a className={classes["project-link"]} href={props.link}>
           <span>View Project</span>
-          <img src="./arrow-right.svg"></img>
+          <img alt="right-arrow" src="./arrow-right.svg"></img>
         </a>
       </div>
       <a href={props.link}>
         {props?.cloudinaryId ? (
-          <Image classes={classes["tile-img"]} tag={props.cloudinaryId} />
+          <Image type="tile" tag={props.cloudinaryId} />
         ) : (
           <img
             className={classes["tile-img"]}

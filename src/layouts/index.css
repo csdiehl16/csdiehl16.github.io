@@ -80,10 +80,3 @@ a {
     max-width: 90%;
   }
 }
-
-.profile-img {
-  height: 120px;
-  width: 120px;
-  object-fit: contain;
-  border-radius: 50%;
-}
