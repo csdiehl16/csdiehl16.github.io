@@ -1,0 +1,23 @@
+---
+import Nav from "../components/Nav.astro"
+import Footer from "../components/Footer.astro"
+
+const {frontmatter} = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <Nav/>
+    <h1>{frontmatter.title}</h1>
+    <p>By Caleb Diehl</p>
+    <p>{frontmatter.pubDate}</p>
+    <article>
+      <slot /> <!-- your content is injected here -->
+    </article>
+    <Footer />
+  </body>
+</html>
