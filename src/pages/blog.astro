@@ -4,6 +4,7 @@ import Nav from '../components/Nav.astro'
 import Footer from "../components/Footer.astro"
 const allPosts = await Astro.glob('../pages/posts/*.md');
 import "../layouts/index.css"
+import '@fontsource/poppins';
 ---
 
 <html lang="en">
@@ -13,10 +14,114 @@ import "../layouts/index.css"
   </head>
   <body>
     <Nav/>
-    <h2>Blog</h2>
-    <ul>
-    {allPosts.map(post => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
+    <div class="hero-section">
+        <h2 class="hero-title">The Blog</h2>
+    </div>
+    <ul class="post-container">
+    {allPosts.map((post, i) => 
+       (<li class="blog-post">
+        <h3 class="big-number">{(i+ 1).toString().padStart(2, "0")}</h3>
+            <img src={post.frontmatter.img} alt="Post 1 Image" class="post-image">
+      
+        <div class="post-card">
+              <a href={post.url}> 
+        
+            <div class="post-content">
+                <h2 class="post-title">{post.frontmatter.title}</h2>
+                <p class="post-description">{post.frontmatter.summary}</p>
+            </div>
+                  </a>
+        </div>
+      
+    </li>))}
     </ul>
     <Footer/>
     </body>
 </html>
+
+<style>
+
+a { 
+    text-decoration: none;
+}
+   /* Hero Section */
+.hero-section {
+    background-color: #f8f8f8;
+    padding: 50px;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 6rem;
+    line-height: 6.25rem;
+    color: #333;
+}
+
+.post-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Blog Post Cards */
+.blog-post {
+    list-style: none;
+    text-decoration: none;
+    margin: 20px 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    grid-template-rows:  auto 120px;
+    grid-template-areas: "number card" "image card";
+    grid-row-gap: 8px;
+    grid-column-gap: 16px;
+}
+
+.big-number {
+    font-size: 4rem;
+    line-height: 4rem;
+    font-weight: 800;
+    grid-area: number;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+.post-card {
+    overflow: hidden;
+    width: 350px;
+    transition: transform 0.3s ease;
+    grid-area: card;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+}
+
+.post-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    float: left;
+    margin-right: 8px;
+    grid-area: image;
+}
+
+.post-content {
+}
+
+.post-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.post-description {
+    font-size: 1rem;
+    color: #666;
+}
+
+</style>

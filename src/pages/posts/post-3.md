@@ -1,8 +1,8 @@
 ---
 layout: "../../layouts/BlogPost.astro"
-title: Why I switched most of my builds to Astro
+title: Getting to know the new Observable framework
 pubDate: 2024-02-27
-summary: "this is post 2"
+summary: "this is post 3"
 img: "/grist-disease.png"
 ---
 

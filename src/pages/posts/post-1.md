@@ -1,16 +1,17 @@
 ---
 layout: "../../layouts/BlogPost.astro"
-title: Hello, World
+title: "How to find out how hot it's getting, anywhere in the world, every day."
 pubDate: 2024-02-27
+summary: "How we built the AP global heat tracker, using thousands of weather stations across the globe."
+img: "/heat_tracker.png"
 ---
 
-# Hi there!
+## Origins of the idea
 
-This Markdown file creates a page at `your-domain.com/page-1/`
+This idea started with the climate re-analyzer.
 
-It probably isn't styled much, but Markdown does support:
+## Gathering weather station data
 
-- **bold** and _italics._
-- lists
-- [links](https://astro.build)
-- and more!
+## Writing python scripts and Gitlab CD
+
+## Visualizing the data
