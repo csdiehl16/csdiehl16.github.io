@@ -4,6 +4,8 @@ import Footer from "../components/Footer.astro"
 import '@fontsource/poppins';
 
 const {frontmatter} = Astro.props;
+
+const date = frontmatter.pubDate.toString().slice(0,10)
 ---
 
 <html lang="en">
@@ -13,29 +15,120 @@ const {frontmatter} = Astro.props;
   </head>
   <body>
     <Nav/>
-    <h1>{frontmatter.title}</h1>
-    <p>By Caleb Diehl</p>
-    <p>{frontmatter.pubDate}</p>
+ 
+  
+    <div class="metadata">
+      <h1>{frontmatter.title}</h1>
+      <div class="profile">
+     <img class="profile-img" height="80" width="80" src="/profile_transparent.png"/>
+     <div>
+      <p class="author">By <strong>Caleb Diehl</strong></p>
+      <p class="date">Published {date}</p>
+     </div>
+   
+      </div>
+    </div>
+
+ 
     <article>
       <slot /> <!-- your content is injected here -->
     </article>
     <Footer />
+   
   </body>
 </html>
 
 <style is:global>
-    h1, h2, h3, p {
-        font-family: "Poppins", "Helvetica Neue", sans-serif;
-    }
 
-    h1 {
-        font-size: 4rem;
-        line-height: 4.25rem;
+  article {
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+      max-width: 75ch;
+      margin: 8px auto;
     }
 
     h2 {
         color: #333;
         font-size: 2rem;
         line-height: 2.25rem;
+        margin: 80px auto 0;
+        width: max-content;
     }
+
+    iframe {
+      border-radius: 8px;
+      margin: 24px 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    img {
+      max-width: 1000px;
+      margin: 24px 0;
+      border-radius: 8px;
+  
+    }
+
+     
+   
+  }
+
+  #content {
+    position: relative;
+  }
+
+  .metadata {
+    position: relative;
+    margin: 0 auto;
+    padding: 48px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+  }
+    h1, h2, h3, p {
+        font-family: "Poppins", "Helvetica Neue", sans-serif;
+    }
+
+    h1 {
+      text-wrap: balance;
+      margin: 0 auto;
+      padding: 24px;
+      position: relative;
+      text-align: center;
+      left: 50%;
+           font-size: 3rem;
+        line-height: 3.25rem;
+        transform: translateX(-50%);
+    }
+
+
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .profile p {
+      margin: 0;
+    }
+
+    .profile-img {
+      border-radius: 50%;
+    }
+
+    p { 
+      color: #555;
+      font-weight: lighter;
+      font-size: 1rem;
+      line-height: 1.75rem;
+    }
+
+
 </style>

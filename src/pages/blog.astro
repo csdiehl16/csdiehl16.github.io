@@ -20,7 +20,6 @@ import '@fontsource/poppins';
     <ul class="post-container">
     {allPosts.map((post, i) => 
        (<li class="blog-post">
-        <h3 class="big-number">{(i+ 1).toString().padStart(2, "0")}</h3>
             <img src={post.frontmatter.img} alt="Post 1 Image" class="post-image">
       
         <div class="post-card">
@@ -55,6 +54,7 @@ a {
     font-size: 6rem;
     line-height: 6.25rem;
     color: #333;
+    margin: 0;
 }
 
 .post-container {
@@ -71,12 +71,9 @@ a {
     text-decoration: none;
     margin: 20px 0;
     padding: 0;
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    grid-template-rows:  auto 120px;
-    grid-template-areas: "number card" "image card";
-    grid-row-gap: 8px;
-    grid-column-gap: 16px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
 }
 
 .big-number {
@@ -101,12 +98,11 @@ a {
 }
 
 .post-image {
-    width: 120px;
-    height: 120px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
     border-radius: 8px;
     float: left;
-    margin-right: 8px;
     grid-area: image;
 }
 
@@ -115,8 +111,9 @@ a {
 
 .post-title {
     font-size: 1.2rem;
-    margin-bottom: 10px;
+    line-height: 1.5rem;
     color: #333;
+    margin: 0;
 }
 
 .post-description {
