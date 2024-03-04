@@ -110,12 +110,6 @@ const projectRawData = [
     tag: ["Dashboards", "Geospatial"],
     description:
       "Interactive dashboard built for internal use at Washington D.C. Metropolitan Transit Authority. Visualizes smart card data.",
-    otherImages: [
-      "/wmata_1.png",
-      "/wmata_2.png",
-      "/wmata_3.png",
-      "/wmata_4.png",
-    ],
   },
   {
     name: "Spotify Reccomendation Engine",
