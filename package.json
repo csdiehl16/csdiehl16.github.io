@@ -5,7 +5,7 @@
   "homepage": "https://csdiehl.github.io",
   "scripts": {
     "predeploy": "npm run build && touch build/.nojekyll",
-    "deploy": "gh-pages -b master -d build",
+    "deploy": "gh-pages -b master -d build -t true",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
