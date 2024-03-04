@@ -1,14 +1,14 @@
 ---
 title: Mysterious missing weather stations and other lessons from tracking global heat
 excerpt: In recent years, the way we work has undergone a significant transformation, largely due to advancements in technology and changing attitudes toward work-life balance. One of the most notable changes has been the rise of remote work, allowing employees to work from the comfort of their own homes.
-publishDate: 'March 4 2023'
+publishDate: "March 4 2023"
 isFeatured: true
 tags:
   - Python
   - Climate data
 seo:
   image:
-    src: '/heat_tracker.png'
+    src: "/heat_tracker.png"
     alt: An application to track extreme heat throughout the world
 ---
 
@@ -49,8 +49,6 @@ But not really.
 There’s not one projection for the whole world. So it’s difficult to compare distance from points all over the world, without using many projections. The best solution I could find is called Great Circle, or “Haversine” distance (here’s a Python implementation), which is measured in degrees as the distance around a sphere. It looks like the flight path of a plane.
 
 <img width="350px" src="https://media.licdn.com/dms/image/C4D12AQE0QbVF-y7cNg/article-cover_image-shrink_600_2000/0/1531928404478?e=2147483647&v=beta&t=_J31oxVLse5Ujz54gN10QVrzC44j66tccB-84ZP6uTA"/>
-
-credit:
 
 This led to more problems, however. We had to establish a cutoff in degrees, which seemed nonsensical, or arbitrary at best. And anyway, who decides where the “city center” is? City hall? The Central Business District? One paper identifies no less than 5 valid ways of deciding what is the “center.”
 
