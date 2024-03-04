@@ -236,7 +236,7 @@ const ProjectList = forwardRef((props, ref) => {
           alt="arrow"
           height="24px"
           width="24px"
-          src="./down-arrow.svg"
+          src="/down-arrow.svg"
         ></img>
       </button>
     </div>
