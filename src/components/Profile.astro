@@ -1,13 +1,14 @@
 ---
-import Image from './Image';
 ---
 
 
 <div class="container">
     <div class="flex flex-vert">
-    <Image
-        tag={"profile_transparent_dae5gq"}
-        type="profile"
+    <img
+      class="profile-img"
+        src="/profile_transparent.png"
+        width="160px"
+        height="160px"
     />
     <div class="flex">
         <a
@@ -49,6 +50,13 @@ import Image from './Image';
 
 
 <style>
+
+  .profile-img {
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+  }
+
   .container {
   position: relative;
   display: flex;
