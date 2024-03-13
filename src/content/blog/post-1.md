@@ -1,6 +1,6 @@
 ---
 title: Mysterious missing weather stations and other lessons from tracking global heat
-excerpt: In recent years, the way we work has undergone a significant transformation, largely due to advancements in technology and changing attitudes toward work-life balance. One of the most notable changes has been the rise of remote work, allowing employees to work from the comfort of their own homes.
+excerpt: "how we built a global heat tracker for the Associated Press."
 publishDate: "March 4 2023"
 isFeatured: true
 tags:
@@ -11,6 +11,12 @@ seo:
     src: "/heat_tracker.png"
     alt: An application to track extreme heat throughout the world
 ---
+
+<style>
+    img {
+        border-radius: 8px;
+    }
+</style>
 
 ![Global heat tracker](/heat_tracker.png)
 
