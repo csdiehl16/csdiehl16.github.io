@@ -10,7 +10,7 @@ tags:
   - Observable
 seo:
   image:
-    src: "/heat_tracker.png"
+    src: "/observable_images/globe.png"
     alt: A visualization created with Observable Framework
 ---
 
