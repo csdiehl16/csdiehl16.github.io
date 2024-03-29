@@ -1,7 +1,7 @@
 ---
 title: Observations on the new Observable 2.0 Framework
 excerpt: "My thoughts on Observable's latest creation."
-publishDate: "March 13 2023"
+publishDate: "March 13 2024"
 isFeatured: true
 tags:
   - Javascript

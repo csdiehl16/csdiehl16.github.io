@@ -1,7 +1,7 @@
 ---
 title: Building an AI-powered data explorer
 excerpt: ""
-publishDate: "March 29 2023"
+publishDate: "March 29 2024"
 isFeatured: true
 tags:
   - Javascript
@@ -13,9 +13,11 @@ tags:
   - Observable
 seo:
   image:
-    src: "/observable_images/globe.png"
+    src: "/ai_images/ai_scatter_example.png"
     alt: An interactive notebook for visualizing data using AI
 ---
+
+![An interactive notebook for visualizing data using AI](/ai_images/ai_scatter_example.png)
 
 Exploring data should feel natural, like conducting an interview with an expert. However, analysts write their queries in code, and it’s easy to get bogged down in syntax errors, forgetting parentheses, typing in complex chart specifications, or messing up variable names.
 
@@ -26,7 +28,9 @@ To get back to that natural process of inquiry, I created an AI assistant for ex
 
 I took advantage of [Vercel’s AI SDK 3.0](https://sdk.vercel.ai/docs), which uses [React Server Components](https://nextjs.org/docs/app/building-your-application/rendering/server-components) to return streamable bits of UI from the AI back to the client. I figured I could combine this with [Observable Plot,](https://observablehq.com/plot/) a high-level and flexible chart prototyping library to ask questions and get back charts.
 
-[Here's the repo](https://github.com/csdiehl/ai-data-assistant) if you want to check out the code, run it locally, or contribute to the project!
+<div style="border:1px solid lightgrey;border-radius: 8px;padding:16px;">
+<a style="font-weight:bold;" target="_blank" href="https://github.com/csdiehl/ai-data-assistant">Here's the repo</a> if you want to check out the code, run it locally, or contribute to the project!
+</div>
 
 **In this post, I’ll walk through how I applied a few key AI concepts. Look out for these terms:**
 
@@ -44,7 +48,7 @@ I took advantage of [Vercel’s AI SDK 3.0](https://sdk.vercel.ai/docs), which u
 - Run that on the data and get back a Javascript array of objects
 - Plug that data into the ideal visualization, chosen through a combination of the LLM and hard-coded logical statements
 
-The first step is getting from a regular English question to a code snippet that can return data. Certain LLMs, including recent OpenAI models, can call functions. This means that in the system prompt, you can reference functions that the LLM can use in specific situations, to augment its capabilities.
+The first step is getting from a regular English question to a code snippet that can return data. Certain LLMs, including recent OpenAI models, can **call functions.** This means that in the system prompt, you can reference functions that the LLM can use in specific situations, to augment its capabilities.
 
 A simple use case is that LLMs are really good at text, but bad at math. They only predict the next words in a sequence. So you could give it a “calculator” tool, and tell it to use that every time you need to add two numbers.
 
@@ -52,7 +56,7 @@ I created different functions for different operations on the data. My first ver
 
 This proved extremely tedious, because I had to write new functions for even simple operations, using Javascript, which is a terrible language for data analysis. I needed to be specific in queries to clue in the LLM to the right tool for the job.
 
-I figured a much more flexible tool would be [text-to-sql.](https://python.langchain.com/docs/integrations/toolkits/sql_database) This is an active research area in getting LLMs to take a natural language question and translate it into a syntactically correct SQL query on a database.
+I figured a much more flexible tool would be **[text-to-sql.](https://python.langchain.com/docs/integrations/toolkits/sql_database)** This is an active research area in getting LLMs to take a natural language question and translate it into a syntactically correct SQL query on a database.
 
 Here’s what my data retrieval tool ended up looking like. The name and description fields help the LLM figure out when it use the tool. The parameters, which I'll detail later on, are arguments that the LLM will fill in and pass to a function to execute.
 
@@ -77,7 +81,7 @@ Taking this route meant that I needed a database, even if I didn’t intend to p
 
 ## Where to store the data
 
-For this task, I didn’t need to keep the data beyond a single user session. I also just wanted to look at one dataset, or table, at a time. I wanted to stay focused on refining the LLM’s response to prompts and building a seamless generative UI. In fact the only reason I really needed a database at all, was to make SQL queries.
+For this task, I didn’t need to keep the data beyond a single user session. I also just wanted to look at one dataset, or table, at a time. I wanted to stay focused on refining the LLM’s response to prompts and building a seamless **generative UI.**
 
 So in today’s ecosystem I had a lot of choices.
 
@@ -85,8 +89,8 @@ So in today’s ecosystem I had a lot of choices.
 
 - Just store the data in React state, and use a library like [alasql](https://github.com/AlaSQL/alasql) to make SQL-like queries to Javascript arrays
 - Store the data on the client using [DuckDB-WASM](https://duckdb.org/docs/api/wasm/overview.html)
-  -Store the data on server in a persistent sqlite3 database file
-  -Store the data in-memory on the server, using sqlite.
+- Store the data on server in a persistent sqlite3 database file
+- Store the data in-memory on the server, using sqlite.
 
 I ended up going with option 4, with the intention of eventually shifting to option 3 so I can save a list of datasets I’m working on. Option 1 provided no opportunity to shift to more persistent storage later.
 
@@ -99,6 +103,8 @@ But the catch was that I couldn’t access the client-side DB from the server, w
 The closest solution I could think of was using [React Context](https://legacy.reactjs.org/docs/context.html) to wrap the messages in a provider with the database, and then access those from the Chart component. But this would make it difficult to eventually chain queries together - for example to get SQL, then turn that into natural language.
 
 I ended up going with the in-memory [sqlite3](https://www.npmjs.com/package/sqlite3) database set up on the server using Node sqlite. I used [Papaparse](https://www.papaparse.com/) to parse CSVs, then some server-side code to extract the schema and other metadata and insert the rows into the db.
+
+![Uploading files to the AI data explorer](/ai_images/ai_file_upload.png)
 
 The text-to-SQL pipeline greatly reduced the lines of code I needed. I essentially needed to provide the LLM with only one function.
 
@@ -142,9 +148,23 @@ In my database setup function, I store the sample and schema in the shared UI an
 
 After asking a question, getting back SQL from the LLM and running this to retrieve data, I needed to visualize it.
 
-To do this, I asked the LLM to generate some encodings (mappings of data to visual variables like color and size) at the same time it created the query. I used the [Zod](https://zod.dev/) schema-mapping library to coerce its responses into a structured output.
+To do this, I asked the LLM to generate some encodings (mappings of data to visual variables like color and size) at the same time it created the query. I used the [Zod](https://zod.dev/) schema-mapping library to coerce its responses into a **structured output.**
 
-This way, I could be sure I was getting all the required variables for the chart, in the right format, from the LLM’s choices. These included x, y, color, and size encoding, and a chart title. Similar to a few-shot prompting approach, I included some guidance and examples of when you might use certain chart types and encodings in the system prompt.
+```
+
+   x: z.string().describe("The x-axis variable."),
+              y: z.string().optional().describe("The y-axis variable."),
+              size: z
+                .string()
+                .optional()
+                .describe("The variable to be represented by size."),
+              color: z.optional(
+                z.string().describe("The variable to be represented by color.")
+              ),
+
+```
+
+This way, I could be sure I was getting all the required variables for the chart, in the right format, from the LLM’s choices. These included x, y, color, and size encoding, and a chart title. Similar to a **few-shot prompting** approach, I included some guidance and examples of when you might use certain chart types and encodings in the system prompt.
 
 At first, I exerted more control - using Zod to force the encodings to actual variable names from the data. Later, this turned out to not be necessary. The LLM is great at taking messy input and figuring out which variable you’re talking about. For example, you can ask about cars in the United States, and it will figure out you want to filter the Origin variable to USA. Often, the LLM makes up its own names as aliases in the SQL and uses those.
 

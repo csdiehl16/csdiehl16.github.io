@@ -1,7 +1,7 @@
 ---
 title: Mysterious missing weather stations and other lessons from tracking global heat
 excerpt: "how we built a global heat tracker for the Associated Press."
-publishDate: "March 4 2023"
+publishDate: "March 4 2024"
 isFeatured: true
 tags:
   - Python
