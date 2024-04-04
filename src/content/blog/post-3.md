@@ -29,7 +29,8 @@ To reach that natural process of inquiry, I created an AI assistant for explorat
 I took advantage of [Vercel’s AI SDK 3.0](https://sdk.vercel.ai/docs), which uses [React Server Components](https://nextjs.org/docs/app/building-your-application/rendering/server-components) to return streamable bits of UI from the AI back to the client. I combined this with [Observable Plot,](https://observablehq.com/plot/) a high-level and flexible chart prototyping library to ask questions and get back charts.
 
 <div style="border:1px solid lightgrey;border-radius: 8px;padding:16px;">
-<a style="font-weight:bold;" target="_blank" href="https://github.com/csdiehl/ai-data-assistant">Here's the repo</a> if you want to check out the code, run it locally, or contribute to the project!
+Try out the deployed project <a style="font-weight:bold;" rel="noreferrer" target="_blank" href="https://ai-data-assistant.vercel.app/login">here! </a><br/>
+<a style="font-weight:bold;" rel="noreferrer"  target="_blank" href="https://github.com/csdiehl/ai-data-assistant">Here's the repo</a> if you want to check out the code, run it locally, or contribute to the project!
 </div>
 
 **In this post, I’ll walk through how I applied a few key AI concepts. Look out for these terms:**
@@ -39,6 +40,8 @@ I took advantage of [Vercel’s AI SDK 3.0](https://sdk.vercel.ai/docs), which u
 - Generative UI
 - Structured Output
 - Few-shot prompting
+
+![An interactive notebook for visualizing data using AI](/ai_images/bitcoin_line.png)
 
 ## Retrieving data from natural language prompts
 

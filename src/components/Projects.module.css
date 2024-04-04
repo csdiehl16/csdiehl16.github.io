@@ -1,80 +1,81 @@
 @keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .nav-bar {
-    height: 56px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: sticky;
-    top: 0px;
-    z-index: 15;
-    width: 100%;
-    background: #f2f1eb;
-    margin: 24px auto;
-    gap: 16px;
+  height: 56px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0px;
+  z-index: 15;
+  width: 100%;
+  background: #f2f1eb;
+  margin: 24px auto;
+  gap: 16px;
 }
 
 .nav-btn {
-    all: unset;
-    cursor: pointer;
-    font-size: 1.2rem;
-    line-height: 1.6rem;
-    font-weight: 500;
-    font-family: 'Poppins', 'Helvetica Neue', sans-serif;
-    text-align: center;
-    color: #333;
+  all: unset;
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  font-weight: 500;
+  font-family: "Poppins", "Helvetica Neue", sans-serif;
+  text-align: center;
+  color: #333;
 }
 
 .nav-btn-clicked {
-    color: #333;
-    font-weight: 700;
+  color: #333;
+  font-weight: 700;
 }
 
 /* TODO implement the nav line */
 .nav-line {
-    height: 2px;
-    width: 100%;
-    background: grey;
-    position: relative;
-    visibility: hidden;
+  height: 2px;
+  width: 100%;
+  background: grey;
+  position: relative;
+  visibility: hidden;
 }
 
 .nav-highlight {
-    position: absolute;
-    background: black;
-    left: 0;
-    width: 50px;
-    height: 4px;
-    visibility: hidden;
+  position: absolute;
+  background: black;
+  left: 0;
+  width: 50px;
+  height: 4px;
+  visibility: hidden;
 }
 
 .project-button {
-    color: #555;
-    font-weight: 400;
-    display: none;
+  color: #555;
+  font-weight: 400;
+  display: none;
 }
 
 @media (min-width: 700px) {
-    .project-button {
-        display: block;
-    }
+  .project-button {
+    display: block;
+  }
 }
 
 .project-button {
-    color: #555;
-    font-weight: 400;
-    display: none;
+  color: #555;
+  font-weight: 400;
+  display: none;
 }
 
 @media (min-width: 700px) {
-    .project-button {
-        display: block;
-    }
+  .project-button {
+    display: block;
+  }
 }

@@ -17,10 +17,18 @@ const ProjectTile = (props) => {
         <p className={classes["language-tag"]}>
           {props.languageTag.join(" / ")}
         </p>
-        <a className={classes["project-link"]} href={props.link}>
-          <span>View Project</span>
-          <img alt="right-arrow" src="/arrow-right.svg"></img>
-        </a>
+        <div style={{ display: "flex", gap: "16px" }}>
+          <a className={classes["project-link"]} href={props.link}>
+            <span>View Project</span>
+            <img alt="right-arrow" src="/arrow-right.svg"></img>
+          </a>
+          {props?.codeLink && (
+            <a className={classes["project-link"]} href={props.codeLink}>
+              <span>View Code</span>
+              <img alt="right-arrow" src="/arrow-right.svg"></img>
+            </a>
+          )}
+        </div>
       </div>
       <a href={props.link}>
         <img

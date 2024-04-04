@@ -1,128 +1,129 @@
 :root {
-    --tag-padding: 8px;
-    --tag-position: 8px;
+  --tag-padding: 8px;
+  --tag-position: 8px;
 }
 
 .tile {
-    border-radius: 5px;
-    position: relative;
-    animation: tile-fade 500ms ease-out;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 16px;
-    transition: opacity 500ms ease-in;
+  border-radius: 5px;
+  position: relative;
+  animation: tile-fade 500ms ease-out;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  transition: opacity 500ms ease-in;
 }
 
 .tile-hidden {
-    opacity: 0;
+  opacity: 0;
 }
 
 .project-title {
-    font-size: 1.5rem;
-    line-height: 1.75rem;
-    color: #333;
-    text-transform: capitalize;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  color: #333;
+  text-transform: capitalize;
 }
 
 .description {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    margin: 16px 0;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  margin: 16px 0;
 }
 
 .tile-img {
-    width: 300px;
-    height: 200px;
-    max-width: none;
-    object-fit: cover;
-    display: block;
-    border-radius: 5px;
-    transition:
-        transform 700ms,
-        filter 1000ms;
-    box-shadow: 0 0 15px lightgrey;
+  width: 400px;
+  aspect-ratio: 3/2;
+  max-width: none;
+  object-fit: cover;
+  display: block;
+  border-radius: 5px;
+  transition:
+    transform 700ms,
+    filter 1000ms;
+  box-shadow: 0 0 15px lightgrey;
 }
 
 .project-link {
-    color: #333;
-    font-weight: bold;
-    text-decoration: none;
-    border-bottom: 3px solid #333;
-    display: flex;
-    align-items: 'center';
-    justify-content: space-between;
-    width: 130px;
-    transition: transform 300ms ease-in;
+  color: #333;
+  font-weight: bold;
+  font-size: 0.875rem;
+  text-decoration: none;
+  border-bottom: 2px solid #333;
+  display: flex;
+  align-items: "center";
+  justify-content: center;
+  transition: transform 300ms ease-in;
 }
 
 .project-link:hover {
-    transform: translateX(8px);
+  transform: translateX(8px);
 }
 
 .language-tag {
-    font-size: 0.875rem;
-    line-height: 1rem;
-    color: #555;
-    margin: 8px 0;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: #555;
+  margin: 8px 0;
 }
 
 .tile-img:hover {
-    transform: scale(1.05);
-    filter: brightness(50%);
+  transform: scale(1.05);
+  filter: brightness(50%);
 }
 
 .languageTag {
-    border-radius: 5px;
-    background-color: #121212;
-    opacity: 0.7;
-    padding: 10px;
-    color: #fff;
-    border: 1px solid #fff;
-    visibility: hidden;
+  border-radius: 5px;
+  background-color: #121212;
+  opacity: 0.7;
+  padding: 10px;
+  color: #fff;
+  border: 1px solid #fff;
+  visibility: hidden;
 }
 
 .langTagContainer {
-    position: absolute;
-    bottom: var(--tag-position);
-    left: var(--tag-position);
-    display: flex;
-    gap: 10px;
+  position: absolute;
+  bottom: var(--tag-position);
+  left: var(--tag-position);
+  display: flex;
+  gap: 10px;
 }
 
 .badge {
-    position: absolute;
-    bottom: 0;
-    right: 0px;
-    z-index: 2;
-    width: 120px;
-    transform: translate(25%, 25%);
+  position: absolute;
+  bottom: 0;
+  right: 0px;
+  z-index: 2;
+  width: 120px;
+  transform: translate(25%, 25%);
 }
 
 @keyframes tile-fade {
-    0% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
 
-    100% {
-        opacity: 1;
-    }
+  100% {
+    opacity: 1;
+  }
 }
 
-@media (max-width: 425px) {
-    .tile {
-        flex-direction: column;
-    }
+@media (max-width: 500px) {
+  .tile {
+    flex-direction: column;
+  }
 
-    .tile-hidden {
-        opacity: 0.7;
-    }
+  .tile-hidden {
+    opacity: 0.7;
+  }
 
-    .tile a {
-        width: 100%;
-    }
+  .tile a {
+    width: 100%;
+  }
 
-    .tile-img {
-        width: 100%;
-    }
+  .tile-img {
+    width: 100%;
+    aspect-ratio: auto;
+  }
 }

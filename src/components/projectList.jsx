@@ -5,7 +5,8 @@ import { useState, forwardRef } from "react"
 const projectRawData = [
   {
     name: "Recharts Sunburst Chart",
-    link: "https://github.com/recharts/recharts/pull/4037",
+    link: "https://master--63da8268a0da9970db6992aa.chromatic.com/?path=/story/api-chart-sunburstchart--sunburst",
+    codeLink: "https://github.com/recharts/recharts/pull/4037",
     imageLink: "/recharts_sunburst.png",
     languages: ["React.js", "Typescript", "D3.js"],
     tag: ["Dashboards", "Web development"],
@@ -23,6 +24,16 @@ const projectRawData = [
     cloudinaryId: "fire_tracker_ul6unw",
   },
   {
+    name: "AI Data Assistant",
+    link: "https://ai-data-assistant.vercel.app/login",
+    codeLink: "https://github.com/csdiehl/ai-data-assistant",
+    imageLink: "/bitcoin_line.png",
+    languages: ["React.js", "Typescript", "D3.js"],
+    tag: ["Dashboards", "Web development"],
+    description:
+      "Explore your data using conversational AI. A full-stack Next.js web app, using Vercel's AI SDK and a firebase backend, that allows users to chat with a database, save and load data snapshots, and use generative UI to build charts.",
+  },
+  {
     name: "Carbon footprint explorer",
     link: "https://apnews.com/projects/carbon-footprint-calculator/",
     imageLink: "/income_calculator.png",
@@ -34,6 +45,7 @@ const projectRawData = [
   {
     name: "AP Extreme Heat Tracker",
     link: "https://interactives.ap.org/heat-tracker/",
+    codeLink: "https://github.com/csdiehl/ap-heat-tracker",
     imageLink: "/heat_tracker.png",
     languages: ["React.js", "D3.js", "Typescript", "Mapbox GL JS", "Python"],
     tag: ["Geospatial", "Dashboards", "Data journalism"],
@@ -209,7 +221,7 @@ const ProjectList = forwardRef((props, ref) => {
       ? projectRawData
       : projectRawData.filter((p) => p.tag.includes(props.filters))
 
-  const projectData = viewMore ? projectsFiltered : projectsFiltered.slice(0, 5)
+  const projectData = viewMore ? projectsFiltered : projectsFiltered.slice(0, 6)
 
   const tiles = projectData.map((p) => (
     <ProjectTile
@@ -217,6 +229,7 @@ const ProjectList = forwardRef((props, ref) => {
       tag={p.tag}
       title={p.name}
       link={p.link}
+      codeLink={p?.codeLink}
       image={p.imageLink}
       languageTag={p.languages}
       cloudinaryId={p?.cloudinaryId}
