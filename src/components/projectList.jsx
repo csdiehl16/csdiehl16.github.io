@@ -64,16 +64,6 @@ const projectRawData = [
     badge: "./iib_badge.png",
   },
   {
-    name: "Maui Fires Timeline",
-    link: "https://interactives.ap.org/hawaii-timeline/",
-    imageLink: "/lahaina.png",
-    languages: ["React.js", "Typescript", "Mapbox GL JS"],
-    tag: ["Geospatial", "Data journalism"],
-    description:
-      "An interactive map that tells the story of the Lahania wildire using smooth animations.",
-    cloudinaryId: "lahaina_fqon1l",
-  },
-  {
     name: "Ski resorts are embracing a new role: climate activist",
     link: "https://apnews.com/article/climate-change-activism-ski-industry-028d83e19543db5d7633ea83932bdde3",
     imageLink: "/skiing.png",
@@ -83,6 +73,17 @@ const projectRawData = [
       "A scrollytelling page that weaves together photo, video, maps and data visualization to explore the effects of climate change on skiing and snowpack.",
     cloudinaryId: "skiing_xpcioo",
   },
+  {
+    name: "CEO Pay Visualization",
+    link: "https://apnews.com/article/wildfires-forest-thinning-community-risk-biden-9d77309cb9e7520069b3c575d850aadc",
+    imageLink: "/ceo.png",
+    languages: ["React.js", "D3.js"],
+    tag: ["Data journalism"],
+    description:
+      "An interactive scatterplot and diverging bar chart to visualize results of an AP survey on CEO performance and compensation.",
+    cloudinaryId: "fire_thinning_bzqrtp",
+  },
+
   {
     name: "Death and Regrowth on the Great Barrier Reef",
     link: "https://projects.apnews.com/features/2022/coral-reef-immersive/index.html",
@@ -102,6 +103,18 @@ const projectRawData = [
     description:
       "Dashboard built for internal use at MBTA. Allows agency to filter and select stop-to-stop bus segments for transit priority measures such as bus-only lanes. Users can adjust the weights as needed to calculate a new weighted average score based on their priorities.",
   },
+
+  {
+    name: "Maui Fires Timeline",
+    link: "https://interactives.ap.org/hawaii-timeline/",
+    imageLink: "/lahaina.png",
+    languages: ["React.js", "Typescript", "Mapbox GL JS"],
+    tag: ["Geospatial", "Data journalism"],
+    description:
+      "An interactive map that tells the story of the Lahania wildire using smooth animations.",
+    cloudinaryId: "lahaina_fqon1l",
+  },
+
   {
     name: "Wildfire Risk Maps",
     link: "https://apnews.com/article/wildfires-forest-thinning-community-risk-biden-9d77309cb9e7520069b3c575d850aadc",
@@ -113,13 +126,13 @@ const projectRawData = [
     cloudinaryId: "fire_thinning_bzqrtp",
   },
   {
-    name: "AP 2022 Climate Photography Showcase",
+    name: "An Underwater Paradise Under Threat",
     link: "https://apnews.com/article/2022-climate-change-photos-3d0d1a338bf8995048bddae11ad17eb2",
-    imageLink: "/climate.png",
-    languages: ["React.js"],
+    imageLink: "/cenotes.png",
+    languages: ["React.js", "D3.js"],
     tag: ["Web development"],
     description:
-      "A scrollytelling experience highlighting AP's best climate photography.",
+      "I developed this webpage and the accompanying maps to showcase AP reporters' work documenting destruction of cenotes in the Yucatan Peninsula.",
     cloudinaryId: "climate_slcbb7",
   },
 
