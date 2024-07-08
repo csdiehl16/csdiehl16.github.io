@@ -92,18 +92,6 @@ const projectRawData = [
       "An interactive scatterplot and diverging bar chart to visualize results of an AP survey on CEO performance and compensation.",
     cloudinaryId: "fire_thinning_bzqrtp",
   },
-
-  {
-    name: "CEO Pay Visualization",
-    link: "https://apnews.com/article/wildfires-forest-thinning-community-risk-biden-9d77309cb9e7520069b3c575d850aadc",
-    imageLink: "/ceo.png",
-    languages: ["React.js", "D3.js"],
-    tag: ["Data journalism"],
-    description:
-      "An interactive scatterplot and diverging bar chart to visualize results of an AP survey on CEO performance and compensation.",
-    cloudinaryId: "fire_thinning_bzqrtp",
-  },
-
   {
     name: "Death and Regrowth on the Great Barrier Reef",
     link: "https://projects.apnews.com/features/2022/coral-reef-immersive/index.html",
