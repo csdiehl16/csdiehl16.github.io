@@ -64,6 +64,15 @@ const projectRawData = [
     badge: "./iib_badge.png",
   },
   {
+    name: "Paris Olympics Interactive Graphics",
+    link: "https://www.ap.org/content/topics/sports/interactive-graphics/",
+    imageLink: "/hometown_heroes.png",
+    languages: ["React.js"],
+    tag: ["Data Journalism", "Geospatial"],
+    description:
+      "Olympic graphics licensed to nearly 100 publications, including Time and FOX, to visualize more than 650 athletes, track medal counts in real time, and explore olympic venues. I produced the hometown heroes and venues maps and oversaw production of the other graphics.",
+  },
+  {
     name: "Ski resorts are embracing a new role: climate activist",
     link: "https://apnews.com/article/climate-change-activism-ski-industry-028d83e19543db5d7633ea83932bdde3",
     imageLink: "/skiing.png",
@@ -73,6 +82,17 @@ const projectRawData = [
       "A scrollytelling page that weaves together photo, video, maps and data visualization to explore the effects of climate change on skiing and snowpack.",
     cloudinaryId: "skiing_xpcioo",
   },
+  {
+    name: "CEO Pay Visualization",
+    link: "https://apnews.com/article/wildfires-forest-thinning-community-risk-biden-9d77309cb9e7520069b3c575d850aadc",
+    imageLink: "/ceo.png",
+    languages: ["React.js", "D3.js"],
+    tag: ["Data journalism"],
+    description:
+      "An interactive scatterplot and diverging bar chart to visualize results of an AP survey on CEO performance and compensation.",
+    cloudinaryId: "fire_thinning_bzqrtp",
+  },
+
   {
     name: "CEO Pay Visualization",
     link: "https://apnews.com/article/wildfires-forest-thinning-community-risk-biden-9d77309cb9e7520069b3c575d850aadc",
@@ -173,15 +193,6 @@ const projectRawData = [
       "Dashboard for visualizing smart card data showing passenger journeys on Sound Transit in the Puget Sound region",
   },
   {
-    name: "Type Cast",
-    link: "https://csdiehl.github.io/type_scale/",
-    imageLink: "/type_scale.png",
-    languages: ["Javascript", "HTML5 / CSS"],
-    tag: ["Web development"],
-    description:
-      "Javascript application that creates a type heirarchy for use in documents and web design",
-  },
-  {
     name: "Outdoor Access Score",
     link: "https://rpubs.com/csdiehl/outdoor-access",
     imageLink: "/outdoor_access.png",
@@ -198,13 +209,6 @@ const projectRawData = [
       "A machine learning model that clusters transit stations in King Count based on ridership demographics.",
     languages: ["Python", "R"],
     tag: ["Geospatial"],
-  },
-  {
-    name: "Early Retirement Calculator",
-    link: "https://csdiehl.github.io/early-retirement-calculator/",
-    imageLink: "/fire_calculator.png",
-    languages: ["React.js", "HTML5 / CSS"],
-    tag: ["Web development"],
   },
   {
     name: "Mobility in a Pandemic",
