@@ -24,6 +24,15 @@ const projectRawData = [
     cloudinaryId: "fire_tracker_ul6unw",
   },
   {
+    name: "Olympics Records Progression",
+    link: "https://apnews.com/projects/olympic-athletes-progress/",
+    imageLink: "/olympic_records.png",
+    languages: ["React.js", "Typescript", "D3.js"],
+    tag: ["Data journalism", "Web development"],
+    description:
+      "Interactive charts that explore the progress of Olympic records over time.",
+  },
+  {
     name: "AI Data Assistant",
     link: "https://ai-data-assistant.vercel.app/login",
     codeLink: "https://github.com/csdiehl/ai-data-assistant",
@@ -135,15 +144,13 @@ const projectRawData = [
   },
   {
     name: "An Underwater Paradise Under Threat",
-    link: "https://apnews.com/article/2022-climate-change-photos-3d0d1a338bf8995048bddae11ad17eb2",
+    link: "https://apnews.com/projects/mexico-tren-maya-climate-yucatan/",
     imageLink: "/cenotes.png",
     languages: ["React.js", "D3.js"],
     tag: ["Web development"],
     description:
       "I developed this webpage and the accompanying maps to showcase AP reporters' work documenting destruction of cenotes in the Yucatan Peninsula.",
-    cloudinaryId: "climate_slcbb7",
   },
-
   {
     name: "WMATA Dashboard",
     link: "https://github.com/csdiehl/smart-card-data-dashboard#readme",
