@@ -14,6 +14,15 @@ const projectRawData = [
       "A new chart type for Recharts, an open-source React data visualization library with more than 173k users. The sunburst is a visually appealing variant of the treemap.",
   },
   {
+    name: "School board documents AI-driven search",
+    link: "/school-board-docs",
+    imageLink: "/school-board/map.png",
+    languages: ["Next.js", "AWS", "PostgreSQL", "Vercel AI SDK"],
+    tag: ["Web development"],
+    description:
+      "A web app using a PostgreSQL database, SST, and AWS to create a search engine for the AP education reporting team to find current issues in hundreds of thousands of documents",
+  },
+  {
     name: "AP Wildfire Tracker",
     link: "https://interactives.ap.org/ap-wildfire-tracker/?sort=acres",
     imageLink: "/fire-tracker-screenshot.png",
@@ -22,15 +31,6 @@ const projectRawData = [
     description:
       "An interactive dashboard that displays real-time fire incident information and surrounding demographics, updated every 15 minutes.",
     cloudinaryId: "fire_tracker_ul6unw",
-  },
-  {
-    name: "Olympics Records Progression",
-    link: "https://apnews.com/projects/olympic-athletes-progress/",
-    imageLink: "/olympic_records.png",
-    languages: ["React.js", "Typescript", "D3.js"],
-    tag: ["Data journalism", "Web development"],
-    description:
-      "Interactive charts that explore the progress of Olympic records over time.",
   },
   {
     name: "AI Data Assistant",
@@ -50,6 +50,15 @@ const projectRawData = [
     tag: ["Dashboards", "Data journalism"],
     description:
       "An interactive visualization tool for exploring how your income and consumer spending decisions affect your carbon footprint.",
+  },
+  {
+    name: "Olympics Records Progression",
+    link: "https://apnews.com/projects/olympic-athletes-progress/",
+    imageLink: "/olympic_records.png",
+    languages: ["React.js", "Typescript", "D3.js"],
+    tag: ["Data journalism", "Web development"],
+    description:
+      "Interactive charts that explore the progress of Olympic records over time.",
   },
   {
     name: "AP Extreme Heat Tracker",

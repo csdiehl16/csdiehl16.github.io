@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import siteConfig from '../data/site-config';
+
+---
+
+<BaseLayout fullWidth={true} description={siteConfig.description} image={siteConfig.image}>
+    <h1>AI-driven school board documents search engine</h1>
+      <div class="rule"/>
+    <p>A tool to help journalists search through hundreds of thousands of documents to find key issues in education.</p>
+
+    <p class="tech"><strong>Technologies</strong> | PostgreSQL, NextJS, Vercel AI SDK, AWS, Serverless stack</p>
+
+    <a href="https://d29ogm19i6xujm.cloudfront.net/">View Project</a>
+    <img src="/school-board/main.png"/>
+
+  <h3>The problem</h3>
+  <div class="rule"/>
+  <p>School board meeting agendas, district planning documents, and meeting transcripts reveal the most pressing issues for parents and students.
+    An AP data journalist on the education team built a tool to scrape thousands of school board documents each month.
+    They needed a developer to build a database and web app to help reporters search the documents and uncover trends.
+    AP recently entered into a partnership with Open AI, so we were interested in exploring solutions that leveraged generative AI.
+</p>
+
+<img class="small" src="/school-board/example_doc.png"/>
+
+
+<h3>System Architecture and Design Approach</h3>
+  <div class="rule"/>
+<p>I was the only engineer working on this project, and needed to work within the budget of a nonprofit and time constraints of an active newsroom.
+    AP uses AWS for cloud infrastructure, so I set up a postgreSQL database instance to store documents. 
+    I developed a NextJS web app, which allowed me to easily organize frontend and backend code and deploy to a serverless stack using SST.
+    I set up automated deployments to continously update the app's lamba functions and static assets on S3 while keeping it functional for reporters. 
+</p>
+
+<h3>Challenge: Keyword vs. Vector Search</h3>
+  <div class="rule"/>
+<p>
+A signficant consideration that I explored early on was the decision to use keyword search or vector search. 
+Vector search offered the potential to type in questions and return context-sensitive results. 
+However, it incurred large costs for storing vectors and embedding documents via the OpenAI API. 
+I explored an alternative - using AI to generate keywords from an open-ended question and pass those into a Postgres full-text search.
+</p>
+
+<p>
+For this project, scale was a key consideration. We were scraping hundreds of thousands of documents, with plenty added each month. 
+On the other hand, the app would have few monthly users as it was intended for journalists and small newsrooms, not the public at large. 
+This meant that we needed to optimize for document storage, and could handle the tradeoff of more OpenAI calls for keyword-search queries in exchange for not having to use the embeddings API. 
+</p>
+
+<img src="/school-board/ai_summary_full.png"/>
+
+
+
+
+<h3>Challenge: Summarizing large documents</h3>
+  <div class="rule"/>
+<p>Many documents contained tens of pages of meeting information, which quickly exceeded the LLM's context window. 
+To solve this problem, I implemented the map-reduce pattern. I first mapped large documents into smaller chunks, then made an API call to summarize each chunk.
+Then a final prompt instructed the AI to summarize all of the summaries. </p>
+
+
+<img class="small" src="/school-board/ai_summary.png"/>
+
+
+<h3>Challenge: transferring large amounts of text data</h3>
+  <div class="rule"/>
+<p>Transferring the entire meeting text of a document over the network proved much too slow. 
+To solve this, I paginated results, while making a separate query to return the count of results and other aggregated data for a map visualization. 
+I also used Postgres ts_headline to return relevant snippets instead of the entire document, including links to PDF and HTML files stored in S3.
+</p>
+
+<h3>Results</h3>
+
+<p>This is an ongoing effort. So far, nearly 45,000 documents are searchable. The education team uses the tool to find trends and publish stories on top issues.</p>
+
+
+  
+</BaseLayout>
+
+<style>
+
+    h1, h3, p, .rule {
+        max-width: 660px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tech {
+        font-size: 1rem;
+        line-height: 1rem;
+        color: rgb(103, 103, 103);
+        margin: 24px auto;
+    }
+
+    main {
+        margin: 0;
+        padding: 0;
+    }
+    p {
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+
+    h1 {
+        text-wrap: balance;
+    }
+
+    h3 {
+        margin-top: 48px;
+    }
+
+    img {
+        max-width: 1200px;
+        width: 100%;
+        border-radius: 8px;
+        margin: 16px auto;
+    }
+
+    .small {
+        max-width: 660px;
+    }
+
+    .rule {
+    background-color: #37AECC;
+    height: 2px;
+
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 48px auto;
+        padding: 16px;
+        background-color: #37AECC;
+        border-radius: 8px;
+        max-width: max-content;
+        color: #FFF;
+        font-weight: bold;
+    }
+
+    a:hover {
+        filter: brightness(80%);
+    }
+</style>
