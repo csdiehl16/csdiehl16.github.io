@@ -1,8 +1,4 @@
-import ProjectTile from "./ProjectTile"
-import classes from "./ProjectList.module.css"
-import { useState, forwardRef } from "react"
-
-const projectRawData = [
+export const projectData = [
   {
     name: "Recharts Sunburst Chart",
     link: "https://master--63da8268a0da9970db6992aa.chromatic.com/?path=/story/api-chart-sunburstchart--sunburst",
@@ -233,51 +229,3 @@ const projectRawData = [
     tag: [],
   },
 ]
-
-const ProjectList = forwardRef((props, ref) => {
-  const [viewMore, setViewMore] = useState(false)
-
-  const projectsFiltered =
-    props.filters === "All"
-      ? projectRawData
-      : projectRawData.filter((p) => p.tag.includes(props.filters))
-
-  const projectData = viewMore ? projectsFiltered : projectsFiltered.slice(0, 6)
-
-  const tiles = projectData.map((p) => (
-    <ProjectTile
-      key={p.link + p.name}
-      tag={p.tag}
-      title={p.name}
-      link={p.link}
-      codeLink={p?.codeLink}
-      image={p.imageLink}
-      languageTag={p.languages}
-      cloudinaryId={p?.cloudinaryId}
-      badge={p?.badge}
-      description={p.description}
-    />
-  ))
-
-  return (
-    <div className="fade-in" ref={ref}>
-      <div className={classes["tileContainer"]}>{tiles}</div>
-
-      <button
-        onClick={() => setViewMore((p) => !p)}
-        className={classes["see-more-button"]}
-      >
-        <span>{viewMore ? "Hide" : "See more"} projects</span>
-        <img
-          className={classes[viewMore ? "arrow-clicked" : ""]}
-          alt="arrow"
-          height="24px"
-          width="24px"
-          src="/down-arrow.svg"
-        ></img>
-      </button>
-    </div>
-  )
-})
-
-export default ProjectList

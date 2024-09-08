@@ -2,6 +2,7 @@ import { UniqueIdentifier, Over, ClientRect } from "@dnd-kit/core"
 import { Coordinates, Translate } from "@dnd-kit/core/dist/types"
 import { useState } from "react"
 import { Canvas } from "./Canvas"
+import { projectData } from "./projectData"
 import "./canvas.css"
 import { ZoomTransform, zoomIdentity } from "d3-zoom"
 
@@ -9,6 +10,8 @@ export interface Card {
   id: UniqueIdentifier
   coordinates: Coordinates
   text: string
+  imageLink: string
+  link: string
 }
 
 const cardData = [
@@ -23,7 +26,7 @@ const cardData = [
   { title: "Project 9" },
 ]
 
-const cardWidth = 200
+const cardWidth = 450
 const cardHeight = 300
 const cardPadding = 48
 const cardsInRow = 3
@@ -34,11 +37,13 @@ function createCards(data, start = { x: 0, y: 0 }) {
     start.y - 1.5 * (cardHeight + cardPadding),
   ]
   return data.map((d, i) => {
+    const { name, ...restProps } = d
     const rowNumber = Math.floor(i / cardsInRow)
     const positionInRow = i % cardsInRow
     return {
-      id: d.title,
-      text: d.title,
+      id: name,
+      text: name,
+      ...restProps,
       coordinates: {
         x: startPosition[0] + positionInRow * (cardWidth + cardPadding),
         y: startPosition[1] + rowNumber * (cardHeight + cardPadding),
@@ -50,7 +55,7 @@ function createCards(data, start = { x: 0, y: 0 }) {
 export default function ProjectCanvas() {
   const [transform, setTransform] = useState(zoomIdentity)
   const [cards, setCards] = useState<Card[]>(
-    createCards(cardData, {
+    createCards(projectData, {
       x: window.innerWidth / 2,
       y: window.innerHeight / 2,
     })

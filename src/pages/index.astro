@@ -1,18 +1,19 @@
 ---
-import Projects from '../components/Projects.jsx';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Profile from '../components/Profile.astro';
+import MainLayout from '../layouts/MainLayout.astro';
 import ProjectCanvas from '../components/projectCanvas'
+import Profile from '../components/Profile.astro';
 
 ---
 
-<BaseLayout
+<MainLayout
+    fullWidth={true}
     title="Portfolio"
     description="Explore a diverse portfolio showcasing my passion and expertise"
     image={{ src: '/dante-preview.jpg', alt: 'The preview of the site' }}
     showHeader={false}
 >
-    <Profile />
+<div style="position:relative;">
+    <Profile/>
     <ProjectCanvas client:only />
-   <Projects client:load />
-</BaseLayout>
+</div>
+</MainLayout>

@@ -1,4 +1,14 @@
 ---
+
+/**
+
+    <p class="label">
+        I'm a front-end developer with expertise in{" "}
+        <strong>data visualization</strong>, <strong>interaction design</strong> and{" "}
+        <strong>geospatial analysis.</strong>{" "}Currently, I am the interactive news editor at The Associated Press, where I oversee data visualization, front-end development and interactive mapping for journalism viewed by millions across the globe.
+    </p>
+
+*/
 ---
 
 
@@ -6,11 +16,7 @@
     <div class="description">
     <h1 class="header">Hi, I'm Caleb Diehl</h1>
     <h2 class="subhead">Front-end Developer</h2>
-    <p class="label">
-        I'm a front-end developer with expertise in{" "}
-        <strong>data visualization</strong>, <strong>interaction design</strong> and{" "}
-        <strong>geospatial analysis.</strong>{" "}Currently, I am the interactive news editor at The Associated Press, where I oversee data visualization, front-end development and interactive mapping for journalism viewed by millions across the globe.
-    </p>
+
        <div class="flex">
         <a
         rel="noreferrer"
@@ -48,13 +54,21 @@
   }
 
   .container {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 3;
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  gap: 16px;
-  margin: 0 auto;
-  padding: 0 12px 160px;
+  gap: 8px;
+  margin: 8px auto;
+  background: rgba(255, 255, 255, .5);
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  padding: 8px;
+  width: max-content;
+  transform: translateX(-50%);
 }
 
 .label {
@@ -75,15 +89,16 @@
 }
 
 .header {
-  font-size: 6rem;
-  line-height: 6.25rem;
+  font-size: 4rem;
+  line-height: 4.25rem;
+  font-weight: 700;
   text-align: left;
   color: var(--color-accent)
 }
 
 .subhead {
-  font-size: 1.5rem;
-  line-height: 1.75rem;
+  font-size: 1.2rem;
+  line-height: 1.45rem;
   color: #555;
   text-align: left;
 }
@@ -118,3 +133,4 @@
   }
 }
 </style>
+

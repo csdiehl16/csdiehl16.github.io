@@ -9,21 +9,22 @@ export const ProjectCard = ({
   canvasTransform: ZoomTransform
 }) => {
   return (
-    <div
-      className="card"
-      style={{
-        position: "absolute",
-        top: `${card.coordinates.y * canvasTransform.k}px`,
-        left: `${card.coordinates.x * canvasTransform.k}px`,
-        transformOrigin: "top left",
+    <a href={card.link} target="_blank" rel="noreferrer">
+      <div
+        className="card"
+        style={{
+          position: "absolute",
+          top: `${card.coordinates.y * canvasTransform.k}px`,
+          left: `${card.coordinates.x * canvasTransform.k}px`,
+          transformOrigin: "top left",
 
-        // zoom to canvas zoom
-        transform: `scale(${canvasTransform.k})`,
-      }}
-      onClick={() => alert("clicked!")}
-    >
-      <img className="project-image" src={"./sample_image.jpg"}></img>
-      <p className="project-title">{card.text}</p>
-    </div>
+          // zoom to canvas zoom
+          transform: `scale(${canvasTransform.k})`,
+        }}
+      >
+        <img className="project-image" src={card.imageLink}></img>
+        <p className="project-title">{card.text}</p>
+      </div>
+    </a>
   )
 }
