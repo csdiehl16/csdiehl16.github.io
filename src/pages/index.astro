@@ -1,7 +1,8 @@
 ---
 import Projects from '../components/Projects.jsx';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Profile from '../components/Profile.astro'
+import Profile from '../components/Profile.astro';
+import ProjectCanvas from '../components/projectCanvas'
 
 ---
 
@@ -12,5 +13,6 @@ import Profile from '../components/Profile.astro'
     showHeader={false}
 >
     <Profile />
+    <ProjectCanvas client:only />
    <Projects client:load />
 </BaseLayout>
