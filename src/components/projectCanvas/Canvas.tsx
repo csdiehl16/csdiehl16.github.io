@@ -1,16 +1,20 @@
 import { DndContext, useDroppable } from "@dnd-kit/core"
 import { DragEndEvent } from "@dnd-kit/core/dist/types"
-import { Card } from "./index"
+import { Card, Post } from "./index"
 import { ProjectCard } from "./ProjectCard"
 import { ZoomTransform, zoom } from "d3-zoom"
-import { useRef, useCallback, useMemo, useLayoutEffect, useEffect } from "react"
+import { useRef, useCallback, useMemo, useLayoutEffect } from "react"
 import { select } from "d3-selection"
+import { Draggable } from "./Draggable"
 
 interface CanvasProps {
   cards: Card[]
   setCards: (cards: Card[]) => void
   transform: ZoomTransform
   setTransform: (transform: ZoomTransform) => void
+  posts: Post[]
+  setPosts: (posts: Post[]) => void
+  setDragged: (dragged: boolean) => void
 }
 
 export const Canvas = ({
@@ -18,6 +22,9 @@ export const Canvas = ({
   setCards,
   transform,
   setTransform,
+  posts,
+  setPosts,
+  setDragged,
 }: CanvasProps) => {
   const { setNodeRef } = useDroppable({
     id: "canvas",
@@ -32,8 +39,8 @@ export const Canvas = ({
   const updateDraggedCardPosition = ({ delta, active }: DragEndEvent) => {
     if (!delta.x && !delta.y) return
 
-    setCards(
-      cards.map((card) => {
+    setPosts(
+      posts.map((card) => {
         if (card.id === active.id) {
           return {
             ...card,
@@ -71,7 +78,11 @@ export const Canvas = ({
   }, [zoomBehavior, canvasRef, updateTransform])
 
   return (
-    <div ref={updateAndForwardRef} className="canvasWindow">
+    <div
+      onClick={() => setDragged(true)}
+      ref={updateAndForwardRef}
+      className="canvasWindow"
+    >
       <div
         className="canvas"
         style={{
@@ -89,6 +100,9 @@ export const Canvas = ({
               card={card}
               key={card.id}
             />
+          ))}
+          {posts.map((post) => (
+            <Draggable key={post.id} card={post} canvasTransform={transform} />
           ))}
         </DndContext>
       </div>

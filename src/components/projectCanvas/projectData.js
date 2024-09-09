@@ -8,6 +8,7 @@ export const projectData = [
     tag: ["Dashboards", "Web development"],
     description:
       "A new chart type for Recharts, an open-source React data visualization library with more than 173k users. The sunburst is a visually appealing variant of the treemap.",
+    featured: true,
   },
   {
     name: "School board documents AI-driven search",
@@ -17,6 +18,7 @@ export const projectData = [
     tag: ["Web development"],
     description:
       "A web app using a PostgreSQL database, SST, and AWS to create a search engine for the AP education reporting team to find current issues in hundreds of thousands of documents",
+    featured: true,
   },
   {
     name: "AP Wildfire Tracker",
@@ -27,6 +29,7 @@ export const projectData = [
     description:
       "An interactive dashboard that displays real-time fire incident information and surrounding demographics, updated every 15 minutes.",
     cloudinaryId: "fire_tracker_ul6unw",
+    featured: true,
   },
   {
     name: "AI Data Assistant",
@@ -37,6 +40,7 @@ export const projectData = [
     tag: ["Dashboards", "Web development"],
     description:
       "Explore your data using conversational AI. A full-stack Next.js web app, using Vercel's AI SDK and a firebase backend, that allows users to chat with a database, save and load data snapshots, and use generative UI to build charts.",
+    featured: true,
   },
   {
     name: "Carbon footprint explorer",
@@ -46,6 +50,7 @@ export const projectData = [
     tag: ["Dashboards", "Data journalism"],
     description:
       "An interactive visualization tool for exploring how your income and consumer spending decisions affect your carbon footprint.",
+    featured: true,
   },
   {
     name: "Olympics Records Progression",

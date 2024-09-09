@@ -1,10 +1,11 @@
-import { UniqueIdentifier, Over, ClientRect } from "@dnd-kit/core"
-import { Coordinates, Translate } from "@dnd-kit/core/dist/types"
+import { UniqueIdentifier } from "@dnd-kit/core"
+import { Coordinates } from "@dnd-kit/core/dist/types"
+import { zoomIdentity } from "d3-zoom"
 import { useState } from "react"
 import { Canvas } from "./Canvas"
-import { projectData } from "./projectData"
 import "./canvas.css"
-import { ZoomTransform, zoomIdentity } from "d3-zoom"
+import { projectData } from "./projectData"
+import FeaturedMenu from "./FeaturedMenu"
 
 export interface Card {
   id: UniqueIdentifier
@@ -13,18 +14,13 @@ export interface Card {
   imageLink: string
   link: string
 }
-
-const cardData = [
-  { title: "Project 1" },
-  { title: "Project 2" },
-  { title: "Project 3" },
-  { title: "Project 4" },
-  { title: "Project 5" },
-  { title: "Project 6" },
-  { title: "Project 7" },
-  { title: "Project 8" },
-  { title: "Project 9" },
-]
+export interface Post {
+  id: number
+  title: string
+  description: string
+  coordinates: { x: number; y: number }
+  link?: string
+}
 
 const cardWidth = 450
 const cardHeight = 300
@@ -60,14 +56,54 @@ export default function ProjectCanvas() {
       y: window.innerHeight / 2,
     })
   )
+
+  const [posts, setPosts] = useState([
+    {
+      id: 1,
+      title: "Building an AI-powered data explorer",
+      description: "",
+      coordinates: { x: -480, y: 350 },
+      link: "/blog/post-3/",
+    },
+    {
+      id: 2,
+      title: "Observations on the new Observable 2.0 Framework",
+      description: "",
+      coordinates: { x: 1400, y: 200 },
+      link: "/blog/post-2/",
+    },
+    {
+      id: 3,
+      title:
+        "Mysterious missing weather stations and other lessons from tracking global heat",
+      description: "",
+      coordinates: { x: -500, y: 600 },
+      link: "/blog/post-1/",
+    },
+    {
+      id: 4,
+      title: "Presentations",
+      description: `"Tracking Wildfires for the Associated Press" | Seattle JS meetup, October 2023
+"Data visualization for the news" University of Washington School of Journalism, February 2024 `,
+      coordinates: { x: 1400, y: 600 },
+    },
+  ])
+  const [dragged, setDragged] = useState(false)
   return (
     <div className="App">
+      <FeaturedMenu />
       <Canvas
+        setDragged={setDragged}
         transform={transform}
         setTransform={setTransform}
         cards={cards}
         setCards={setCards}
+        posts={posts}
+        setPosts={setPosts}
       />
+      {!dragged && (
+        <div className="intro-message">← Click and drag to explore →</div>
+      )}
     </div>
   )
 }

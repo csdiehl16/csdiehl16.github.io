@@ -22,8 +22,13 @@ export const ProjectCard = ({
           transform: `scale(${canvasTransform.k})`,
         }}
       >
-        <img className="project-image" src={card.imageLink}></img>
         <p className="project-title">{card.text}</p>
+        <img className="project-image" src={card.imageLink}></img>
+        <div className="project-infobox">
+          <p>{card.languages.join(" | ")}</p>
+          <p>{card.description}</p>
+          <img height={24} width={24} src="/link-solid.svg"></img>
+        </div>
       </div>
     </a>
   )

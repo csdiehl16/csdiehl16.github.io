@@ -1,14 +1,4 @@
 ---
-
-/**
-
-    <p class="label">
-        I'm a front-end developer with expertise in{" "}
-        <strong>data visualization</strong>, <strong>interaction design</strong> and{" "}
-        <strong>geospatial analysis.</strong>{" "}Currently, I am the interactive news editor at The Associated Press, where I oversee data visualization, front-end development and interactive mapping for journalism viewed by millions across the globe.
-    </p>
-
-*/
 ---
 
 
@@ -41,16 +31,106 @@
             src="/github-mark.svg"
         />
         </a>
+
+          <div class="menu">
+          <button id="expand-button">
+      <img height={24} width={24} src="/plus-solid.svg"></img>
+          <p>About me</p>
+    </button>
+
+    <a href="/blog"><p>Blog</p></a>
+
     </div>
+
+    </div>
+  
+
+
+    <p class="label">
+        I'm a front-end developer with expertise in{" "}
+        <strong>data visualization</strong>, <strong>interaction design</strong> and{" "}
+        <strong>geospatial analysis.</strong>{" "}Currently, I am the interactive news editor at The Associated Press, where I oversee data visualization, front-end development and interactive mapping for journalism viewed by millions across the globe.
+    </p>
     </div>
   
 </div>
 
+<script>
+  let expanded = false
+  const container = document.querySelector(".container")
+  const label = document.querySelector(".label")
+  const btn = document.querySelector("#expand-button")
+
+  btn?.addEventListener("click", () => {
+    expanded = !expanded
+
+    if (expanded) {
+      container.style.maxWidth = "100%"
+      container.style.width = "100%"
+      container.style.height = "100vh"
+      container.style.maxHeight = "100vh"
+
+      label.style.display = "block"
+      label.style.opacity = 1
+
+      // rotate button
+      document.querySelector("#expand-button img").style.transform = "rotate(45deg)"
+
+    } else {
+      container.style.maxWidth = "800px"
+      container.style.maxHeight = "250px"
+
+      // reset
+      container.style.width = "max-content"
+      container.style.height = "max-content"
+
+      label.style.opacity = 0
+      label.style.display = "none"
+
+        document.querySelector("#expand-button img").style.transform = "rotate(0)"
+
+    }
+
+
+
+  })
+
+
+</script>
+
 
 <style>
 
+  #expand-button {
+    display: flex;
+    gap: 8px;
+  }
+
+  #expand-button:hover, a:hover {
+    color: var(--color-accent);
+  }
+
+
+
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+
+  }
+
+  #expand-button img {
+    transition: transform 300ms ease-out;
+  }
+
   h1,h2,p {
     margin: 0;
+
+  }
+
+  p {
+      font-weight: 600;
+    font-size: 1rem;
   }
 
   .container {
@@ -68,7 +148,11 @@
   backdrop-filter: blur(4px);
   padding: 8px;
   width: max-content;
+  height: max-content;
+  max-width: 800px;
+  max-height: 250px;
   transform: translateX(-50%);
+  transition: max-height 300ms ease-in-out, max-width 300ms ease-in-out;
 }
 
 .label {
@@ -76,6 +160,8 @@
     font-size: 1rem;
     color: #555;
     line-height: 1.5rem;
+    display: none;
+    opacity: 0;
 }
 
 .flex {
@@ -97,8 +183,8 @@
 }
 
 .subhead {
-  font-size: 1.2rem;
-  line-height: 1.45rem;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
   color: #555;
   text-align: left;
 }
