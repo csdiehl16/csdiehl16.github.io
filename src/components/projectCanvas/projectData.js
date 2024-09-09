@@ -1,5 +1,93 @@
 export const projectData = [
   {
+    name: "Transit Smart Card Clustering",
+    link: "https://rpubs.com/csdiehl/transit-clusters",
+    imageLink: "/clusters.png",
+    description:
+      "A machine learning model that clusters transit stations in King Count based on ridership demographics.",
+    languages: ["Python", "R"],
+    tag: ["Geospatial"],
+  },
+  {
+    name: "Mobility in a Pandemic",
+    link: "",
+    imageLink: "/covid_mobility.jpg",
+    description:
+      "Data visualization of the change in Google searches for common destinations before and after the pandemic.",
+    languages: ["Python", "R"],
+    tag: [],
+  },
+
+  {
+    name: "Visualizing Police Use of Force",
+    link: "",
+    imageLink: "/police_force.jpg",
+    description: "",
+    languages: ["Python", "R"],
+    tag: [],
+  },
+  {
+    name: "Wildfire Risk Maps",
+    link: "https://apnews.com/article/wildfires-forest-thinning-community-risk-biden-9d77309cb9e7520069b3c575d850aadc",
+    imageLink: "/wildfire.png",
+    languages: ["React.js", "D3.js"],
+    tag: ["Data journalism", "Geospatial"],
+    description:
+      "A series of interactive maps that explore a Forest Service plan to mitigate wildfire throughout the U.S.",
+    cloudinaryId: "fire_thinning_bzqrtp",
+  },
+
+  {
+    name: "Ski resorts are embracing a new role: climate activist",
+    link: "https://apnews.com/article/climate-change-activism-ski-industry-028d83e19543db5d7633ea83932bdde3",
+    imageLink: "/skiing.png",
+    languages: ["React.js", "D3.js"],
+    tag: ["Data journalism", "Web development"],
+    description:
+      "A scrollytelling page that weaves together photo, video, maps and data visualization to explore the effects of climate change on skiing and snowpack.",
+    cloudinaryId: "skiing_xpcioo",
+  },
+  {
+    name: "CEO Pay Visualization",
+    link: "https://apnews.com/article/wildfires-forest-thinning-community-risk-biden-9d77309cb9e7520069b3c575d850aadc",
+    imageLink: "/ceo.png",
+    languages: ["React.js", "D3.js"],
+    tag: ["Data journalism"],
+    description:
+      "An interactive scatterplot and diverging bar chart to visualize results of an AP survey on CEO performance and compensation.",
+    cloudinaryId: "fire_thinning_bzqrtp",
+  },
+  {
+    name: "Death and Regrowth on the Great Barrier Reef",
+    link: "https://projects.apnews.com/features/2022/coral-reef-immersive/index.html",
+    imageLink: "/GBR.png",
+    languages: ["React.js", "Python"],
+    tag: ["Geospatial", "Data journalism"],
+    description:
+      "An interactive map visualization of major coral bleaching events.",
+    cloudinaryId: "GBR_yt22no",
+  },
+  {
+    name: "Transit Segment Priority Finder",
+    link: "https://ibi-group.github.io/mbta-transit-priority-finder/",
+    imageLink: "/mbta_tool.PNG",
+    languages: ["React.js", "Python"],
+    tag: ["Geospatial", "Dashboards"],
+    description:
+      "Dashboard built for internal use at MBTA. Allows agency to filter and select stop-to-stop bus segments for transit priority measures such as bus-only lanes. Users can adjust the weights as needed to calculate a new weighted average score based on their priorities.",
+  },
+
+  {
+    name: "Maui Fires Timeline",
+    link: "https://interactives.ap.org/hawaii-timeline/",
+    imageLink: "/lahaina.png",
+    languages: ["React.js", "Typescript", "Mapbox GL JS"],
+    tag: ["Geospatial", "Data journalism"],
+    description:
+      "An interactive map that tells the story of the Lahania wildire using smooth animations.",
+    cloudinaryId: "lahaina_fqon1l",
+  },
+  {
     name: "Recharts Sunburst Chart",
     link: "https://master--63da8268a0da9970db6992aa.chromatic.com/?path=/story/api-chart-sunburstchart--sunburst",
     codeLink: "https://github.com/recharts/recharts/pull/4037",
@@ -61,6 +149,7 @@ export const projectData = [
     description:
       "Interactive charts that explore the progress of Olympic records over time.",
   },
+
   {
     name: "AP Extreme Heat Tracker",
     link: "https://interactives.ap.org/heat-tracker/",
@@ -91,67 +180,7 @@ export const projectData = [
     description:
       "Olympic graphics licensed to nearly 100 publications, including Time and FOX, to visualize more than 650 athletes, track medal counts in real time, and explore olympic venues. I produced the hometown heroes and venues maps and oversaw production of the other graphics.",
   },
-  {
-    name: "Ski resorts are embracing a new role: climate activist",
-    link: "https://apnews.com/article/climate-change-activism-ski-industry-028d83e19543db5d7633ea83932bdde3",
-    imageLink: "/skiing.png",
-    languages: ["React.js", "D3.js"],
-    tag: ["Data journalism", "Web development"],
-    description:
-      "A scrollytelling page that weaves together photo, video, maps and data visualization to explore the effects of climate change on skiing and snowpack.",
-    cloudinaryId: "skiing_xpcioo",
-  },
-  {
-    name: "CEO Pay Visualization",
-    link: "https://apnews.com/article/wildfires-forest-thinning-community-risk-biden-9d77309cb9e7520069b3c575d850aadc",
-    imageLink: "/ceo.png",
-    languages: ["React.js", "D3.js"],
-    tag: ["Data journalism"],
-    description:
-      "An interactive scatterplot and diverging bar chart to visualize results of an AP survey on CEO performance and compensation.",
-    cloudinaryId: "fire_thinning_bzqrtp",
-  },
-  {
-    name: "Death and Regrowth on the Great Barrier Reef",
-    link: "https://projects.apnews.com/features/2022/coral-reef-immersive/index.html",
-    imageLink: "/GBR.png",
-    languages: ["React.js", "Python"],
-    tag: ["Geospatial", "Data journalism"],
-    description:
-      "An interactive map visualization of major coral bleaching events.",
-    cloudinaryId: "GBR_yt22no",
-  },
-  {
-    name: "Transit Segment Priority Finder",
-    link: "https://ibi-group.github.io/mbta-transit-priority-finder/",
-    imageLink: "/mbta_tool.PNG",
-    languages: ["React.js", "Python"],
-    tag: ["Geospatial", "Dashboards"],
-    description:
-      "Dashboard built for internal use at MBTA. Allows agency to filter and select stop-to-stop bus segments for transit priority measures such as bus-only lanes. Users can adjust the weights as needed to calculate a new weighted average score based on their priorities.",
-  },
 
-  {
-    name: "Maui Fires Timeline",
-    link: "https://interactives.ap.org/hawaii-timeline/",
-    imageLink: "/lahaina.png",
-    languages: ["React.js", "Typescript", "Mapbox GL JS"],
-    tag: ["Geospatial", "Data journalism"],
-    description:
-      "An interactive map that tells the story of the Lahania wildire using smooth animations.",
-    cloudinaryId: "lahaina_fqon1l",
-  },
-
-  {
-    name: "Wildfire Risk Maps",
-    link: "https://apnews.com/article/wildfires-forest-thinning-community-risk-biden-9d77309cb9e7520069b3c575d850aadc",
-    imageLink: "/wildfire.png",
-    languages: ["React.js", "D3.js"],
-    tag: ["Data journalism", "Geospatial"],
-    description:
-      "A series of interactive maps that explore a Forest Service plan to mitigate wildfire throughout the U.S.",
-    cloudinaryId: "fire_thinning_bzqrtp",
-  },
   {
     name: "An Underwater Paradise Under Threat",
     link: "https://apnews.com/projects/mexico-tren-maya-climate-yucatan/",
@@ -205,32 +234,5 @@ export const projectData = [
       "A custom gravity model I built for a graduate school course that shows census tracts in King County by their ability to access outdoor activities.",
     languages: ["Python", "R"],
     tag: ["Geospatial"],
-  },
-  {
-    name: "Transit Smart Card Clustering",
-    link: "https://rpubs.com/csdiehl/transit-clusters",
-    imageLink: "/clusters.png",
-    description:
-      "A machine learning model that clusters transit stations in King Count based on ridership demographics.",
-    languages: ["Python", "R"],
-    tag: ["Geospatial"],
-  },
-  {
-    name: "Mobility in a Pandemic",
-    link: "",
-    imageLink: "/covid_mobility.jpg",
-    description:
-      "Data visualization of the change in Google searches for common destinations before and after the pandemic.",
-    languages: ["Python", "R"],
-    tag: [],
-  },
-
-  {
-    name: "Visualizing Police Use of Force",
-    link: "",
-    imageLink: "/police_force.jpg",
-    description: "",
-    languages: ["Python", "R"],
-    tag: [],
   },
 ]

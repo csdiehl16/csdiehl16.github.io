@@ -4,8 +4,8 @@
 
 <div class="container">
     <div class="description">
-    <h1 class="header">Hi, I'm Caleb Diehl</h1>
-    <h2 class="subhead">Front-end Developer</h2>
+    <h1 class="header">Hi, I'm <span class="highlight">Caleb Diehl</span></h1>
+    <h2 class="subhead">Frontend Developer + Dataviz Expert</h2>
 
        <div class="flex">
         <a
@@ -143,7 +143,7 @@
   justify-content: center;
   gap: 8px;
   margin: 8px auto;
-  background: rgba(255, 255, 255, .5);
+  background: rgba(255, 255, 255, .8);
   border-radius: 8px;
   backdrop-filter: blur(4px);
   padding: 8px;
@@ -153,6 +153,7 @@
   max-height: 250px;
   transform: translateX(-50%);
   transition: max-height 300ms ease-in-out, max-width 300ms ease-in-out;
+  box-shadow: 0 0 5px lightgrey;
 }
 
 .label {
@@ -179,7 +180,11 @@
   line-height: 4.25rem;
   font-weight: 700;
   text-align: left;
-  color: var(--color-accent)
+  color: darkgrey;
+}
+
+.highlight {
+color: var(--color-accent);
 }
 
 .subhead {

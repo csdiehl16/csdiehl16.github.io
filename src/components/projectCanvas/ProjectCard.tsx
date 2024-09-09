@@ -14,6 +14,7 @@ export const ProjectCard = ({
         className="card"
         style={{
           position: "absolute",
+          fontWeight: card.featured ? "bold" : "normal",
           top: `${card.coordinates.y * canvasTransform.k}px`,
           left: `${card.coordinates.x * canvasTransform.k}px`,
           transformOrigin: "top left",

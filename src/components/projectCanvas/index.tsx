@@ -13,6 +13,7 @@ export interface Card {
   text: string
   imageLink: string
   link: string
+  featured: boolean
 }
 export interface Post {
   id: number
@@ -29,8 +30,8 @@ const cardsInRow = 3
 
 function createCards(data, start = { x: 0, y: 0 }) {
   const startPosition = [
-    start.x - 1.5 * (cardWidth + cardPadding),
-    start.y - 1.5 * (cardHeight + cardPadding),
+    start.x - (cardsInRow / 2) * (cardWidth + cardPadding),
+    start.y - 4 * (cardHeight + cardPadding),
   ]
   return data.map((d, i) => {
     const { name, ...restProps } = d
@@ -62,7 +63,7 @@ export default function ProjectCanvas() {
       id: 1,
       title: "Building an AI-powered data explorer",
       description: "",
-      coordinates: { x: -480, y: 350 },
+      coordinates: { x: -500, y: 400 },
       link: "/blog/post-3/",
     },
     {
@@ -77,7 +78,7 @@ export default function ProjectCanvas() {
       title:
         "Mysterious missing weather stations and other lessons from tracking global heat",
       description: "",
-      coordinates: { x: -500, y: 600 },
+      coordinates: { x: -500, y: 800 },
       link: "/blog/post-1/",
     },
     {
@@ -89,9 +90,14 @@ export default function ProjectCanvas() {
     },
   ])
   const [dragged, setDragged] = useState(false)
+  const featuredProjects = cards && cards.filter((d) => d.featured)
   return (
     <div className="App">
-      <FeaturedMenu />
+      <FeaturedMenu
+        projects={featuredProjects}
+        transform={transform}
+        setTransform={setTransform}
+      />
       <Canvas
         setDragged={setDragged}
         transform={transform}

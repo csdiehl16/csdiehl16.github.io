@@ -27,6 +27,7 @@
   background-color: var(--color-bg-main);
   height: 100vh;
   width: 100%;
+  cursor: grab;
 }
 
 .project-image {
@@ -43,10 +44,10 @@
 
 .project-title {
   position: absolute;
-  top: -1.5rem;
+  top: -1.7rem;
   left: 0;
   z-index: 2;
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: rgb(54, 54, 54);
 }
 
@@ -109,12 +110,13 @@
   top: 50%;
   left: 0;
   padding: 8px;
-  max-width: 200px;
+  max-width: 80px;
   transform: translateY(-50%);
-  z-index: 5;
-  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(4px);
   border-radius: 8px;
+  box-shadow: 0 0 5px lightgrey;
 }
 
 .featured-header {
@@ -123,8 +125,14 @@
 }
 
 .featured {
-  padding: 2px;
-  border-radius: 8px;
+  z-index: 3;
+  background: #fff;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid rgb(233, 233, 233);
   font-size: 0.875rem;
   cursor: pointer;
@@ -135,5 +143,22 @@
 
 .featured:hover {
   border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.featured-project-label {
+  z-index: -1;
+  position: absolute;
+  left: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  padding: 4px;
+  padding-left: 16px;
+  background: #fff;
+  font-size: 0.875rem;
+  pointer-events: none;
+  border-radius: 8px;
+  font-weight: bold;
   color: var(--color-accent);
 }
