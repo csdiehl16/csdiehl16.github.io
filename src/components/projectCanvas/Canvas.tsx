@@ -6,6 +6,7 @@ import { ZoomTransform, zoom } from "d3-zoom"
 import { useRef, useCallback, useMemo, useLayoutEffect } from "react"
 import { select } from "d3-selection"
 import { Draggable } from "./Draggable"
+import { useState } from "react"
 
 interface CanvasProps {
   cards: Card[]
@@ -30,6 +31,12 @@ export const Canvas = ({
     id: "canvas",
   })
   const canvasRef = useRef<HTMLDivElement | null>(null)
+
+  const [imageLoadedCount, setImageLoadedCount] = useState(0)
+
+  const allImagesLoaded = imageLoadedCount === cards.length
+
+  console.log(allImagesLoaded)
 
   const updateAndForwardRef = (div: HTMLDivElement) => {
     canvasRef.current = div
@@ -96,6 +103,7 @@ export const Canvas = ({
         <DndContext onDragEnd={updateDraggedCardPosition}>
           {cards.map((card) => (
             <ProjectCard
+              imageOnLoad={setImageLoadedCount}
               canvasTransform={transform}
               card={card}
               key={card.id}
@@ -105,6 +113,11 @@ export const Canvas = ({
             <Draggable key={post.id} card={post} canvasTransform={transform} />
           ))}
         </DndContext>
+        {!allImagesLoaded && (
+          <div className="image-loader">
+            Loading... {Math.round((imageLoadedCount / cards.length) * 100)}%
+          </div>
+        )}
       </div>
     </div>
   )

@@ -142,14 +142,14 @@
   align-items: flex-start;
   justify-content: center;
   gap: 8px;
-  margin: 8px auto;
+  margin: 0 auto;
   background: rgba(255, 255, 255, .8);
   border-radius: 8px;
   backdrop-filter: blur(4px);
   padding: 8px;
   width: max-content;
   height: max-content;
-  max-width: 800px;
+  max-width: 600px;
   max-height: 250px;
   transform: translateX(-50%);
   transition: max-height 300ms ease-in-out, max-width 300ms ease-in-out;
@@ -212,15 +212,21 @@ color: var(--color-accent);
   align-items: flex-end;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 600px) {
   .container {
-    flex-direction: column;
     align-items: center;
+    max-width: 100%;
+    border-radius: 0;
+    margin: 0;
   }
 
   .header {
     font-size: 2rem;
     line-height: 2.25rem;
+  }
+
+  #expand-button {
+    display: none;
   }
 }
 </style>

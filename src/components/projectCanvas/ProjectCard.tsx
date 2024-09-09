@@ -4,9 +4,11 @@ import { Card } from "./index"
 export const ProjectCard = ({
   card,
   canvasTransform,
+  imageOnLoad,
 }: {
   card: Card
   canvasTransform: ZoomTransform
+  imageOnLoad: (count: number) => void
 }) => {
   return (
     <a href={card.link} target="_blank" rel="noreferrer">
@@ -24,7 +26,11 @@ export const ProjectCard = ({
         }}
       >
         <p className="project-title">{card.text}</p>
-        <img className="project-image" src={card.imageLink}></img>
+        <img
+          onLoad={() => imageOnLoad((p) => p + 1)}
+          className="project-image"
+          src={card.imageLink}
+        ></img>
         <div className="project-infobox">
           <p>{card.languages.join(" | ")}</p>
           <p>{card.description}</p>

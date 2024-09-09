@@ -162,3 +162,19 @@
   font-weight: bold;
   color: var(--color-accent);
 }
+
+@media (max-width: 425px) {
+  .featured-project-label,
+  .post {
+    display: none;
+  }
+}
+
+.image-loader {
+  position: absolute;
+  z-index: 10;
+  top: 50vh;
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-size: 1.5rem;
+}

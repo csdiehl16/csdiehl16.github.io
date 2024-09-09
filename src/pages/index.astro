@@ -9,11 +9,11 @@ import Profile from '../components/Profile.astro';
     fullWidth={true}
     title="Portfolio"
     description="Explore a diverse portfolio showcasing my passion and expertise"
-    image={{ src: '/dante-preview.jpg', alt: 'The preview of the site' }}
+    image={{ src: '/grist-disease.jpg', alt: 'The preview of the site' }}
     showHeader={false}
 >
 <div style="position:relative;">
     <Profile/>
-    <ProjectCanvas client:only />
+    <ProjectCanvas client:only="react" />
 </div>
 </MainLayout>
