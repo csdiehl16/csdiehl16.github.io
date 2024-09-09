@@ -36,8 +36,6 @@ export const Canvas = ({
 
   const allImagesLoaded = imageLoadedCount === cards.length
 
-  console.log(allImagesLoaded)
-
   const updateAndForwardRef = (div: HTMLDivElement) => {
     canvasRef.current = div
     setNodeRef(div)

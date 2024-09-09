@@ -13,6 +13,10 @@
   border-radius: 8px;
 }
 
+.card p {
+  color: lightgrey;
+}
+
 .tray {
   display: flex;
   margin-bottom: 10px;
@@ -39,7 +43,7 @@
 }
 
 .project-image:hover {
-  filter: brightness(30%);
+  filter: brightness(20%);
 }
 
 .project-title {

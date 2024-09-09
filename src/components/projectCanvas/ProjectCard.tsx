@@ -33,9 +33,12 @@ export const ProjectCard = ({
           src={card.imageLink}
         ></img>
         <div className="project-infobox">
-          <p>{card.languages.join(" | ")}</p>
           <p>{card.description}</p>
+
           <img height={24} width={24} src="/link-solid.svg"></img>
+          <p style={{ fontSize: ".875rem", color: "lightgrey" }}>
+            {card.languages.join(" | ")}
+          </p>
         </div>
       </div>
     </a>

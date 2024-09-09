@@ -4,8 +4,8 @@ import { zoomIdentity } from "d3-zoom"
 import { useState } from "react"
 import { Canvas } from "./Canvas"
 import "./canvas.css"
-import { projectData } from "./projectData"
 import FeaturedMenu from "./FeaturedMenu"
+import { projectData } from "./projectData"
 
 export interface Project {
   name: string
@@ -77,7 +77,7 @@ export default function ProjectCanvas() {
       id: 1,
       title: "Building an AI-powered data explorer",
       description: "",
-      coordinates: { x: -500, y: 400 },
+      coordinates: { x: -600, y: 400 },
       link: "/blog/post-3/",
     },
     {
@@ -92,7 +92,7 @@ export default function ProjectCanvas() {
       title:
         "Mysterious missing weather stations and other lessons from tracking global heat",
       description: "",
-      coordinates: { x: -500, y: 800 },
+      coordinates: { x: -600, y: 800 },
       link: "/blog/post-1/",
     },
     {
