@@ -8,8 +8,8 @@ const duration = 700
 const icons = ["sun", "sparkles", "fire", "glass", "shoe"]
 
 const FeaturedMenu = ({
-  projects,
   transform,
+  projects,
   setTransform,
 }: {
   transform: ZoomTransform

@@ -4,7 +4,6 @@ import { zoomIdentity } from "d3-zoom"
 import { useState } from "react"
 import { Canvas } from "./Canvas"
 import "./canvas.css"
-import FeaturedMenu from "./FeaturedMenu"
 import { projectData } from "./projectData"
 
 export interface Project {
@@ -104,14 +103,8 @@ export default function ProjectCanvas() {
     },
   ])
   const [dragged, setDragged] = useState(false)
-  const featuredProjects = cards && cards.filter((d) => d.featured)
   return (
     <div className="App">
-      <FeaturedMenu
-        projects={featuredProjects}
-        transform={transform}
-        setTransform={setTransform}
-      />
       <Canvas
         setDragged={setDragged}
         transform={transform}

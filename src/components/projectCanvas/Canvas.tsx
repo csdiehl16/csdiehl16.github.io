@@ -7,6 +7,7 @@ import { useRef, useCallback, useMemo, useLayoutEffect } from "react"
 import { select } from "d3-selection"
 import { Draggable } from "./Draggable"
 import { useState } from "react"
+import FeaturedMenu from "./FeaturedMenu"
 
 interface CanvasProps {
   cards: Card[]
@@ -82,12 +83,19 @@ export const Canvas = ({
     select<HTMLDivElement, unknown>(canvasRef.current).call(zoomBehavior)
   }, [zoomBehavior, canvasRef, updateTransform])
 
+  const featuredProjects = cards && cards.filter((d) => d.featured)
+
   return (
     <div
       onClick={() => setDragged(true)}
       ref={updateAndForwardRef}
       className="canvasWindow"
     >
+      <FeaturedMenu
+        projects={featuredProjects}
+        transform={transform}
+        setTransform={setTransform}
+      />
       <div
         className="canvas"
         style={{
