@@ -32,7 +32,7 @@ export const Canvas = ({
   })
   const canvasRef = useRef<HTMLDivElement | null>(null)
 
-  const [imageLoadedCount, setImageLoadedCount] = useState(0)
+  const [imageLoadedCount, setImageLoadedCount] = useState<number>(0)
 
   const allImagesLoaded = imageLoadedCount === cards.length
 

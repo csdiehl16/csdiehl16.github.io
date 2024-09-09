@@ -27,6 +27,7 @@ export const ProjectCard = ({
       >
         <p className="project-title">{card.text}</p>
         <img
+          //@ts-ignore
           onLoad={() => imageOnLoad((p) => p + 1)}
           className="project-image"
           src={card.imageLink}

@@ -7,13 +7,27 @@ import "./canvas.css"
 import { projectData } from "./projectData"
 import FeaturedMenu from "./FeaturedMenu"
 
+export interface Project {
+  name: string
+  featured?: boolean
+  cloudinaryId?: string
+  badge?: string
+  link: string
+  imageLink: string
+  description: string
+  languages: string[]
+  tag: string[]
+}
+
 export interface Card {
   id: UniqueIdentifier
   coordinates: Coordinates
   text: string
   imageLink: string
   link: string
-  featured: boolean
+  featured?: boolean
+  description: string
+  languages: string[]
 }
 export interface Post {
   id: number
@@ -28,7 +42,7 @@ const cardHeight = 300
 const cardPadding = 48
 const cardsInRow = 3
 
-function createCards(data, start = { x: 0, y: 0 }) {
+function createCards(data: Project[], start = { x: 0, y: 0 }) {
   const startPosition = [
     start.x - (cardsInRow / 2) * (cardWidth + cardPadding),
     start.y - 4 * (cardHeight + cardPadding),

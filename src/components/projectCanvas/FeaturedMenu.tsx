@@ -16,7 +16,7 @@ const FeaturedMenu = ({
   setTransform: (transform: ZoomTransform) => void
   projects: Card[]
 }) => {
-  const [hovered, setHovered] = useState(null)
+  const [hovered, setHovered] = useState<string | null>(null)
 
   function zoomToProject(project: Card) {
     const scale = 1
@@ -45,7 +45,7 @@ const FeaturedMenu = ({
         return (
           <div style={{ position: "relative" }}>
             <button
-              onMouseOver={() => setHovered(proj.id)}
+              onMouseOver={() => setHovered(proj.text)}
               onMouseOut={() => setHovered(null)}
               key={proj.id}
               onClick={() => zoomToProject(proj)}
