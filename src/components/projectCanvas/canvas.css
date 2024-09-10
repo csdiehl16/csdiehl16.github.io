@@ -99,6 +99,7 @@
   border-radius: 16px;
   pointer-events: none;
   color: rgb(57, 57, 57);
+  text-align: center;
 }
 
 .featured-projects {

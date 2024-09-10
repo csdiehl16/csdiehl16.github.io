@@ -115,7 +115,12 @@ export default function ProjectCanvas() {
         setPosts={setPosts}
       />
       {!dragged && (
-        <div className="intro-message">← Click and drag to explore →</div>
+        <div className="intro-message">
+          ← Click and drag to explore → <br />{" "}
+          <span style={{ fontSize: ".75rem" }}>
+            &copy; Caleb Diehl 2024, built with Astro, React and d3-zoom
+          </span>
+        </div>
       )}
     </div>
   )
