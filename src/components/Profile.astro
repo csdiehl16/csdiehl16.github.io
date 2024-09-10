@@ -57,9 +57,9 @@
 
 <script>
   let expanded = false
-  const container = document.querySelector(".container")
-  const label = document.querySelector(".label")
-  const btn = document.querySelector("#expand-button")
+  const container = document.querySelector(".container") as HTMLElement
+  const label = document.querySelector(".label") as HTMLElement
+  const btn = document.querySelector("#expand-button") as HTMLElement
 
   btn?.addEventListener("click", () => {
     expanded = !expanded
@@ -71,10 +71,10 @@
       container.style.maxHeight = "100vh"
 
       label.style.display = "block"
-      label.style.opacity = 1
+      label.style.opacity = "1";
 
       // rotate button
-      document.querySelector("#expand-button img").style.transform = "rotate(45deg)"
+      (document.querySelector("#expand-button img") as HTMLElement).style.transform = "rotate(45deg)"
 
     } else {
       container.style.maxWidth = "800px"
@@ -84,10 +84,10 @@
       container.style.width = "max-content"
       container.style.height = "max-content"
 
-      label.style.opacity = 0
-      label.style.display = "none"
+      label.style.opacity = "0";
+      label.style.display = "none";
 
-        document.querySelector("#expand-button img").style.transform = "rotate(0)"
+      (document.querySelector("#expand-button img") as HTMLElement).style.transform = "rotate(0)"
 
     }
 
