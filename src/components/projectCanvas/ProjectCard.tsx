@@ -1,5 +1,6 @@
 import { ZoomTransform } from "d3-zoom"
 import { Card } from "./index"
+import React from "react"
 
 export const ProjectCard = ({
   card,
@@ -10,6 +11,7 @@ export const ProjectCard = ({
   canvasTransform: ZoomTransform
   imageOnLoad: (count: number) => void
 }) => {
+  console.log(canvasTransform.k)
   return (
     <a href={card.link} target="_blank" rel="noreferrer">
       <div
@@ -25,7 +27,17 @@ export const ProjectCard = ({
           transform: `scale(${canvasTransform.k})`,
         }}
       >
-        <p className="project-title">{card.text}</p>
+        <p
+          style={{
+            fontSize:
+              canvasTransform.k >= 0.6
+                ? `${16 / canvasTransform.k}px`
+                : ".875rem",
+          }}
+          className="project-title"
+        >
+          {card.text}
+        </p>
         <img
           //@ts-ignore
           onLoad={() => imageOnLoad((p) => p + 1)}
@@ -36,7 +48,12 @@ export const ProjectCard = ({
           <p>{card.description}</p>
 
           <img height={24} width={24} src="/link-solid.svg"></img>
-          <p style={{ fontSize: ".875rem", color: "lightgrey" }}>
+          <p
+            style={{
+              color: "lightgrey",
+              fontSize: ".875rem",
+            }}
+          >
             {card.languages.join(" | ")}
           </p>
         </div>

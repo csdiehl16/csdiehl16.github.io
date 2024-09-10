@@ -13,10 +13,6 @@
   border-radius: 8px;
 }
 
-.card p {
-  color: lightgrey;
-}
-
 .tray {
   display: flex;
   margin-bottom: 10px;
