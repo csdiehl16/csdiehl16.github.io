@@ -2,7 +2,7 @@ export const projectData = [
   {
     name: "Transit Smart Card Clustering",
     link: "https://rpubs.com/csdiehl/transit-clusters",
-    imageLink: "/clusters.png",
+    imageLink: "/clusters.webp",
     description:
       "A machine learning model that clusters transit stations in King Count based on ridership demographics.",
     languages: ["Python", "R"],
@@ -11,7 +11,7 @@ export const projectData = [
   {
     name: "Mobility in a Pandemic",
     link: "",
-    imageLink: "/covid_mobility.jpg",
+    imageLink: "/covid_mobility.webp",
     description:
       "Data visualization of the change in Google searches for common destinations before and after the pandemic.",
     languages: ["Python", "R"],
@@ -21,7 +21,7 @@ export const projectData = [
   {
     name: "Visualizing Police Use of Force",
     link: "",
-    imageLink: "/police_force.jpg",
+    imageLink: "/police_force.webp",
     description: "",
     languages: ["Python", "R"],
     tag: [],
@@ -29,7 +29,7 @@ export const projectData = [
   {
     name: "Wildfire Risk Maps",
     link: "https://apnews.com/article/wildfires-forest-thinning-community-risk-biden-9d77309cb9e7520069b3c575d850aadc",
-    imageLink: "/wildfire.png",
+    imageLink: "/wildfire.webp",
     languages: ["React.js", "D3.js"],
     tag: ["Data journalism", "Geospatial"],
     description:
@@ -40,7 +40,7 @@ export const projectData = [
   {
     name: "Ski resorts are embracing a new role: climate activist",
     link: "https://apnews.com/article/climate-change-activism-ski-industry-028d83e19543db5d7633ea83932bdde3",
-    imageLink: "/skiing.png",
+    imageLink: "/skiing.webp",
     languages: ["React.js", "D3.js"],
     tag: ["Data journalism", "Web development"],
     description:
@@ -50,7 +50,7 @@ export const projectData = [
   {
     name: "CEO Pay Visualization",
     link: "https://apnews.com/article/wildfires-forest-thinning-community-risk-biden-9d77309cb9e7520069b3c575d850aadc",
-    imageLink: "/ceo.png",
+    imageLink: "/ceo.webp",
     languages: ["React.js", "D3.js"],
     tag: ["Data journalism"],
     description:
@@ -60,7 +60,7 @@ export const projectData = [
   {
     name: "Death and Regrowth on the Great Barrier Reef",
     link: "https://projects.apnews.com/features/2022/coral-reef-immersive/index.html",
-    imageLink: "/GBR.png",
+    imageLink: "/GBR.webp",
     languages: ["React.js", "Python"],
     tag: ["Geospatial", "Data journalism"],
     description:
@@ -70,7 +70,7 @@ export const projectData = [
   {
     name: "Transit Segment Priority Finder",
     link: "https://ibi-group.github.io/mbta-transit-priority-finder/",
-    imageLink: "/mbta_tool.PNG",
+    imageLink: "/mbta_tool.webp",
     languages: ["React.js", "Python"],
     tag: ["Geospatial", "Dashboards"],
     description:
@@ -80,7 +80,7 @@ export const projectData = [
   {
     name: "Maui Fires Timeline",
     link: "https://interactives.ap.org/hawaii-timeline/",
-    imageLink: "/lahaina.png",
+    imageLink: "/lahaina.webp",
     languages: ["React.js", "Typescript", "Mapbox GL JS"],
     tag: ["Geospatial", "Data journalism"],
     description:
@@ -91,7 +91,7 @@ export const projectData = [
     name: "Recharts Sunburst Chart",
     link: "https://master--63da8268a0da9970db6992aa.chromatic.com/?path=/story/api-chart-sunburstchart--sunburst",
     codeLink: "https://github.com/recharts/recharts/pull/4037",
-    imageLink: "/recharts_sunburst.png",
+    imageLink: "/recharts_sunburst.webp",
     languages: ["React.js", "Typescript", "D3.js"],
     tag: ["Dashboards", "Web development"],
     description:
@@ -101,7 +101,7 @@ export const projectData = [
   {
     name: "School board documents AI-driven search",
     link: "/school-board-docs",
-    imageLink: "/school-board/map.png",
+    imageLink: "/school-board/map.webp",
     languages: ["Next.js", "AWS", "PostgreSQL", "Vercel AI SDK"],
     tag: ["Web development"],
     description:
@@ -111,7 +111,7 @@ export const projectData = [
   {
     name: "AP Wildfire Tracker",
     link: "https://interactives.ap.org/ap-wildfire-tracker/?sort=acres",
-    imageLink: "/fire-tracker-screenshot.png",
+    imageLink: "/fire-tracker-screenshot.webp",
     languages: ["React.js", "Typescript", "Mapbox GL JS"],
     tag: ["Geospatial", "Dashboards", "Data journalism"],
     description:
@@ -123,7 +123,7 @@ export const projectData = [
     name: "AI Data Assistant",
     link: "https://ai-data-assistant.vercel.app/login",
     codeLink: "https://github.com/csdiehl/ai-data-assistant",
-    imageLink: "/bitcoin_line.png",
+    imageLink: "/bitcoin_line.webp",
     languages: ["React.js", "Typescript", "D3.js"],
     tag: ["Dashboards", "Web development"],
     description:
@@ -133,7 +133,7 @@ export const projectData = [
   {
     name: "Carbon footprint explorer",
     link: "https://apnews.com/projects/carbon-footprint-calculator/",
-    imageLink: "/income_calculator.png",
+    imageLink: "/income_calculator.webp",
     languages: ["React.js", "Typescript", "D3.js"],
     tag: ["Dashboards", "Data journalism"],
     description:
@@ -143,7 +143,7 @@ export const projectData = [
   {
     name: "Olympics Records Progression",
     link: "https://apnews.com/projects/olympic-athletes-progress/",
-    imageLink: "/olympic_records.png",
+    imageLink: "/olympic_records.webp",
     languages: ["React.js", "Typescript", "D3.js"],
     tag: ["Data journalism", "Web development"],
     description:
@@ -154,7 +154,7 @@ export const projectData = [
     name: "AP Extreme Heat Tracker",
     link: "https://interactives.ap.org/heat-tracker/",
     codeLink: "https://github.com/csdiehl/ap-heat-tracker",
-    imageLink: "/heat_tracker.png",
+    imageLink: "/heat_tracker.webp",
     languages: ["React.js", "D3.js", "Typescript", "Mapbox GL JS", "Python"],
     tag: ["Geospatial", "Dashboards", "Data journalism"],
     description:
@@ -163,18 +163,18 @@ export const projectData = [
   {
     name: "Climate and Disease",
     link: "https://projects.apnews.com/features/2023/climate-change-disease-animals-warming-earth/index.html",
-    imageLink: "/grist-disease.png",
+    imageLink: "/grist-disease.webp",
     languages: ["React.js", "D3.js", "Python"],
     tag: ["Data Journalism", "Geospatial"],
     description:
       "A parallax scrolling experience. Data visualizations highlight the links between climate change and disease, including the migration of animal species and recent history of climate disasters.",
     cloudinaryId: "grist-disease_ygobl1",
-    badge: "./iib_badge.png",
+    badge: "./iib_badge.webp",
   },
   {
     name: "Paris Olympics Interactive Graphics",
     link: "https://www.ap.org/content/topics/sports/interactive-graphics/",
-    imageLink: "/hometown_heroes.png",
+    imageLink: "/hometown_heroes.webp",
     languages: ["React.js"],
     tag: ["Data Journalism", "Geospatial"],
     description:
@@ -184,7 +184,7 @@ export const projectData = [
   {
     name: "An Underwater Paradise Under Threat",
     link: "https://apnews.com/projects/mexico-tren-maya-climate-yucatan/",
-    imageLink: "/cenotes.png",
+    imageLink: "/cenotes.webp",
     languages: ["React.js", "D3.js"],
     tag: ["Web development"],
     description:
@@ -193,7 +193,7 @@ export const projectData = [
   {
     name: "WMATA Dashboard",
     link: "https://github.com/csdiehl/smart-card-data-dashboard#readme",
-    imageLink: "/WMATA_web_app.png",
+    imageLink: "/WMATA_web_app.webp",
     languages: ["Javascript", "Python"],
     tag: ["Dashboards", "Geospatial"],
     description:
@@ -202,7 +202,7 @@ export const projectData = [
   {
     name: "Spotify Reccomendation Engine",
     link: "https://csdiehl.github.io/spotify-reccomendation-engine/",
-    imageLink: "/spotify_app.png",
+    imageLink: "/spotify_app.webp",
     languages: ["React.js"],
     tag: ["Dashboards"],
     description:
@@ -211,7 +211,7 @@ export const projectData = [
   {
     name: "Protests Visualization",
     link: "https://observablehq.com/@csdiehl/protests-analysis",
-    imageLink: "/protests.png",
+    imageLink: "/protests.webp",
     languages: ["React.js"],
     tag: ["Data journalism"],
     description:
@@ -220,7 +220,7 @@ export const projectData = [
   {
     name: "Transit System Dashboard",
     link: "https://cse512-21s.github.io/FP-Transit_System/",
-    imageLink: "/orcaviz.png",
+    imageLink: "/orcaviz.webp",
     languages: ["React.js"],
     tag: ["Dashboards", "Geospatial"],
     description:
@@ -229,7 +229,7 @@ export const projectData = [
   {
     name: "Outdoor Access Score",
     link: "https://rpubs.com/csdiehl/outdoor-access",
-    imageLink: "/outdoor_access.png",
+    imageLink: "/outdoor_access.webp",
     description:
       "A custom gravity model I built for a graduate school course that shows census tracts in King County by their ability to access outdoor activities.",
     languages: ["Python", "R"],
