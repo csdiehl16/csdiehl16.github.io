@@ -87,17 +87,18 @@ export const projectData = [
       "An interactive map that tells the story of the Lahania wildire using smooth animations.",
     cloudinaryId: "lahaina_fqon1l",
   },
+
   {
-    name: "Recharts Sunburst Chart",
-    link: "https://master--63da8268a0da9970db6992aa.chromatic.com/?path=/story/api-chart-sunburstchart--sunburst",
-    codeLink: "https://github.com/recharts/recharts/pull/4037",
-    imageLink: "/recharts_sunburst.webp",
+    name: "Carbon footprint explorer",
+    link: "https://apnews.com/projects/carbon-footprint-calculator/",
+    imageLink: "/income_calculator.webp",
     languages: ["React.js", "Typescript", "D3.js"],
-    tag: ["Dashboards", "Web development"],
+    tag: ["Dashboards", "Data journalism"],
     description:
-      "A new chart type for Recharts, an open-source React data visualization library with more than 173k users. The sunburst is a visually appealing variant of the treemap.",
+      "An interactive visualization tool for exploring how your income and consumer spending decisions affect your carbon footprint.",
     featured: true,
   },
+
   {
     name: "School board documents AI-driven search",
     link: "/school-board-docs",
@@ -130,15 +131,27 @@ export const projectData = [
       "Explore your data using conversational AI. A full-stack Next.js web app, using Vercel's AI SDK and a firebase backend, that allows users to chat with a database, save and load data snapshots, and use generative UI to build charts.",
     featured: true,
   },
+
   {
-    name: "Carbon footprint explorer",
-    link: "https://apnews.com/projects/carbon-footprint-calculator/",
-    imageLink: "/income_calculator.webp",
+    name: "Recharts Sunburst Chart",
+    link: "https://master--63da8268a0da9970db6992aa.chromatic.com/?path=/story/api-chart-sunburstchart--sunburst",
+    codeLink: "https://github.com/recharts/recharts/pull/4037",
+    imageLink: "/recharts_sunburst.webp",
     languages: ["React.js", "Typescript", "D3.js"],
-    tag: ["Dashboards", "Data journalism"],
+    tag: ["Dashboards", "Web development"],
     description:
-      "An interactive visualization tool for exploring how your income and consumer spending decisions affect your carbon footprint.",
+      "A new chart type for Recharts, an open-source React data visualization library with more than 173k users. The sunburst is a visually appealing variant of the treemap.",
     featured: true,
+  },
+
+  {
+    name: "Draggable Migration Globe",
+    link: "https://apnews.com/projects/china-migration-thailand-mexico-japan-map/",
+    imageLink: "/migration_globe.webp",
+    description:
+      "A 3D draggable globe showing recent changes in Chinese migration across the world.",
+    languages: ["D3.js", "React"],
+    tag: ["Data journalism"],
   },
   {
     name: "Olympics Records Progression",
