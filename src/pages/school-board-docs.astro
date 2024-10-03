@@ -42,13 +42,14 @@ However, it incurred large costs for storing vectors and embedding documents via
 I explored an alternative - using AI to generate keywords from an open-ended question and pass those into a Postgres full-text search.
 </p>
 
+<img class="small" src="/school-board/search_page.png"/>
+
 <p>
 For this project, scale was a key consideration. We were scraping hundreds of thousands of documents, with plenty added each month. 
 On the other hand, the app would have few monthly users as it was intended for journalists and small newsrooms, not the public at large. 
 This meant that we needed to optimize for document storage, and could handle the tradeoff of more OpenAI calls for keyword-search queries in exchange for not having to use the embeddings API. 
 </p>
 
-<img src="/school-board/ai_summary_full.png"/>
 
 
 
