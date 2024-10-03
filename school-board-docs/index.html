@@ -23,11 +23,11 @@ A signficant consideration that I explored early on was the decision to use keyw
 Vector search offered the potential to type in questions and return context-sensitive results. 
 However, it incurred large costs for storing vectors and embedding documents via the OpenAI API. 
 I explored an alternative - using AI to generate keywords from an open-ended question and pass those into a Postgres full-text search.
-</p> <p data-astro-cid-u23gns6n>
+</p> <img class="small" src="/school-board/search_page.png" data-astro-cid-u23gns6n> <p data-astro-cid-u23gns6n>
 For this project, scale was a key consideration. We were scraping hundreds of thousands of documents, with plenty added each month. 
 On the other hand, the app would have few monthly users as it was intended for journalists and small newsrooms, not the public at large. 
 This meant that we needed to optimize for document storage, and could handle the tradeoff of more OpenAI calls for keyword-search queries in exchange for not having to use the embeddings API.
-</p> <img src="/school-board/ai_summary_full.png" data-astro-cid-u23gns6n> <h3 data-astro-cid-u23gns6n>Challenge: Summarizing large documents</h3> <div class="rule" data-astro-cid-u23gns6n></div> <p data-astro-cid-u23gns6n>Many documents contained tens of pages of meeting information, which quickly exceeded the LLM's context window. 
+</p> <h3 data-astro-cid-u23gns6n>Challenge: Summarizing large documents</h3> <div class="rule" data-astro-cid-u23gns6n></div> <p data-astro-cid-u23gns6n>Many documents contained tens of pages of meeting information, which quickly exceeded the LLM's context window. 
 To solve this problem, I implemented the map-reduce pattern. I first mapped large documents into smaller chunks, then made an API call to summarize each chunk.
 Then a final prompt instructed the AI to summarize all of the summaries. </p> <img class="small" src="/school-board/ai_summary.png" data-astro-cid-u23gns6n> <h3 data-astro-cid-u23gns6n>Challenge: transferring large amounts of text data</h3> <div class="rule" data-astro-cid-u23gns6n></div> <p data-astro-cid-u23gns6n>Transferring the entire meeting text of a document over the network proved much too slow. 
 To solve this, I paginated results, while making a separate query to return the count of results and other aggregated data for a map visualization. 
