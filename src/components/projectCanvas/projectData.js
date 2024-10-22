@@ -1,14 +1,5 @@
 export const projectData = [
   {
-    name: "Transit Smart Card Clustering",
-    link: "https://rpubs.com/csdiehl/transit-clusters",
-    imageLink: "/clusters.webp",
-    description:
-      "A machine learning model that clusters transit stations in King Count based on ridership demographics.",
-    languages: ["Python", "R"],
-    tag: ["Geospatial"],
-  },
-  {
     name: "Mobility in a Pandemic",
     link: "",
     imageLink: "/covid_mobility.webp",
@@ -89,6 +80,27 @@ export const projectData = [
   },
 
   {
+    name: "AP Extreme Heat Tracker",
+    link: "https://interactives.ap.org/heat-tracker/",
+    codeLink: "https://github.com/csdiehl/ap-heat-tracker",
+    imageLink: "/heat_tracker.webp",
+    languages: ["React.js", "D3.js", "Typescript", "Mapbox GL JS", "Python"],
+    tag: ["Geospatial", "Dashboards", "Data journalism"],
+    description:
+      "A real-time heat tracking app that pulls data every day from satellites and 1,000+ weather stations across the globe, analyzes it for deviations from normal temperatures, and displays it in an interactive, searchable map and custom line chart.",
+  },
+
+  {
+    name: "What would your Olympic sport be?",
+    link: "https://apnews.com/what-would-your-best-olympic-sport-be-00000190a37adebeaff0fbffeb6e0000",
+    imageLink: "/olympic_sport_finder.webp",
+    languages: ["React.js", "D3.js"],
+    tag: ["Data journalism"],
+    description:
+      "Places you in your best olympic sport using your height, weight and more than 100 years of Olympic data.",
+  },
+
+  {
     name: "Carbon footprint explorer",
     link: "https://apnews.com/projects/carbon-footprint-calculator/",
     imageLink: "/income_calculator.webp",
@@ -118,17 +130,6 @@ export const projectData = [
     description:
       "An interactive dashboard that displays real-time fire incident information and surrounding demographics, updated every 15 minutes.",
     cloudinaryId: "fire_tracker_ul6unw",
-    featured: true,
-  },
-  {
-    name: "AI Data Assistant",
-    link: "https://ai-data-assistant.vercel.app/login",
-    codeLink: "https://github.com/csdiehl/ai-data-assistant",
-    imageLink: "/bitcoin_line.webp",
-    languages: ["React.js", "Typescript", "D3.js"],
-    tag: ["Dashboards", "Web development"],
-    description:
-      "Explore your data using conversational AI. A full-stack Next.js web app, using Vercel's AI SDK and a firebase backend, that allows users to chat with a database, save and load data snapshots, and use generative UI to build charts.",
     featured: true,
   },
 
@@ -164,15 +165,17 @@ export const projectData = [
   },
 
   {
-    name: "AP Extreme Heat Tracker",
-    link: "https://interactives.ap.org/heat-tracker/",
-    codeLink: "https://github.com/csdiehl/ap-heat-tracker",
-    imageLink: "/heat_tracker.webp",
-    languages: ["React.js", "D3.js", "Typescript", "Mapbox GL JS", "Python"],
-    tag: ["Geospatial", "Dashboards", "Data journalism"],
+    name: "AI Data Assistant",
+    link: "https://ai-data-assistant.vercel.app/login",
+    codeLink: "https://github.com/csdiehl/ai-data-assistant",
+    imageLink: "/bitcoin_line.webp",
+    languages: ["React.js", "Typescript", "D3.js"],
+    tag: ["Dashboards", "Web development"],
     description:
-      "A real-time heat tracking app that pulls data every day from satellites and 1,000+ weather stations across the globe, analyzes it for deviations from normal temperatures, and displays it in an interactive, searchable map and custom line chart.",
+      "Explore your data using conversational AI. A full-stack Next.js web app, using Vercel's AI SDK and a firebase backend, that allows users to chat with a database, save and load data snapshots, and use generative UI to build charts.",
+    featured: true,
   },
+
   {
     name: "Climate and Disease",
     link: "https://projects.apnews.com/features/2023/climate-change-disease-animals-warming-earth/index.html",
@@ -245,6 +248,16 @@ export const projectData = [
     imageLink: "/outdoor_access.webp",
     description:
       "A custom gravity model I built for a graduate school course that shows census tracts in King County by their ability to access outdoor activities.",
+    languages: ["Python", "R"],
+    tag: ["Geospatial"],
+  },
+
+  {
+    name: "Transit Smart Card Clustering",
+    link: "https://rpubs.com/csdiehl/transit-clusters",
+    imageLink: "/clusters.webp",
+    description:
+      "A machine learning model that clusters transit stations in King Count based on ridership demographics.",
     languages: ["Python", "R"],
     tag: ["Geospatial"],
   },
