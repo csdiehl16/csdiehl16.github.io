@@ -45,14 +45,14 @@ const textBlock = "m-auto max-w-screen-md my-8 px-4";
     </div>
    </div>
    
-   {textBlocks.map((block, index) => (
+   {textBlocks.map((block: any, index: number) => (
     <>
-      <div class={textBlock} key={index}>
+      <div class={textBlock}>
           <h3>{block.title}</h3>
           <div class="mb-4 rule"/>
           <p class="text-md">{block.content}</p>
       </div>
-        <img class={inlinePhoto} src={inlineImages[index]} key={index}/>
+        <img class={inlinePhoto} src={inlineImages[index]}/>
         </>
    ))}
 </BaseLayout>
