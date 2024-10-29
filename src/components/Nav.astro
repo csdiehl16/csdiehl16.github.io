@@ -6,7 +6,7 @@ import siteConfig from '../data/site-config';
 const navLinks = siteConfig.headerNavLinks || [];
 ---
 
-<nav class="py-4 sticky top-0 bg-[#F5F5F5] flex items-start">
+<nav class="py-4 sticky top-0 bg-[#F2F1EB] flex items-start z-10">
     {
         navLinks.length > 0 && (
             <div class="w-full max-w-3xl mx-6 relative">
@@ -20,9 +20,9 @@ const navLinks = siteConfig.headerNavLinks || [];
                 </button>
                 <ul id="menu-items" class="menu flex gap-6">
                     {navLinks.map((link) => (
-                        <li class="py-1 text-xl">
+                        <li class="py-1">
                             <NavLink
-                                class="text-sm text-main hover:underline hover:underline-offset-2 hover:decoration-1 md:text-base"
+                                class="text-xl hover:underline hover:underline-offset-2 hover:decoration-1 md:text-2xl md:font-semibold"
                                 href={link.href}
                             >
                                 {link.text}

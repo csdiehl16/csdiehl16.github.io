@@ -6,9 +6,13 @@ import { projectData } from "./projectData"
     {projectData.map((p, index) => (
         <div class="card" key={index}>
             <img alt={p.description} src={p.imageLink} class="image" />
+            <a href={p.link} target="_blank" rel="noreferrer">
+
+           
             <div class="overlay">
                 <p>{p.name}</p>
             </div>
+             </a>
         </div>
     ))}
 </div>
