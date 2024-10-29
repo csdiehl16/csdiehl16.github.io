@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+export interface ProjectLayoutProps {
+  mainImage: string;
+  mainTitle: string;
+  mainDescription: string;
+  themeColor: string;
+  secondColor: string;
+  technologies: string;
+  projectLink: string;
+  textBlocks: Array<{ title: string; content: string }>;
+  inlineImages: string[];
+}
+
+const {
+  mainImage,
+  mainTitle,
+  mainDescription,
+  themeColor,
+  secondColor,
+  technologies,
+  projectLink,
+  textBlocks,
+  inlineImages,
+} = Astro.props;
+
+const inlinePhoto = "m-auto max-w-screen-md max-md:max-w-full rounded-md px-4";
+const textBlock = "m-auto max-w-screen-md my-8 px-4";
+---
+
+<BaseLayout fullWidth={true} description={mainDescription} image={mainImage}>
+   <div style={`background: linear-gradient(to right, ${themeColor} 30%, ${secondColor});`}  class="min-h-full py-8 grid md:grid-cols-[350px_minmax(0,_1fr)] items-center box-border">
+    <div class="flex flex-col items-center gap-4 p-8">
+        <h1 class="text-3xl text-white font-bold">{mainTitle}</h1>
+        <div class="w-full h-0.5 bg-white"></div>
+        <p class="text-md text-white">{mainDescription}</p>
+
+        <p class="text-sm text-white"><strong>Technologies</strong> | {technologies}</p>
+
+        <a href={projectLink}>View Project</a>
+    </div>
+    <div class="p-16" class="w-full h-full flex items-center justify-center">
+         <img class="rounded-md" src={mainImage}/>
+    </div>
+   </div>
+   
+   {textBlocks.map((block, index) => (
+    <>
+      <div class={textBlock} key={index}>
+          <h3>{block.title}</h3>
+          <div class="mb-4 rule"/>
+          <p class="text-md">{block.content}</p>
+      </div>
+        <img class={inlinePhoto} src={inlineImages[index]} key={index}/>
+        </>
+   ))}
+</BaseLayout>
+
+<style define:vars={{ themeColor}}>
+    .rule {
+        background-color: var(--themeColor);
+        height: 2px;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+        background-color: rgba(255, 255, 255, .3);
+        border-radius: 8px;
+        border: 1px solid white;
+        max-width: max-content;
+        color: #FFF;
+        font-weight: bold;
+    }
+
+    a:hover {
+        filter: brightness(80%);
+    }
+</style>

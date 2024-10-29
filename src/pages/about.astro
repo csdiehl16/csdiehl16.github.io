@@ -16,20 +16,6 @@ const projects = (await getCollection('projects')).sort(sortItemsByDateDesc);
 <BaseLayout description={siteConfig.description} image={siteConfig.image}>
     <Hero />
 
-      {
-        featuredPosts?.length > 0 && (
-            <div class="mb-16 sm:mb-24">
-                <h2 class="mb-12 text-5xl sm:mb-16 sm:text-3xl">Writing</h2>
-                {featuredPosts.map((post) => (
-                    <PostPreview post={post} class="mb-10 sm:mb-12" headingLevel="h3" />
-                ))}
-                <div class="mt-12 sm:mt-16">
-                    <Button href="/blog">View All Posts</Button>
-                </div>
-            </div>
-        )
-    }
-
             <div>
                  <h2 class="mb-12 text-5xl sm:mb-16 sm:text-3xl">Talks</h2>
                  <ul>
