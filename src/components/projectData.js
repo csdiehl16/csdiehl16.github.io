@@ -24,17 +24,6 @@ export const projectData = [
   },
 
   {
-    name: "Draggable Migration Globe",
-    client: "AP News",
-    link: "https://apnews.com/projects/china-migration-thailand-mexico-japan-map/",
-    imageLink: "/migration_globe.webp",
-    description:
-      "A 3D draggable globe showing recent changes in Chinese migration across the world.",
-    languages: ["D3.js", "React"],
-    tag: ["Data journalism"],
-  },
-
-  {
     name: "Carbon footprint explorer",
     client: "AP News",
     link: "https://apnews.com/projects/carbon-footprint-calculator/",
@@ -44,6 +33,17 @@ export const projectData = [
     description:
       "An interactive visualization tool for exploring how your income and consumer spending decisions affect your carbon footprint.",
     featured: true,
+  },
+
+  {
+    name: "Draggable Migration Globe",
+    client: "AP News",
+    link: "https://apnews.com/projects/china-migration-thailand-mexico-japan-map/",
+    imageLink: "/migration_globe.webp",
+    description:
+      "A 3D draggable globe showing recent changes in Chinese migration across the world.",
+    languages: ["D3.js", "React"],
+    tag: ["Data journalism"],
   },
 
   {
@@ -57,17 +57,6 @@ export const projectData = [
       "An interactive dashboard that displays real-time fire incident information and surrounding demographics, updated every 15 minutes.",
     cloudinaryId: "fire_tracker_ul6unw",
     featured: true,
-  },
-
-  {
-    name: "Paris Olympics Interactive Graphics",
-    client: "AP News, Time, FOX",
-    link: "https://www.ap.org/content/topics/sports/interactive-graphics/",
-    imageLink: "/hometown_heroes.webp",
-    languages: ["React.js"],
-    tag: ["Data Journalism", "Geospatial"],
-    description:
-      "Olympic graphics licensed to nearly 100 publications, including Time and FOX, to visualize more than 650 athletes, track medal counts in real time, and explore olympic venues. I produced the hometown heroes and venues maps and oversaw production of the other graphics.",
   },
 
   {
@@ -92,6 +81,17 @@ export const projectData = [
     description:
       "Explore your data using conversational AI. A full-stack Next.js web app, using Vercel's AI SDK and a firebase backend, that allows users to chat with a database, save and load data snapshots, and use generative UI to build charts.",
     featured: true,
+  },
+
+  {
+    name: "Paris Olympics Interactive Graphics",
+    client: "AP News, Time, FOX",
+    link: "https://www.ap.org/content/topics/sports/interactive-graphics/",
+    imageLink: "/hometown_heroes.webp",
+    languages: ["React.js"],
+    tag: ["Data Journalism", "Geospatial"],
+    description:
+      "Olympic graphics licensed to nearly 100 publications, including Time and FOX, to visualize more than 650 athletes, track medal counts in real time, and explore olympic venues. I produced the hometown heroes and venues maps and oversaw production of the other graphics.",
   },
 
   {
