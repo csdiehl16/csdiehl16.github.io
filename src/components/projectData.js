@@ -2,7 +2,9 @@ export const projectData = [
   {
     name: "Recharts Sunburst Chart",
     client: "Recharts Group",
-    link: "https://master--63da8268a0da9970db6992aa.chromatic.com/?path=/story/api-chart-sunburstchart--sunburst",
+    sourceLink:
+      "https://master--63da8268a0da9970db6992aa.chromatic.com/?path=/story/api-chart-sunburstchart--sunburst",
+    link: "/recharts",
     codeLink: "https://github.com/recharts/recharts/pull/4037",
     imageLink: "/recharts_sunburst.webp",
     languages: ["React.js", "Typescript", "D3.js"],
@@ -14,6 +16,7 @@ export const projectData = [
   {
     name: "School board documents AI-driven search",
     client: "AP News",
+    sourceLink: "https://d29ogm19i6xujm.cloudfront.net/",
     link: "/school-board-docs",
     imageLink: "/school-board/map.webp",
     languages: ["Next.js", "AWS", "PostgreSQL", "Vercel AI SDK"],
@@ -26,7 +29,8 @@ export const projectData = [
   {
     name: "Carbon footprint explorer",
     client: "AP News",
-    link: "https://apnews.com/projects/carbon-footprint-calculator/",
+    sourceLink: "https://apnews.com/projects/carbon-footprint-calculator/",
+    link: "/carbon-calculator",
     imageLink: "/income_calculator.webp",
     languages: ["React.js", "Typescript", "D3.js"],
     tag: ["Dashboards", "Data journalism"],

@@ -1,0 +1,31 @@
+---
+import ProjectLayout from "../layouts/ProjectLayout.astro"
+import { projectData } from "../components/projectData";
+
+const project = projectData.find(x => x.name === "Carbon footprint explorer")
+
+const textBlocks = [
+  {
+    title: "Design",
+    content: `I developed this project for the Associated Press climate team. 
+    The goal was to communicate carbon inequality and how personal spending decisions influence a person's carbon footprint. I found a researcher to collaborate with, prototyped visualizations of their data, and designed the page layout and data views in Figma.`,
+  },
+  {title: "Development", content: "I developed this page using Next.js as a static site generator. I thoroughly tested possible scenarios using Playwright to automate filling in the form with various demographic info."}
+]
+
+const inlineImages = [
+""
+];
+---
+
+  <ProjectLayout 
+  mainImage={project?.imageLink}
+  mainTitle={project?.name}
+  mainDescription={project?.description}
+  themeColor="#D28109"
+  secondColor="rgba(210, 129, 9, .3)"
+  technologies={project?.languages.join(", ")}
+  projectLink={project?.sourceLink}
+  textBlocks={textBlocks}
+  inlineImages={inlineImages}
+/>

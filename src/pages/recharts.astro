@@ -1,0 +1,29 @@
+---
+import ProjectLayout from "../layouts/ProjectLayout.astro"
+import { projectData } from "../components/projectData";
+
+const project = projectData.find(x => x.name === "Recharts Sunburst Chart")
+
+const textBlocks = [
+  {
+    title: "Development",
+    content: `I developed this in response to an open issue in the open-source Recharts library. I wrote tests and Storybook documentation for the new component.`,
+  },
+]
+
+const inlineImages = [
+""
+];
+---
+
+  <ProjectLayout 
+  mainImage={project?.imageLink}
+  mainTitle={project?.name}
+  mainDescription={project?.description}
+  themeColor="#4D9B8F"
+  secondColor="rgba(77, 155, 143, .3)"
+  technologies={project?.languages.join(", ")}
+  projectLink={project?.sourceLink}
+  textBlocks={textBlocks}
+  inlineImages={inlineImages}
+/>
