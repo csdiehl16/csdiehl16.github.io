@@ -1,7 +1,8 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-import ProjectCanvas from '../components/projectCanvas'
 import Profile from '../components/Profile.astro';
+import ProjectGrid from '../components/ProjectGrid.astro';
+import Nav from '../components/Nav.astro';
 
 ---
 
@@ -12,8 +13,7 @@ import Profile from '../components/Profile.astro';
     image={{ src: '/grist-disease.jpg', alt: 'The preview of the site' }}
     showHeader={false}
 >
-<div style="position:relative;">
+<Nav/>
     <Profile/>
-    <ProjectCanvas client:only="react" />
-</div>
+    <ProjectGrid />
 </MainLayout>

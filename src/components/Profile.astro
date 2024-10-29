@@ -2,9 +2,8 @@
 ---
 
 
-<div class="container">
-    <div class="description">
-    <h1 class="header">Hi, I'm <span class="highlight">Caleb Diehl</span></h1>
+<div class="profile-container">
+    <h1 class="header">Hi, I'm <br/><span class="highlight">Caleb Diehl</span></h1>
     <h2 class="subhead">Frontend Developer + Dataviz Expert</h2>
 
        <div class="flex">
@@ -32,16 +31,6 @@
         />
         </a>
 
-          <div class="menu">
-          <button id="expand-button">
-      <img height={24} width={24} src="/plus-solid.svg"></img>
-          <p>About me</p>
-    </button>
-
-    <a href="/blog"><p>Blog</p></a>
-
-    </div>
-
     </div>
   
 
@@ -51,183 +40,42 @@
         <strong>data visualization</strong>, <strong>interaction design</strong> and{" "}
         <strong>geospatial analysis.</strong>{" "}Currently, I am the interactive news editor at The Associated Press, where I oversee data visualization, front-end development and interactive mapping for journalism viewed by millions across the globe.
     </p>
-    </div>
   
 </div>
 
-<script>
-  let expanded = false
-  const container = document.querySelector(".container") as HTMLElement
-  const label = document.querySelector(".label") as HTMLElement
-  const btn = document.querySelector("#expand-button") as HTMLElement
-
-  btn?.addEventListener("click", () => {
-    expanded = !expanded
-
-    if (expanded) {
-      container.style.maxWidth = "100%"
-      container.style.width = "100%"
-      container.style.height = "100vh"
-      container.style.maxHeight = "100vh"
-
-      label.style.display = "block"
-      label.style.opacity = "1";
-
-      // rotate button
-      (document.querySelector("#expand-button img") as HTMLElement).style.transform = "rotate(45deg)"
-
-    } else {
-      container.style.maxWidth = "800px"
-      container.style.maxHeight = "250px"
-
-      // reset
-      container.style.width = "max-content"
-      container.style.height = "max-content"
-
-      label.style.opacity = "0";
-      label.style.display = "none";
-
-      (document.querySelector("#expand-button img") as HTMLElement).style.transform = "rotate(0)"
-
-    }
-
-
-
-  })
-
-
-</script>
-
-
 <style>
 
-  #expand-button {
-    display: flex;
-    gap: 8px;
-  }
-
-  #expand-button:hover, a:hover {
-    color: var(--color-accent);
-  }
-
-
-
-  .menu {
-    display: flex;
-    justify-content: space-between;
-    gap: 16px;
-
-  }
-
-  #expand-button img {
-    transition: transform 300ms ease-out;
-  }
-
-  h1,h2,p {
-    margin: 0;
-
-  }
-
-  p {
-      font-weight: 600;
-    font-size: 1rem;
-  }
-
-  .container {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  z-index: 3;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 8px;
-  margin: 0 auto;
-  background: rgba(255, 255, 255, .8);
-  border-radius: 8px;
-  backdrop-filter: blur(4px);
-  padding: 8px;
-  width: max-content;
-  height: max-content;
-  max-width: 600px;
-  max-height: 250px;
-  transform: translateX(-50%);
-  transition: max-height 300ms ease-in-out, max-width 300ms ease-in-out;
-  box-shadow: 0 0 5px lightgrey;
-}
-
-.label {
-    margin: 0;
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.5rem;
-    display: none;
-    opacity: 0;
-}
-
-.flex {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-}
-
-.flex-vert {
-    flex-direction: column;
-}
-
-.header {
-  font-size: 4rem;
-  line-height: 4.25rem;
-  font-weight: 700;
-  text-align: left;
-  color: darkgrey;
-}
-
-.highlight {
-color: var(--color-accent);
-}
-
-.subhead {
-  font-size: 1.5rem;
-  line-height: 1.75rem;
-  color: #555;
-  text-align: left;
-}
-
-.description {
-  box-sizing: border-box;
-  grid-area: text;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 16px;
-  max-width: 570px;
-}
-
-.image-container {
-  grid-area: photo;
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-}
-
-@media (max-width: 600px) {
-  .container {
-    align-items: center;
-    max-width: 100%;
-    border-radius: 0;
-    margin: 0;
-  }
-
   .header {
+    font-size: 8rem;
+    line-height: 8.25rem;
+    color: #FFF;
+  }
+
+  .subhead {
     font-size: 2rem;
     line-height: 2.25rem;
+    color: #FFF;
+    margin: 0;
   }
 
-  #expand-button {
-    display: none;
+  .highlight {
+        font-weight: 800;
   }
-}
+
+  .flex {
+    display: flex;
+    gap: 8px;
+    padding: 8px 0;
+  }
+
+  .profile-container {
+    box-sizing: border-box;
+    padding: 16px;
+    background: linear-gradient(135deg, rgba(255, 0, 150, 0.6), rgba(0, 204, 255, 0.6));
+    height: 100vh;
+    width: calc(100% - 32px);
+    border-radius: 8px;
+    margin: 0 16px;
+    color: #3f3f3f;
+  }
 </style>
-
