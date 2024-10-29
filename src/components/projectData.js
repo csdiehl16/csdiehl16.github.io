@@ -1,6 +1,7 @@
 export const projectData = [
   {
     name: "Recharts Sunburst Chart",
+    client: "Recharts Group",
     link: "https://master--63da8268a0da9970db6992aa.chromatic.com/?path=/story/api-chart-sunburstchart--sunburst",
     codeLink: "https://github.com/recharts/recharts/pull/4037",
     imageLink: "/recharts_sunburst.webp",
@@ -12,6 +13,7 @@ export const projectData = [
   },
   {
     name: "School board documents AI-driven search",
+    client: "AP News",
     link: "/school-board-docs",
     imageLink: "/school-board/map.webp",
     languages: ["Next.js", "AWS", "PostgreSQL", "Vercel AI SDK"],
@@ -23,6 +25,7 @@ export const projectData = [
 
   {
     name: "Draggable Migration Globe",
+    client: "AP News",
     link: "https://apnews.com/projects/china-migration-thailand-mexico-japan-map/",
     imageLink: "/migration_globe.webp",
     description:
@@ -33,6 +36,7 @@ export const projectData = [
 
   {
     name: "Carbon footprint explorer",
+    client: "AP News",
     link: "https://apnews.com/projects/carbon-footprint-calculator/",
     imageLink: "/income_calculator.webp",
     languages: ["React.js", "Typescript", "D3.js"],
@@ -44,6 +48,7 @@ export const projectData = [
 
   {
     name: "AP Wildfire Tracker",
+    client: "AP News",
     link: "https://interactives.ap.org/ap-wildfire-tracker/?sort=acres",
     imageLink: "/fire-tracker-screenshot.webp",
     languages: ["React.js", "Typescript", "Mapbox GL JS"],
@@ -56,6 +61,7 @@ export const projectData = [
 
   {
     name: "Paris Olympics Interactive Graphics",
+    client: "AP News, Time, FOX",
     link: "https://www.ap.org/content/topics/sports/interactive-graphics/",
     imageLink: "/hometown_heroes.webp",
     languages: ["React.js"],
@@ -66,6 +72,7 @@ export const projectData = [
 
   {
     name: "Olympics Records Progression",
+    client: "AP News",
     link: "https://apnews.com/projects/olympic-athletes-progress/",
     imageLink: "/olympic_records.webp",
     languages: ["React.js", "Typescript", "D3.js"],
@@ -76,6 +83,7 @@ export const projectData = [
 
   {
     name: "AI Data Assistant",
+    client: "Personal Project",
     link: "https://ai-data-assistant.vercel.app/login",
     codeLink: "https://github.com/csdiehl/ai-data-assistant",
     imageLink: "/bitcoin_line.webp",
@@ -88,6 +96,7 @@ export const projectData = [
 
   {
     name: "Climate and Disease",
+    client: "AP News, Grist",
     link: "https://projects.apnews.com/features/2023/climate-change-disease-animals-warming-earth/index.html",
     imageLink: "/grist-disease.webp",
     languages: ["React.js", "D3.js", "Python"],
@@ -100,6 +109,7 @@ export const projectData = [
 
   {
     name: "Ski resorts are embracing a new role: climate activist",
+    client: "AP News",
     link: "https://apnews.com/article/climate-change-activism-ski-industry-028d83e19543db5d7633ea83932bdde3",
     imageLink: "/skiing.webp",
     languages: ["React.js", "D3.js"],
@@ -111,6 +121,7 @@ export const projectData = [
 
   {
     name: "Death and Regrowth on the Great Barrier Reef",
+    client: "AP News",
     link: "https://projects.apnews.com/features/2022/coral-reef-immersive/index.html",
     imageLink: "/GBR.webp",
     languages: ["React.js", "Python"],
@@ -122,6 +133,7 @@ export const projectData = [
 
   {
     name: "CEO Pay Visualization",
+    client: "AP News",
     link: "https://apnews.com/article/wildfires-forest-thinning-community-risk-biden-9d77309cb9e7520069b3c575d850aadc",
     imageLink: "/ceo.webp",
     languages: ["React.js", "D3.js"],
@@ -133,6 +145,7 @@ export const projectData = [
 
   {
     name: "Maui Fires Timeline",
+    client: "AP News",
     link: "https://interactives.ap.org/hawaii-timeline/",
     imageLink: "/lahaina.webp",
     languages: ["React.js", "Typescript", "Mapbox GL JS"],
@@ -144,6 +157,7 @@ export const projectData = [
 
   {
     name: "AP Extreme Heat Tracker",
+    client: "AP News",
     link: "https://interactives.ap.org/heat-tracker/",
     codeLink: "https://github.com/csdiehl/ap-heat-tracker",
     imageLink: "/heat_tracker.webp",
@@ -155,6 +169,7 @@ export const projectData = [
 
   {
     name: "Wildfire Risk Maps",
+    client: "AP News",
     link: "https://apnews.com/article/wildfires-forest-thinning-community-risk-biden-9d77309cb9e7520069b3c575d850aadc",
     imageLink: "/wildfire.webp",
     languages: ["React.js", "D3.js"],
@@ -166,6 +181,7 @@ export const projectData = [
 
   {
     name: "Transit Segment Priority Finder",
+    client: "MBTA Transit Agency",
     link: "https://ibi-group.github.io/mbta-transit-priority-finder/",
     imageLink: "/mbta_tool.webp",
     languages: ["React.js", "Python"],
@@ -176,6 +192,7 @@ export const projectData = [
 
   {
     name: "What would your Olympic sport be?",
+    client: "AP News",
     link: "https://apnews.com/what-would-your-best-olympic-sport-be-00000190a37adebeaff0fbffeb6e0000",
     imageLink: "/olympic_sport_finder.webp",
     languages: ["React.js", "D3.js"],
@@ -186,6 +203,7 @@ export const projectData = [
 
   {
     name: "An Underwater Paradise Under Threat",
+    client: "AP News",
     link: "https://apnews.com/projects/mexico-tren-maya-climate-yucatan/",
     imageLink: "/cenotes.webp",
     languages: ["React.js", "D3.js"],
@@ -196,6 +214,7 @@ export const projectData = [
 
   {
     name: "Mobility in a Pandemic",
+    client: "Class Project",
     link: "",
     imageLink: "/covid_mobility.webp",
     description:
@@ -205,6 +224,7 @@ export const projectData = [
   },
   {
     name: "Visualizing Police Use of Force",
+    client: "Class Project",
     link: "",
     imageLink: "/police_force.webp",
     description: "",
@@ -213,6 +233,7 @@ export const projectData = [
   },
   {
     name: "WMATA Dashboard",
+    client: "WMATA Transit Agency",
     link: "https://github.com/csdiehl/smart-card-data-dashboard#readme",
     imageLink: "/WMATA_web_app.webp",
     languages: ["Javascript", "Python"],
@@ -222,6 +243,7 @@ export const projectData = [
   },
   {
     name: "Spotify Reccomendation Engine",
+    client: "Personal Project",
     link: "https://csdiehl.github.io/spotify-reccomendation-engine/",
     imageLink: "/spotify_app.webp",
     languages: ["React.js"],
@@ -231,6 +253,7 @@ export const projectData = [
   },
   {
     name: "Protests Visualization",
+    client: "Personal Project",
     link: "https://observablehq.com/@csdiehl/protests-analysis",
     imageLink: "/protests.webp",
     languages: ["React.js"],
@@ -240,6 +263,7 @@ export const projectData = [
   },
   {
     name: "Transit System Dashboard",
+    client: "WMATA Transit Agency",
     link: "https://cse512-21s.github.io/FP-Transit_System/",
     imageLink: "/orcaviz.webp",
     languages: ["React.js"],
@@ -249,6 +273,7 @@ export const projectData = [
   },
   {
     name: "Outdoor Access Score",
+    client: "Class Project",
     link: "https://rpubs.com/csdiehl/outdoor-access",
     imageLink: "/outdoor_access.webp",
     description:
@@ -259,6 +284,7 @@ export const projectData = [
 
   {
     name: "Transit Smart Card Clustering",
+    client: "Class Project",
     link: "https://rpubs.com/csdiehl/transit-clusters",
     imageLink: "/clusters.webp",
     description:

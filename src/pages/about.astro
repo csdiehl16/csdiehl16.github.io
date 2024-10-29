@@ -19,7 +19,7 @@ const projects = (await getCollection('projects')).sort(sortItemsByDateDesc);
       {
         featuredPosts?.length > 0 && (
             <div class="mb-16 sm:mb-24">
-                <h2 class="mb-12 text-xl font-serif italic sm:mb-16 sm:text-2xl">Writing</h2>
+                <h2 class="mb-12 text-5xl sm:mb-16 sm:text-3xl">Writing</h2>
                 {featuredPosts.map((post) => (
                     <PostPreview post={post} class="mb-10 sm:mb-12" headingLevel="h3" />
                 ))}
@@ -29,19 +29,9 @@ const projects = (await getCollection('projects')).sort(sortItemsByDateDesc);
             </div>
         )
     }
-   
-            <div class="mb-16 sm:mb-24">
-                <h2 class="mb-12 text-xl font-serif italic sm:mb-16 sm:text-2xl">Data Viz Course</h2>
-              <p>
-        I offer a Udemy Course in Data Visualization, which you can
-        <a href="https://www.udemy.com/course/data-visualization-react-d3/?referralCode=A669D6D959CBDEDD134A" target="_blank" rel="noreferrer">
-          find here.
-        </a>
-      </p>
-            </div>
 
             <div>
-                 <h2 class="mb-12 text-xl font-serif italic sm:mb-16 sm:text-2xl">Talks</h2>
+                 <h2 class="mb-12 text-5xl sm:mb-16 sm:text-3xl">Talks</h2>
                  <ul>
                   <li>"Tracking Wildfires for the Associated Press" | Seattle JS meetup, October 2023</li>
                   <li>"Data visualization for the news" | University of Washington School of Journalism, February 2024</li>

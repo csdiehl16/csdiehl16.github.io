@@ -10,7 +10,11 @@ import { projectData } from "./projectData"
 
            
             <div class="overlay">
-                <p>{p.name}</p>
+                <div>
+                <p class="text-sm font-bold">— {p.client} —</p>
+                <p class="font-semibold text-white">{p.name}</p>
+                </div>
+              
             </div>
              </a>
         </div>
@@ -31,6 +35,7 @@ import { projectData } from "./projectData"
         border-radius: 8px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         cursor: pointer;
+        height: 300px;
     }
 
     .image {
@@ -54,7 +59,7 @@ import { projectData } from "./projectData"
         display: flex;
         align-items: center;
         justify-content: center;
-        background: linear-gradient(135deg, rgba(255, 0, 150, 0.6), rgba(0, 204, 255, 0.6));
+        background: linear-gradient(135deg, rgba(255, 0, 150, 0.8), rgba(0, 204, 255, 0.8));
         color: #fff;
         font-size: 1.2rem;
         opacity: 0;
