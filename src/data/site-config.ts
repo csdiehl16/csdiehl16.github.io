@@ -81,7 +81,7 @@ const siteConfig: SiteConfig = {
   ],
   hero: {
     title: "Beautiful and informative data visualization and development",
-    text: 'Data visualization combines my two passions: design and statistics. I currently work at <a href="https://apnews.com" target="_blank" rel="noreferrer"> The Associated Press</a> as the interactive news editor. I oversee interactive maps, data visualizations, and graphics that tell the story of AP journalism for millions of readers across the globe. I am a JavaScript / TypeScript and Python expert, with deep knowledge of data visualization tools including D3.js and Mapbox. My work has won APs global best of the week award three times, and has been longlisted for an <a href="https://www.informationisbeautifulawards.com/showcase?award=2023&type=awards" target="_blank" rel="noreferrer">Information is Beautiful</a> Award. <br/><br/> Previously, I analyzed data and produced visualizations for major U.S. transit agencies. I hold a masters degree in Urban Planning, with an emphasis on urban informatics, from the University of Washington.',
+    text: 'Data visualization combines my two passions: design and statistics. I currently work at <a href="https://apnews.com" target="_blank" rel="noreferrer"> The Associated Press</a> as the interactive news editor. I oversee interactive maps, data visualizations, and graphics that tell the story of AP journalism for millions of readers across the globe.',
     image: {
       src: "/talk1.jpeg",
       alt: "A person giving a talk",

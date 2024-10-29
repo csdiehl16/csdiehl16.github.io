@@ -20,7 +20,6 @@ seo:
     }
 </style>
 
-![Page rendered with Observable Framework](/observable_images/globe.png)
 
 I’ve been a longtime fan of the interactive in-browser data visualization notebooks that are the trademark of Observable, and in general of anything [Mike Bostock](https://bost.ocks.org/mike/) creates. So when the new [Observable 2.0 Framework](https://observablehq.com/framework/) arrived, I immediately took it for a spin.
 

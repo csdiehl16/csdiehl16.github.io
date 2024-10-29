@@ -1,0 +1,26 @@
+  h2 {
+    margin: 2.5rem 8px;
+  }
+
+  p, li {
+    margin: 1.5rem 8px;
+    color: #181818;
+    font-size: 1rem;
+    line-height: 1.25rem;
+  }
+
+  a {
+    color: #37AECC;
+    font-weight: bold;
+  }
+
+  code {
+    font-family: Consolas, monospace;
+    color: lightgrey;
+  }
+
+  pre {
+    padding: 16px;
+    border-radius: 8px;
+    margin: 0 8px;
+  }

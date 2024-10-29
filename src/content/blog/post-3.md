@@ -17,7 +17,6 @@ seo:
     alt: An interactive notebook for visualizing data using AI
 ---
 
-![An interactive notebook for visualizing data using AI](/ai_images/ai_scatter_example.png)
 
 Exploring data should feel natural, like conducting an interview with an expert. However, analysts write their queries in code. It’s easy to get bogged down in syntax errors, forgetting parentheses, typing in complex chart specifications, or messing up variable names.
 

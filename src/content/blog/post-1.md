@@ -10,15 +10,10 @@ seo:
   image:
     src: "/heat_tracker.png"
     alt: An application to track extreme heat throughout the world
+
+
 ---
 
-<style>
-    img {
-        border-radius: 8px;
-    }
-</style>
-
-![Global heat tracker](/heat_tracker.png)
 
 How can we show how much hotter it is than normal, every day, in every part of the world?
 
@@ -36,7 +31,7 @@ When I first plotted this network on a map, I thought I had inadvertently droppe
 
 I had stumbled upon a massive equity issue.
 
-<img width="100%" src="https://e360.yale.edu/assets/site/_1500x1500_fit_center-center_80/Weather-Radar-Stations.png" />
+<img class="m-auto max-w-screen-md max-md:max-w-full rounded-md px-4" width="100%" src="https://e360.yale.edu/assets/site/_1500x1500_fit_center-center_80/Weather-Radar-Stations.png" />
 
 Many nations in the Global South lack functional weather stations. Africa, a continent with 1.2 billion people, [has just 37 WMO weather stations](https://e360.yale.edu/features/africa-weather-stations-climate-change) . Meanwhile, the U.S. and E.U. combined have 636 weather radar stations for a population of 1.1 billion. Because of this disparity, US citizens were able to evacuate disasters like Hurricane Ida without major loss of life, while disasters such as Cyclone Idai hit Africa without warning.
 
@@ -46,7 +41,7 @@ We filtered out hundreds of stations worldwide that haven't recorded a blip of d
 
 ### The heat tracker in action!
 
-<iframe src="https://interactives.ap.org/heat-tracker/" scrolling="no" frameborder="0" width="100%" height="900"></iframe>
+<iframe class="m-auto max-w-screen-md max-md:max-w-full rounded-md px-4" src="https://interactives.ap.org/heat-tracker/" scrolling="no" frameborder="0" width="100%" height="900"></iframe>
 
 ## Pairing the stations with cities
 
@@ -58,7 +53,7 @@ But not really.
 
 You can't use one single projection to measure distances in all parts of the world. The best solution I could find is called Great Circle, or [“Haversine” distance](https://community.esri.com/t5/coordinate-reference-systems-blog/distance-on-a-sphere-the-haversine-formula/ba-p/902128), which is measured in degrees as the distance around a sphere. It looks like the flight path of a plane.
 
-<img width="350px" src="https://media.licdn.com/dms/image/C4D12AQE0QbVF-y7cNg/article-cover_image-shrink_600_2000/0/1531928404478?e=2147483647&v=beta&t=_J31oxVLse5Ujz54gN10QVrzC44j66tccB-84ZP6uTA"/>
+<img class="m-auto max-w-screen-md max-md:max-w-full rounded-md px-4" width="350px" src="https://media.licdn.com/dms/image/C4D12AQE0QbVF-y7cNg/article-cover_image-shrink_600_2000/0/1531928404478?e=2147483647&v=beta&t=_J31oxVLse5Ujz54gN10QVrzC44j66tccB-84ZP6uTA"/>
 
 This led to more problems, however. We had to establish a cutoff in degrees, which seemed nonsensical, or arbitrary at best.
 
