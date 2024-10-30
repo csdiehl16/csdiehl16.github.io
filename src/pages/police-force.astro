@@ -1,0 +1,17 @@
+---
+import ProjectLayout from "../layouts/ProjectLayout.astro"
+import { projectData } from "../components/projectData";
+
+const project = projectData.find(x => x.name === "Visualizing Police Use of Force")
+
+
+---
+
+  <ProjectLayout 
+  mainImage={project?.imageLink}
+  mainTitle={project?.name}
+  mainDescription={project?.description}
+  themeColor="#121212"
+  secondColor="rgba(12, 12, 12, .3)"
+  technologies={project?.languages.join(", ")}
+/>

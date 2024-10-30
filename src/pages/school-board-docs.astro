@@ -1,5 +1,9 @@
 ---
 import ProjectLayout from '../layouts/ProjectLayout.astro';
+import { projectData } from "../components/projectData";
+
+
+const project = projectData.find(x => x.name === "School board documents AI-driven search")
 
 const textBlocks = [
   {
@@ -45,6 +49,7 @@ const inlineImages = [
  
   <ProjectLayout 
   mainImage="/school-board/main.png"
+  client={project?.client}
   mainTitle="AI-driven school board documents search engine"
   mainDescription="A tool to help journalists search through hundreds of thousands of documents to find key issues in education."
   themeColor="#37AECC"

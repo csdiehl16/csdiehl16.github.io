@@ -219,20 +219,22 @@ export const projectData = [
   {
     name: "Mobility in a Pandemic",
     client: "Class Project",
-    link: "",
-    imageLink: "/covid_mobility.webp",
+    link: "/pandemic-mobility",
+    imageSmall: "/covid-mobility.webp",
+    imageLink: "/large/pandemic-large.webp",
     description:
       "Data visualization of the change in Google searches for common destinations before and after the pandemic.",
-    languages: ["Python", "R"],
+    languages: ["Python", "R", "Adobe Illustrator"],
     tag: [],
   },
   {
     name: "Visualizing Police Use of Force",
     client: "Class Project",
-    link: "",
-    imageLink: "/police_force.webp",
+    link: "/police-force",
+    imageSmall: "/police_force.webp",
+    imageLink: "/large/police-use-of-force-large.webp",
     description: "",
-    languages: ["Python", "R"],
+    languages: ["Python", "R", "Adobe Illustrator"],
     tag: [],
   },
   {
