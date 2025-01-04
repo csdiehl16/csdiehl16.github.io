@@ -2,7 +2,7 @@
   "name": "csdiehl-website",
   "type": "module",
   "version": "0.0.1",
-  "homepage": "https://csdiehl.github.io",
+  "homepage": "https://csdiehl16.github.io",
   "scripts": {
     "predeploy": "npm run build && touch build/.nojekyll",
     "deploy": "gh-pages -b master -d build -t true",
