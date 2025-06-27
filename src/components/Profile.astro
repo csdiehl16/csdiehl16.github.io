@@ -51,13 +51,15 @@
 <script>
     // Wait for DOM to be ready
     document.addEventListener('DOMContentLoaded', function() {
-        const canvas = document.getElementById('profileCanvas');
+        const canvas = document.getElementById('profileCanvas') as HTMLCanvasElement;
         if (!canvas) return;
 
         const ctx = canvas.getContext('2d');
+        if (!ctx) return;
 
         // Set up responsive canvas
         function resizeCanvas() {
+           if (!canvas || !ctx) return;
             const rect = canvas.getBoundingClientRect();
             const devicePixelRatio = window.devicePixelRatio || 1;
 
@@ -75,12 +77,11 @@
         const width = canvas.offsetWidth;
         const height = canvas.offsetHeight;
 
-        let points = [];
+        let points: number[][] = [];
         let currentPatternIndex = 0;
         let isTransitioning = false;
-        let animationId;
+        let animationId: number;
 
-        const patterns = ['Spiral', 'Clusters', 'Waves', 'Vortex', 'Grid'];
         const patternFunctions = [
             generateSpiral,
             generateClusters,
@@ -206,8 +207,8 @@
             return points;
         }
 
-        function drawTriangulation(targetPoints, lineOpacity = 1) {
-            if (targetPoints.length < 3) return;
+        function drawTriangulation(targetPoints: number[][], lineOpacity = 1) {
+            if (targetPoints.length < 3 || !ctx) return;
 
             // Clear canvas with dark background
             ctx.fillStyle = '#F2F1EB';
@@ -215,8 +216,8 @@
 
             try {
                 // Use d3.Delaunay if available
-                if (typeof d3 !== 'undefined' && d3.Delaunay) {
-                    const delaunay = d3.Delaunay.from(targetPoints);
+                if (typeof (globalThis as any).d3 !== 'undefined' && (globalThis as any).d3.Delaunay) {
+                    const delaunay = (globalThis as any).d3.Delaunay.from(targetPoints);
                     const triangles = delaunay.triangles;
 
                     const baseOpacity = Math.max(0.4, Math.min(.8, 250 / targetPoints.length));
@@ -296,7 +297,7 @@
             }
         }
 
-        function interpolatePoints(oldPoints, newPoints, progress) {
+        function interpolatePoints(oldPoints: number[][], newPoints: number[][], progress: number) {
             const targetLength = Math.max(oldPoints.length, newPoints.length);
             const interpolated = [];
 
@@ -331,7 +332,7 @@
             const oldPoints = [...points];
 
             currentPatternIndex = (currentPatternIndex + 1) % patternFunctions.length;
-            const newPoints = patternFunctions[currentPatternIndex]();
+            const newPoints = patternFunctions[Math.floor(Math.random() * patternFunctions.length)]();
 
             let progress = 0;
             const transitionDuration = 4000; // 4 seconds
@@ -361,11 +362,11 @@
         points = generateSpiral();
         drawTriangulation(points);
 
-        // Auto-morph every 8 seconds
-        setInterval(morphPattern, 8000);
+        // Auto-morph every 5 seconds
+        setInterval(morphPattern, 5000);
 
         // Load D3.js for Delaunay triangulation
-        if (typeof d3 === 'undefined') {
+        if (typeof (globalThis as any).d3 === 'undefined') {
             const script = document.createElement('script');
             script.src = 'https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js';
             script.onload = function() {
