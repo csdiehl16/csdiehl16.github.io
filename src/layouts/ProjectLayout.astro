@@ -32,28 +32,28 @@ const textBlock = "m-auto max-w-screen-md my-8 px-4";
 ---
 
 <BaseLayout fullWidth={true} description={mainDescription} image={mainImage}>
-   <div style={`background: linear-gradient(to right, ${themeColor} 30%, ${secondColor});`}  class="min-h-full py-8 grid md:grid-cols-[350px_minmax(0,_1fr)] items-center box-border">
+   <div class="min-h-full py-8 grid md:grid-cols-[350px_minmax(0,_1fr)] items-center box-border project-header">
     <div class="flex flex-col items-start gap-4 p-8">
         <h1 class="text-3xl text-white font-bold">{mainTitle}</h1>
         <div class="w-full h-0.5 bg-white"></div>
-        <p class="text-md text-white">{mainDescription}</p>
+        <p class="text-base text-white">{mainDescription}</p>
 
        {client &&  <p class="text-sm text-white"><strong>For</strong> {client}</p>}
         <p class="text-sm text-white"><strong>Technologies</strong> | {technologies}</p>
 
-        {projectLink && <a href={projectLink}>View Project</a>}
+        {projectLink && <a href={projectLink} class="inline-flex items-center justify-center px-4 py-4 bg-white/30 rounded-lg border border-white w-max text-white font-bold hover:brightness-75 transition-all">View Project</a>}
     </div>
     <div class="px-16 py-8 w-full h-full flex items-center justify-center">
          <img class="rounded-md" src={mainImage}/>
     </div>
    </div>
-   
+
    {textBlocks && textBlocks.map((block: any, index: number) => (
     <>
       <div class={textBlock}>
-          <h3>{block.title}</h3>
-          <div class="mb-4 rule"/>
-          <p class="text-md">{block.content}</p>
+          <h3 class="text-2xl font-serif font-medium my-2">{block.title}</h3>
+          <div class="mb-4 h-0.5 rule"/>
+          <p class="text-base leading-6">{block.content}</p>
       </div>
         <img class={inlinePhoto} src={inlineImages[index]}/>
         </>
@@ -61,25 +61,12 @@ const textBlock = "m-auto max-w-screen-md my-8 px-4";
 </BaseLayout>
 
 <style define:vars={{ themeColor}}>
+    .project-header {
+        background: linear-gradient(to right, var(--themeColor) 30%, var(--themeColor) 30%);
+        background: linear-gradient(to right, ${themeColor} 30%, ${secondColor});
+    }
+
     .rule {
         background-color: var(--themeColor);
-        height: 2px;
-    }
-
-    a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 16px;
-        background-color: rgba(255, 255, 255, .3);
-        border-radius: 8px;
-        border: 1px solid white;
-        max-width: max-content;
-        color: #FFF;
-        font-weight: bold;
-    }
-
-    a:hover {
-        filter: brightness(80%);
     }
 </style>

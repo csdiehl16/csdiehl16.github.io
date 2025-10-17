@@ -7,7 +7,7 @@ const hero = siteConfig.hero;
 
 {
     (hero?.title || hero?.image?.src || hero?.text || (hero?.actions && hero.actions.length > 0)) && (
-        <section  style={`background: linear-gradient(to right, #37AECC 30%, rgba(55, 174, 204, .3));`}  class="m-4 rounded-md min-h-full py-8 grid md:grid-cols-[350px_minmax(0,_1fr)] items-center box-border">
+        <section class="m-4 rounded-md min-h-full py-8 grid md:grid-cols-[350px_minmax(0,_1fr)] items-center box-border bg-gradient-to-r from-accent from-30% to-accent/30">
             {hero.text && <div class="flex flex-col items-start gap-4 p-8 text-white" >
                 <h1 class="font-bold text-5xl md:text-6xl">About Me</h1>
                 <p class="text-xs" set:html={marked.parse(hero.text)}></p>
@@ -19,9 +19,9 @@ const hero = siteConfig.hero;
                     {hero.image.caption && <figcaption class="mt-1.5 text-xs sm:text-sm text-white">{hero.image.caption}</figcaption>}
                 </figure>
             )}
-           
 
-           
+
+
         </section>
     )
 }

@@ -1,26 +1,20 @@
-  h2 {
-    margin: 2.5rem 8px;
-  }
+h2 {
+  @apply my-10 mx-2;
+}
 
-  p, li {
-    margin: 1.5rem 8px;
-    color: #181818;
-    font-size: 1rem;
-    line-height: 1.25rem;
-  }
+p,
+li {
+  @apply my-6 mx-2 text-base leading-5;
+}
 
-  a {
-    color: #37AECC;
-    font-weight: bold;
-  }
+a {
+  @apply text-accent font-bold;
+}
 
-  code {
-    font-family: Consolas, monospace;
-    color: lightgrey;
-  }
+code {
+  @apply font-mono text-gray-400;
+}
 
-  pre {
-    padding: 16px;
-    border-radius: 8px;
-    margin: 0 8px;
-  }
+pre {
+  @apply p-4 rounded-lg mx-2;
+}

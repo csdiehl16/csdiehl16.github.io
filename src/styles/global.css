@@ -17,29 +17,6 @@
     --color-border-main: 242 241 236; /* #F2F1EC */
   }
 
-  h1 {
-    font-size: 2rem;
-    line-height: 2.25rem;
-    margin: 8px 0;
-  }
-
-  h2 {
-    font-size: 1.7rem;
-    line-height: 2rem;
-    margin: 8px 0;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-    line-height: 1.75rem;
-    margin: 8px 0;
-  }
-
-  p {
-    font-size: 1.2rem;
-    line-height: 1.5rem;
-  }
-
   /* Cyan */
   /*
     :root {
