@@ -12,7 +12,8 @@ a {
 }
 
 code {
-  @apply font-mono text-gray-400;
+  font-family: Consolas, monospace;
+  @apply text-gray-400;
 }
 
 pre {
