@@ -211,8 +211,7 @@
             if (targetPoints.length < 3 || !ctx) return;
 
             // Clear canvas with dark background
-            ctx.fillStyle = '#F2F1EB';
-            ctx.fillRect(0, 0, width, height);
+            ctx.clearRect(0, 0, width, height);
 
             try {
                 // Use d3.Delaunay if available
