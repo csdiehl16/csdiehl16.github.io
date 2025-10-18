@@ -1,0 +1,34 @@
+---
+import ProjectLayout from "../layouts/ProjectLayout.astro"
+import { projectData } from "../components/projectData";
+
+const project = projectData.find(x => x.name === "Observable canvases")
+
+const textBlocks = [
+  {
+    title: "Project Description",
+    content: `Observable canvases are a collaborative business intelligence tool for data analysis, visualization and whiteboarding.
+    Observable launched this product in 2025, and I contributed to building the charts platform, developing UI to allow users to build SQL queries with no code, and developing proof-of-concept projects in customer workspaces.
+    `,
+  },
+  {title: "My Contributions", content: `I worked on this project as part of a highly talented team of around 10 developers. My contributions included custom chart development, including maps, scatterplots, line and area charts.
+    I also developed frontend UI elements such as the Group by node and some table features.`}
+]
+
+const inlineImages = [
+""
+];
+---
+
+  <ProjectLayout
+  mainImage={project?.imageLink}
+  client={project?.client}
+  mainTitle={project?.name}
+  mainDescription={project?.description}
+  themeColor=""
+  secondColor="rgba(210, 129, 9, .3)"
+  technologies={project?.languages.join(", ")}
+  projectLink={project?.sourceLink}
+  textBlocks={textBlocks}
+  inlineImages={inlineImages}
+/>
