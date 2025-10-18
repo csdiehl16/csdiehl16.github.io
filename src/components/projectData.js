@@ -18,7 +18,7 @@ export const projectData = [
     client: "AP News",
     sourceLink: "https://d29ogm19i6xujm.cloudfront.net/",
     link: "/school-board-docs",
-    imageLink: "/school-board/map.webp",
+    imageLink: "/school-board/main.webp",
     languages: ["Next.js", "AWS", "PostgreSQL", "Vercel AI SDK"],
     tag: ["Web development"],
     description:
@@ -298,4 +298,4 @@ export const projectData = [
     languages: ["Python", "R"],
     tag: ["Geospatial"],
   },
-]
+];
