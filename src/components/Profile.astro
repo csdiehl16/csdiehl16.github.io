@@ -361,14 +361,25 @@
         // Initialize with spiral pattern
         points = generateSpiral();
         drawTriangulation(points);
-        morphPattern()
 
-        // Auto-morph every 5 seconds
-        const morphInterval = setInterval(morphPattern, 5000);
+        // Variable to hold the interval ID
+        let morphInterval: number;
+
+        // Morph immediately on page load
+        setTimeout(() => {
+            morphPattern();
+        }, 100);
+
+        // Start interval after first morph completes (100ms + 4000ms transition + 1000ms wait)
+        setTimeout(() => {
+            morphInterval = setInterval(morphPattern, 5000);
+        }, 5100);
 
         // Cleanup function to prevent memory leaks
         const cleanup = () => {
-            clearInterval(morphInterval);
+            if (morphInterval) {
+                clearInterval(morphInterval);
+            }
             if (animationId) {
                 cancelAnimationFrame(animationId);
             }
