@@ -307,7 +307,7 @@
 
                     ctx.fillStyle = i % 4 === 0 ?'rgba(239,71,111,.2)' : `rgba(${r},${g},${b},.2)`;
                     ctx.beginPath();
-                    ctx.arc(point[0], point[1], 8, 0, PI2);
+                    ctx.arc(point[0], point[1],  i % 10 === 0 ? 16 : i % 6 === 0 ? 12 : 8, 0, PI2);
                     ctx.fill();
                 }
 
@@ -326,7 +326,7 @@
 
                     ctx.fillStyle = i % 4 === 0 ? '#EF476F'  : `rgba(${r},${g},${b},${pointOpacity})`;  // '#52FFB8' '#F37748'
                     ctx.beginPath();
-                    ctx.arc(point[0], point[1], 2, 0, PI2);
+                    ctx.arc(point[0], point[1],  i % 10 === 0 ? 6 : i % 6 === 0 ? 4 : 2, 0, PI2);
                     ctx.fill();
                 }
             } catch (e) {
