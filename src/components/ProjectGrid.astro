@@ -1,23 +1,17 @@
 ---
 import { projectData } from "./projectData"
+import ProjectGridItems from "./ProjectGridItems.astro"
+import ProjectSectionHeader from "./ProjectSectionHeader.astro"
 ---
 
-<div class="p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-    {projectData.map((p, index) => (
-        <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer h-[300px]">
-            <img
-                alt={p.description}
-                src={p.imageLink}
-                class="w-full h-full object-cover rounded-lg transition-transform duration-300 ease-in-out group-hover:scale-105"
-            />
-            <a href={p.link} target="_blank" rel="noreferrer">
-                <div class="glass-cyan-muted absolute inset-0 flex items-center justify-center text-white text-xl text-center p-4 rounded-lg opacity-100 group-hover:opacity-0 transition-opacity duration-300 ease-in-out">
-                    <div class='bg-main/40 rounded-sm p-2 text-sm flex flex-col items-start absolute bottom-0 left-0'>
-                        <p class="text-xs text-gray-300">{p.client}</p>
-                        <p class="font-semibold text-gray-200">{p.name}</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-    ))}
+
+<div class="flex flex-col items-center justify-center">
+    <ProjectSectionHeader title="Selected Work" subtitle="My most awesome work that I was paid to develop, along with one or two personal projects that heavily influenced my professional work." />
+    <ProjectGridItems projects={projectData.slice(0,6)} />
+
+    <ProjectSectionHeader title="Older Projects" subtitle="Custom data viz I built from scratch for the Associated Press. Also, some web apps to visualize transit data that I built as a data analyst at a civil engineering consultancy." />
+    <ProjectGridItems projects={projectData.slice(6, 21)} />
+
+    <ProjectSectionHeader title="School and personal projects" subtitle="Even older projects that represent early experiments in software development and data viz..." />
+    <ProjectGridItems projects={projectData.slice(21, projectData.length - 1)} />
 </div>

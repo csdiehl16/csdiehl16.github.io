@@ -63,14 +63,16 @@ export const projectData = [
   },
 
   {
-    name: "Draggable Migration Globe",
-    client: "AP News",
-    link: "https://apnews.com/projects/china-migration-thailand-mexico-japan-map/",
-    imageLink: "/migration_globe.webp",
+    name: "AI Data Assistant",
+    client: "Personal Project",
+    link: "https://ai-data-assistant.vercel.app/login",
+    codeLink: "https://github.com/csdiehl/ai-data-assistant",
+    imageLink: "/bitcoin_line.webp",
+    languages: ["React.js", "Typescript", "D3.js"],
+    tag: ["Dashboards", "Web development"],
     description:
-      "A 3D draggable globe showing recent changes in Chinese migration across the world.",
-    languages: ["D3.js", "React"],
-    tag: ["Data journalism"],
+      "Explore your data using conversational AI. A full-stack Next.js web app, using Vercel's AI SDK and a firebase backend, that allows users to chat with a database, save and load data snapshots, and use generative UI to build charts.",
+    featured: true,
   },
 
   {
@@ -98,16 +100,14 @@ export const projectData = [
   },
 
   {
-    name: "AI Data Assistant",
-    client: "Personal Project",
-    link: "https://ai-data-assistant.vercel.app/login",
-    codeLink: "https://github.com/csdiehl/ai-data-assistant",
-    imageLink: "/bitcoin_line.webp",
-    languages: ["React.js", "Typescript", "D3.js"],
-    tag: ["Dashboards", "Web development"],
+    name: "Draggable Migration Globe",
+    client: "AP News",
+    link: "https://apnews.com/projects/china-migration-thailand-mexico-japan-map/",
+    imageLink: "/migration_globe.webp",
     description:
-      "Explore your data using conversational AI. A full-stack Next.js web app, using Vercel's AI SDK and a firebase backend, that allows users to chat with a database, save and load data snapshots, and use generative UI to build charts.",
-    featured: true,
+      "A 3D draggable globe showing recent changes in Chinese migration across the world.",
+    languages: ["D3.js", "React"],
+    tag: ["Data journalism"],
   },
 
   {
@@ -240,15 +240,14 @@ export const projectData = [
   },
 
   {
-    name: "Mobility in a Pandemic",
-    client: "Class Project",
-    link: "/pandemic-mobility",
-    imageSmall: "/covid-mobility.webp",
-    imageLink: "/large/pandemic-large.webp",
+    name: "WMATA Dashboard",
+    client: "WMATA Transit Agency",
+    link: "https://github.com/csdiehl/smart-card-data-dashboard#readme",
+    imageLink: "/WMATA_web_app.webp",
+    languages: ["Javascript", "Python"],
+    tag: ["Dashboards", "Geospatial"],
     description:
-      "Data visualization of the change in Google searches for common destinations before and after the pandemic.",
-    languages: ["Python", "R", "Adobe Illustrator"],
-    tag: [],
+      "Interactive dashboard built for internal use at Washington D.C. Metropolitan Transit Authority. Visualizes smart card data.",
   },
   {
     name: "Visualizing Police Use of Force",
@@ -260,16 +259,19 @@ export const projectData = [
     languages: ["Python", "R", "Adobe Illustrator"],
     tag: [],
   },
+
   {
-    name: "WMATA Dashboard",
-    client: "WMATA Transit Agency",
-    link: "https://github.com/csdiehl/smart-card-data-dashboard#readme",
-    imageLink: "/WMATA_web_app.webp",
-    languages: ["Javascript", "Python"],
-    tag: ["Dashboards", "Geospatial"],
+    name: "Mobility in a Pandemic",
+    client: "Class Project",
+    link: "/pandemic-mobility",
+    imageSmall: "/covid-mobility.webp",
+    imageLink: "/large/pandemic-large.webp",
     description:
-      "Interactive dashboard built for internal use at Washington D.C. Metropolitan Transit Authority. Visualizes smart card data.",
+      "Data visualization of the change in Google searches for common destinations before and after the pandemic.",
+    languages: ["Python", "R", "Adobe Illustrator"],
+    tag: [],
   },
+
   {
     name: "Spotify Reccomendation Engine",
     client: "Personal Project",
