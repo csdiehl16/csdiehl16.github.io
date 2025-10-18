@@ -363,6 +363,7 @@
         drawTriangulation(points);
 
         // Variable to hold the interval ID
+        morphPattern()
         const morphInterval = setInterval(morphPattern, 5000);
 
         // Cleanup function to prevent memory leaks
@@ -392,6 +393,5 @@
     }
 
     // Initialize on first load and after each view transition
-    initializeCanvas();
     document.addEventListener('astro:page-load', initializeCanvas);
 </script>
