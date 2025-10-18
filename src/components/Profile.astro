@@ -50,6 +50,7 @@
 
 <script>
     function initializeCanvas() {
+      console.log('canvas initializing')
         const canvas = document.getElementById('profileCanvas') as HTMLCanvasElement;
         if (!canvas) return;
 
@@ -360,6 +361,7 @@
         // Initialize with spiral pattern
         points = generateSpiral();
         drawTriangulation(points);
+        morphPattern()
 
         // Auto-morph every 5 seconds
         const morphInterval = setInterval(morphPattern, 5000);
