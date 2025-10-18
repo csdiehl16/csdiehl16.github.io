@@ -40,6 +40,17 @@ export const projectData = [
   },
 
   {
+    name: "Migration globe",
+    client: "Observable",
+    link: "https://observablehq.com/d/cd0b1104799e2603",
+    imageLink: "/globe.webp",
+    languages: ["D3.js"],
+    tag: ["Data journalism"],
+    description: "Animated globe showing migration patterns",
+    featured: true,
+  },
+
+  {
     name: "Draggable Migration Globe",
     client: "AP News",
     link: "https://apnews.com/projects/china-migration-thailand-mexico-japan-map/",
