@@ -200,10 +200,24 @@
         const startColor = { r: 100, g: 200, b: 220 };
         const endColor = { r: 41, g: 58, b: 78 };
 
+        // Pre-calculate constants to avoid repeated calculations
+        const halfWidth = width / 2;
+        const halfHeight = height / 2;
+        const maxDistance = Math.sqrt(halfWidth * halfWidth + halfHeight * halfHeight);
+        const invWidth = 1 / width;
+        const invHeight = 1 / height;
+        const invMaxDistance = 1 / maxDistance;
+        const PI2 = Math.PI * 2;
+
+        // Color difference for faster interpolation
+        const colorDiffR = endColor.r - startColor.r;
+        const colorDiffG = endColor.g - startColor.g;
+        const colorDiffB = endColor.b - startColor.b;
+
         function drawTriangulation(targetPoints: number[][], lineOpacity = 1) {
             if (targetPoints.length < 3 || !ctx) return;
 
-            // Clear canvas with dark background
+            // Clear canvas
             ctx.clearRect(0, 0, width, height);
 
             try {
@@ -213,12 +227,9 @@
                     const triangles = delaunay.triangles;
 
                     const baseOpacity = Math.max(0.4, Math.min(.8, 250 / targetPoints.length));
+                    const drawStrokes = lineOpacity > 0.05;
 
-                    ctx.lineWidth = 0.6;
-                    ctx.lineCap = 'round';
-                    ctx.lineJoin = 'round';
-
-                    // Draw triangles
+                    // Batch all fills first, then all strokes (reduces state changes)
                     for (let i = 0; i < triangles.length; i += 3) {
                         const p1 = targetPoints[triangles[i]];
                         const p2 = targetPoints[triangles[i + 1]];
@@ -226,38 +237,53 @@
 
                         if (!p1 || !p2 || !p3) continue;
 
-                        // Calculate opacity based on distance from center
-                        const centerX = (p1[0] + p2[0] + p3[0]) / 3;
-                        const centerY = (p1[1] + p2[1] + p3[1]) / 3;
-                        const distanceFromCenter = Math.sqrt(
-                            Math.pow(centerX - width / 2, 2) + Math.pow(centerY - height / 2, 2)
-                        );
-                        const maxDistance = Math.sqrt(Math.pow(width / 2, 2) + Math.pow(height / 2, 2));
-                        const distanceFactor = 1 - (distanceFromCenter / maxDistance) * 0.4;
+                        // Calculate triangle center
+                        const centerX = (p1[0] + p2[0] + p3[0]) * 0.333333;
+                        const centerY = (p1[1] + p2[1] + p3[1]) * 0.333333;
+
+                        // Fast distance calculation using pre-computed values
+                        const dx = centerX - halfWidth;
+                        const dy = centerY - halfHeight;
+                        const distanceFromCenter = Math.sqrt(dx * dx + dy * dy);
+                        const distanceFactor = 1 - (distanceFromCenter * invMaxDistance) * 0.4;
 
                         const finalOpacity = baseOpacity * distanceFactor * lineOpacity;
 
-                        // Create gradient colors from cyan to pink
+                        // Fast color interpolation using pre-computed differences
+                        const colorT = (centerX * invWidth + centerY * invHeight) * 0.5;
+                        const r = (startColor.r + colorT * colorDiffR) | 0;
+                        const g = (startColor.g + colorT * colorDiffG) | 0;
+                        const b = (startColor.b + colorT * colorDiffB) | 0;
 
-                        const colorT = (centerX / width + centerY / height) / 2;
-                        const r = Math.floor(startColor.r + colorT * (endColor.r - startColor.r)); // cyan to pink red
-                        const g = Math.floor(startColor.g + colorT * (endColor.g - startColor.g)); // cyan to pink green
-                        const b = Math.floor(startColor.b + colorT * (endColor.b - startColor.b)); // cyan to pink blue
-
-                        // Fill triangles with gradient colors
+                        // Fill triangles
                         const fillOpacity = finalOpacity * 0.5;
-                        ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${fillOpacity})`;
+                        ctx.fillStyle = `rgba(${r},${g},${b},${fillOpacity})`;
                         ctx.beginPath();
                         ctx.moveTo(p1[0], p1[1]);
                         ctx.lineTo(p2[0], p2[1]);
                         ctx.lineTo(p3[0], p3[1]);
-                        ctx.closePath();
                         ctx.fill();
+                    }
 
-                        // Draw triangle outline
-                        if (lineOpacity > 0.05) {
-                            ctx.lineWidth = 1;
-                            ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${.2})`;
+                    // Draw strokes in a second pass if needed (reduces context switching)
+                    if (drawStrokes) {
+                        ctx.lineWidth = 1;
+                        for (let i = 0; i < triangles.length; i += 3) {
+                            const p1 = targetPoints[triangles[i]];
+                            const p2 = targetPoints[triangles[i + 1]];
+                            const p3 = targetPoints[triangles[i + 2]];
+
+                            if (!p1 || !p2 || !p3) continue;
+
+                            const centerX = (p1[0] + p2[0] + p3[0]) * 0.333333;
+                            const centerY = (p1[1] + p2[1] + p3[1]) * 0.333333;
+
+                            const colorT = (centerX * invWidth + centerY * invHeight) * 0.5;
+                            const r = (startColor.r + colorT * colorDiffR) | 0;
+                            const g = (startColor.g + colorT * colorDiffG) | 0;
+                            const b = (startColor.b + colorT * colorDiffB) | 0;
+
+                            ctx.strokeStyle = `rgba(${r},${g},${b},.2)`;
                             ctx.beginPath();
                             ctx.moveTo(p1[0], p1[1]);
                             ctx.lineTo(p2[0], p2[1]);
@@ -268,29 +294,40 @@
                     }
                 }
 
-                // Draw points with gradient colors
-                for (let point of targetPoints) {
-                    const distanceFromCenter = Math.sqrt(
-                        Math.pow(point[0] - width / 2, 2) + Math.pow(point[1] - height / 2, 2)
-                    );
-                    const maxDistance = Math.sqrt(Math.pow(width / 2, 2) + Math.pow(height / 2, 2));
-                    const pointOpacity = (1 - (distanceFromCenter / maxDistance) * 0.3) * 0.8;
+                // Draw points - batch by style to reduce state changes
+                const numPoints = targetPoints.length;
 
-                    const colorT = (point[0] / width + point[1] / height) / 2;
-                    const r = Math.floor(startColor.r + colorT * (endColor.r - startColor.r));
-                    const g = Math.floor(startColor.g + colorT * (endColor.g - startColor.g));
-                    const b = Math.floor(startColor.b + colorT * (endColor.b - startColor.b));
+                // Draw outer glow circles first
+                for (let i = 0; i < numPoints; i++) {
+                    const point = targetPoints[i];
+                    const colorT = (point[0] * invWidth + point[1] * invHeight) * 0.5;
+                    const r = (startColor.r + colorT * colorDiffR) | 0;
+                    const g = (startColor.g + colorT * colorDiffG) | 0;
+                    const b = (startColor.b + colorT * colorDiffB) | 0;
 
-                    ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${.2})`;
-                    ctx.arc(point[0], point[1], 8, 0, Math.PI * 2);
-                     ctx.fill();
-
-                    ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${pointOpacity})`;
+                    ctx.fillStyle = `rgba(${r},${g},${b},.2)`;
                     ctx.beginPath();
-                    ctx.arc(point[0], point[1], 2, 0, Math.PI * 2);
+                    ctx.arc(point[0], point[1], 8, 0, PI2);
                     ctx.fill();
+                }
 
+                // Draw inner points
+                for (let i = 0; i < numPoints; i++) {
+                    const point = targetPoints[i];
+                    const dx = point[0] - halfWidth;
+                    const dy = point[1] - halfHeight;
+                    const distanceFromCenter = Math.sqrt(dx * dx + dy * dy);
+                    const pointOpacity = (1 - (distanceFromCenter * invMaxDistance) * 0.3) * 0.8;
 
+                    const colorT = (point[0] * invWidth + point[1] * invHeight) * 0.5;
+                    const r = (startColor.r + colorT * colorDiffR) | 0;
+                    const g = (startColor.g + colorT * colorDiffG) | 0;
+                    const b = (startColor.b + colorT * colorDiffB) | 0;
+
+                    ctx.fillStyle = `rgba(${r},${g},${b},${pointOpacity})`;
+                    ctx.beginPath();
+                    ctx.arc(point[0], point[1], 2, 0, PI2);
+                    ctx.fill();
                 }
             } catch (e) {
                 console.error('Error drawing triangulation:', e);
@@ -298,28 +335,23 @@
         }
 
         function interpolatePoints(oldPoints: number[][], newPoints: number[][], progress: number) {
-            const targetLength = Math.max(oldPoints.length, newPoints.length);
-            const interpolated = [];
+            const oldLen = oldPoints.length;
+            const newLen = newPoints.length;
+            const targetLength = Math.max(oldLen, newLen);
+            const interpolated = new Array(targetLength);
+
+            // Pre-calculate center point for fallback
+            const centerPoint = [halfWidth, halfHeight];
 
             for (let i = 0; i < targetLength; i++) {
-                let oldPoint, newPoint;
+                const oldPoint = i < oldLen ? oldPoints[i] : centerPoint;
+                const newPoint = i < newLen ? newPoints[i] : centerPoint;
 
-                if (i < oldPoints.length) {
-                    oldPoint = oldPoints[i];
-                } else {
-                    oldPoint = [width / 2, height / 2];
-                }
-
-                if (i < newPoints.length) {
-                    newPoint = newPoints[i];
-                } else {
-                    newPoint = [width / 2, height / 2];
-                }
-
-                const x = oldPoint[0] + (newPoint[0] - oldPoint[0]) * progress;
-                const y = oldPoint[1] + (newPoint[1] - oldPoint[1]) * progress;
-
-                interpolated.push([x, y]);
+                // Inline calculation to avoid array creation
+                interpolated[i] = [
+                    oldPoint[0] + (newPoint[0] - oldPoint[0]) * progress,
+                    oldPoint[1] + (newPoint[1] - oldPoint[1]) * progress
+                ];
             }
 
             return interpolated;
