@@ -83,4 +83,8 @@ $licorice: rgba(43, 26, 22, 1);
   .glass-cyan {
     @apply shadow-[inset_0_0_25px_rgba(6,182,212,0.5)] bg-muted/20 backdrop-blur-md border-2 border-cyan-400/30 rounded-lg p-4;
   }
+
+  .glass-cyan-muted {
+    @apply shadow-[inset_0_0_25px_rgba(6,182,212,0.5)] bg-muted/30  border-2 border-cyan-400/30 rounded-lg p-4;
+  }
 }
