@@ -78,3 +78,9 @@ $licorice: rgba(43, 26, 22, 1);
     background: linear-gradient(to top, var(--gunmetal), var(--prussian-blue));
   }
 }
+
+@layer components {
+  .glass-cyan {
+    @apply shadow-[inset_0_0_25px_rgba(6,182,212,0.5)] bg-muted/20 backdrop-blur-md border-2 border-cyan-400/30 rounded-lg p-4;
+  }
+}
