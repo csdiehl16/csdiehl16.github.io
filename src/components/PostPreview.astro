@@ -6,11 +6,20 @@ import FormattedDate from './FormattedDate.astro';
 type Props = { post: CollectionEntry<'blog'>; class?: string; headingLevel?: 'h2' | 'h3' };
 
 const { post, class: className, headingLevel = 'h2' } = Astro.props;
-const { title, publishDate, updatedDate, excerpt } = post.data;
+const { title, publishDate, updatedDate, excerpt, image } = post.data;
 const TitleTag = headingLevel;
 ---
 
 <a class:list={['flex justify-between items-start gap-8 group', className]} href={`/blog/${post.slug}/`}>
+    {image && (
+        <div class="glass-cyan-muted p-0 shrink-0">
+            <img
+                src={image.src}
+                alt={image.alt || title}
+                class="grayscale w-48 h-48 object-cover rounded-lg"
+            />
+        </div>
+    )}
     <div class="grow">
         <TitleTag
             class="text-xl leading-tight font-medium group-hover:underline group-hover:decoration-dashed group-hover:underline-offset-4 group-hover:decoration-1 sm:text-2xl"

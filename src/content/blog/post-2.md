@@ -8,6 +8,9 @@ tags:
   - Python
   - Data Visualization
   - Observable
+image:
+  src: "/observable_images/globe.png"
+  alt: "Description of the image"
 seo:
   image:
     src: "/observable_images/globe.png"

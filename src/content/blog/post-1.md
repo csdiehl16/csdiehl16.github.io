@@ -3,12 +3,15 @@ title: Mysterious missing weather stations and other lessons from tracking globa
 excerpt: "how we built a global heat tracker for the Associated Press."
 publishDate: "March 4 2024"
 isFeatured: true
+image:
+  src: "/heat_tracker.webp"
+  alt: "Description of the image"
 tags:
   - Python
   - Climate data
 seo:
   image:
-    src: "/heat_tracker.png"
+    src: "/heat_tracker.webp"
     alt: An application to track extreme heat throughout the world
 
 

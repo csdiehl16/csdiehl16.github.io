@@ -11,6 +11,9 @@ tags:
   - Vercel AI SDK
   - Open AI
   - Observable
+image:
+  src: "/ai_images/ai_scatter_example.png"
+  alt: "Description of the image"
 seo:
   image:
     src: "/ai_images/ai_scatter_example.png"
