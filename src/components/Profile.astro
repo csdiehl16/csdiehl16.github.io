@@ -335,7 +335,7 @@
             const newPoints = patternFunctions[Math.floor(Math.random() * patternFunctions.length)]();
 
             let progress = 0;
-            const transitionDuration = 4000; // 4 seconds
+            const transitionDuration = 3000; // 4 seconds
             const startTime = Date.now();
 
             function animateTransition() {
@@ -363,17 +363,7 @@
         drawTriangulation(points);
 
         // Variable to hold the interval ID
-        let morphInterval: number;
-
-        // Morph immediately on page load
-        setTimeout(() => {
-            morphPattern();
-        }, 100);
-
-        // Start interval after first morph completes (100ms + 4000ms transition + 1000ms wait)
-        setTimeout(() => {
-            morphInterval = setInterval(morphPattern, 5000);
-        }, 5100);
+        const morphInterval = setInterval(morphPattern, 5000);
 
         // Cleanup function to prevent memory leaks
         const cleanup = () => {
