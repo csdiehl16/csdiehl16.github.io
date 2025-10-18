@@ -1,17 +1,20 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Hero from '../components/Hero.astro';
 import siteConfig from '../data/site-config';
 ---
 
 <BaseLayout fullWidth description={siteConfig.description} image={siteConfig.image}>
-    <Hero />
-            <div class="mt-8 mx-auto max-md:px-4 max-w-screen-md">
-               <p class="mb-4">I am a JavaScript / TypeScript and Python expert, with deep knowledge of data visualization tools including D3.js and Mapbox. My work has won APs global best of the week award three times, and has been longlisted for an <a href="https://www.informationisbeautifulawards.com/showcase?award=2023&type=awards" target="_blank" rel="noreferrer">Information is Beautiful</a> Award.</p>
+            <div class="flex flex-col gap-4 mt-8 mx-auto max-md:px-4 max-w-screen-md">
+                <figure class="max-w-xl rounded w-full h-full flex items-center justify-center">
+                    <img class="w-full h-full object-cover rounded" src={siteConfig.hero.image.src} loading="lazy" decoding="async" alt={siteConfig.hero.image.alt || ''} />
+                    {siteConfig.hero.image.caption && <figcaption class="text-xs sm:text-sm text-main">{siteConfig.hero.image.caption}</figcaption>}
+                </figure>
+                     <h2 class="mt-8 text-5xl sm:text-3xl">About me</h2>
+               <p class="text-gray-300">I am a JavaScript / TypeScript and Python expert, with deep knowledge of data visualization tools including D3.js and Mapbox. My work has won APs global best of the week award three times, and has been longlisted for an <a href="https://www.informationisbeautifulawards.com/showcase?award=2023&type=awards" target="_blank" rel="noreferrer">Information is Beautiful</a> Award.</p>
                                 <p>Previously, I analyzed data and produced visualizations for major U.S. transit agencies. I hold a masters degree in Urban Planning, with an emphasis on urban informatics, from the University of Washington.</p>
 
-                 <h2 class="mt-8 text-5xl sm:text-3xl">Talks</h2>
-                 <ul>
+                 <h2 class="text-5xl sm:text-3xl">Talks</h2>
+                 <ul class="text-gray-300 flex flex-col gap-4">
                   <li>"Tracking Wildfires for the Associated Press" | Seattle JS meetup, October 2023</li>
                   <li>"Data visualization for the news" | University of Washington School of Journalism, February 2024</li>
                  </ul>

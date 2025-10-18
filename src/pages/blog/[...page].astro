@@ -24,23 +24,11 @@ const blog = page.data;
     image={{ src: '/dante-preview.jpg', alt: 'The preview of the site' }}
     showHeader={false}
 >
-<div class="profile-container">
-        <h1 class="mb-12 text-white text-5xl leading-tight sm:mb-16 sm:text-8xl">Blog</h1>
+<div class="my-12 flex flex-col items-start justify-center gap-4 bg-muted/20 backdrop-blur-md border border-white/20 shadow-xl p-8 rounded-lg">
+        <h1 class=" text-white text-5xl leading-tight  sm:text-8xl">Data Viz Blog</h1>
 
 </div>
 
     {blog.map((post) => <PostPreview post={post} class="mb-10 sm:mb-12" />)}
     <Pagination page={page} class="my-16 sm:my-24" />
 </BaseLayout>
-
-<style>
-     .profile-container {
-    box-sizing: border-box;
-    padding: 16px;
-    background: linear-gradient(135deg, rgba(255, 0, 150, 0.6), rgba(0, 204, 255, 0.6) 60%);
-    width: calc(100% - 32px);
-    border-radius: 8px;
-    margin: 0 0 48px;
-    color: #3f3f3f;
-  }
-</style>
