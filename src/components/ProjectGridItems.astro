@@ -1,0 +1,38 @@
+---
+type Project = {
+    name: string;
+    client: string;
+    link: string;
+    imageLink: string;
+    description: string;
+    languages?: string[];
+    tag?: string[];
+    featured?: boolean;
+};
+
+type Props = {
+    projects: Project[];
+};
+
+const { projects } = Astro.props;
+---
+
+<div class="md:max-w-screen-xl p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    {projects.map((p) => (
+        <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer h-[300px]">
+            <img
+                alt={p.description}
+                src={p.imageLink}
+                class="w-full h-full object-cover rounded-lg transition-transform duration-300 ease-in-out group-hover:scale-105"
+            />
+            <a href={p.link} target="_blank" rel="noreferrer">
+                <div class="glass-cyan-muted absolute inset-0 flex items-center justify-center text-white text-xl text-center p-4 rounded-lg opacity-100 group-hover:opacity-0 transition-opacity duration-300 ease-in-out">
+                    <div class='bg-main/40 rounded-sm p-2 text-sm flex flex-col items-start absolute bottom-0 left-0'>
+                        <p class="text-xs text-gray-300">{p.client}</p>
+                        <p class="font-semibold text-gray-200">{p.name}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    ))}
+</div>

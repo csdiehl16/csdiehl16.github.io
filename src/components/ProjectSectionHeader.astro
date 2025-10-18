@@ -1,0 +1,13 @@
+---
+type Props = {
+    title: string;
+    subtitle?: string;
+};
+
+const { title, subtitle } = Astro.props;
+---
+
+<div class="flex flex-col items-center justify-center gap-2 my-8">
+    <h2 class="size-fit glass-cyan font-semibold text-lg md:text-xl text-gray-300">{title}</h2>
+    {subtitle && <p class="text-sm text-gray-400 max-w-2xl text-center">{subtitle}</p>}
+</div>
