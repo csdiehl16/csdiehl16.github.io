@@ -1,5 +1,17 @@
 export const projectData = [
   {
+    name: "Observable canvases",
+    client: "Observable",
+    sourceLink: "https://observablehq.com",
+    link: "/project-canvas",
+    imageLink: "/canvas.webp",
+    languages: ["React.js", "Typescript", "D3.js"],
+    tag: ["React.js", "D3.js"],
+    description:
+      "Contributed to a next-gen data exploration and BI tool on a collaborative infinite canvas",
+    featured: true,
+  },
+  {
     name: "Recharts Sunburst Chart",
     client: "Recharts Group",
     sourceLink:
