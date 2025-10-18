@@ -1,7 +1,7 @@
 ---
 ---
 
-<div class="box-border p-4 min-h-screen w-[calc(100%-32px)] rounded-lg mx-4 text-gray-700 relative overflow-hidden">
+<div class="box-border p-4 min-h-screen w-[calc(100%-32px)] rounded-lg mx-4 text-main relative overflow-hidden">
     <!-- Animated Canvas Background -->
     <canvas id="profileCanvas" class="absolute inset-0 w-full h-full object-cover rounded-lg"></canvas>
 
@@ -9,15 +9,18 @@
 
 
     <!-- Content -->
-    <div class="relative z-10">
-        <h1 class="text-6xl md:text-8xl text-main">Hi, I'm <br/><span class="font-bold">Caleb Diehl</span></h1>
-        <h2 class="m-0 text-3xl md:text-4xl text-main">Frontend Engineer + <br/>Data Visualization Developer</h2>
+    <div class="mt-8 max-w-xl flex flex-col gap-4 relative z-10">
+        <h2 class="font-bold text-3xl md:text-4xl  text-gray-300">Hi, I'm </h2>
+        <h1 class="text-6xl md:text-8xl text-main">Caleb Diehl</h1>
 
-        <p class="text-main bg-white/10 backdrop-blur-md border border-white/20 shadow-xl max-w-xl p-4 rounded-lg">
-            I'm a front-end developer with expertise in{" "}
-            <strong>data visualization</strong>, <strong>interaction design</strong> and{" "}
-            <strong>geospatial analysis.</strong>{" "}Currently, I am a solutions engineer at Observable, the leading company for custom data viz. Before that, I was the interactive news editor at The Associated Press, where I oversaw data visualization, front-end development and interactive mapping for journalism viewed by millions across the globe.
-        </p>
+        <div class="flex flex-col gap-4 bg-white/10 backdrop-blur-md border border-white/20 shadow-xl p-4 rounded-lg">
+            <p class="font-bold">Frontend Engineer + Data Visualization Developer</p>
+            <p class="text-gray-300">
+                I'm a front-end developer with expertise in{" "}
+                <strong>data visualization</strong>, <strong>interaction design</strong> and{" "}
+                <strong>geospatial analysis.</strong>{" "}Currently, I am a solutions engineer at Observable, the leading company for custom data viz. Before that, I was the interactive news editor at The Associated Press, where I oversaw data visualization, front-end development and interactive mapping for journalism viewed by millions across the globe.
+            </p>
+        </div>
     </div>
 </div>
 
