@@ -85,7 +85,7 @@
             const centerX = width / 2;
             const centerY = height / 2;
             const maxRadius = Math.min(width, height) * 0.4;
-            const numPoints = 1200 + Math.random() * 800;
+            const numPoints = 1000 + Math.random() * 800;
             const rotations = 5 + Math.random() * 3;
 
             for (let i = 0; i < numPoints; i++) {
@@ -107,7 +107,7 @@
 
         function generateClusters() {
             const points = [];
-            const numPoints = 1000 + Math.random() * 600;
+            const numPoints = 800 + Math.random() * 600;
             const numClusters = 4 + Math.floor(Math.random() * 3);
             const pointsPerCluster = Math.floor(numPoints / numClusters);
 
@@ -133,7 +133,7 @@
 
         function generateWaves() {
             const points = [];
-            const numPoints = 800 + Math.random() * 600;
+            const numPoints = 600 + Math.random() * 600;
             const waves = 4 + Math.floor(Math.random() * 2);
             const amplitude = 50 + Math.random() * 70;
             const frequency = 3 + Math.random() * 2;
@@ -160,7 +160,7 @@
             const centerX = width / 2;
             const centerY = height / 2;
             const maxRadius = Math.min(width, height) * 0.45;
-            const numPoints = 1000 + Math.random() * 600;
+            const numPoints = 800 + Math.random() * 600;
             const spiralTightness = 7 + Math.random() * 5;
 
             for (let i = 0; i < numPoints; i++) {
@@ -182,7 +182,7 @@
 
         function generateGrid() {
             const points = [];
-            const numPoints = 800 + Math.random() * 600;
+            const numPoints = 600 + Math.random() * 600;
             const gridSize = Math.sqrt((width * height) / numPoints) * 1.1;
             const jitter = gridSize * (0.4 + Math.random() * 0.3);
 
@@ -364,7 +364,7 @@
 
         // Variable to hold the interval ID
         morphPattern()
-        const morphInterval = setInterval(morphPattern, 5000);
+        const morphInterval = setInterval(morphPattern, 8000);
 
         // Cleanup function to prevent memory leaks
         const cleanup = () => {
