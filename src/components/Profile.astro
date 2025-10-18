@@ -183,6 +183,9 @@
             return points;
         }
 
+        const startColor = { r: 100, g: 200, b: 220 };
+        const endColor = { r: 41, g: 58, b: 78 };
+
         function drawTriangulation(targetPoints: number[][], lineOpacity = 1) {
             if (targetPoints.length < 3 || !ctx) return;
 
@@ -221,13 +224,14 @@
                         const finalOpacity = baseOpacity * distanceFactor * lineOpacity;
 
                         // Create gradient colors from cyan to pink
+
                         const colorT = (centerX / width + centerY / height) / 2;
-                        const r = Math.floor(6 + colorT * (236 - 6)); // cyan to pink red
-                        const g = Math.floor(182 + colorT * (72 - 182)); // cyan to pink green
-                        const b = Math.floor(212 + colorT * (191 - 212)); // cyan to pink blue
+                        const r = Math.floor(startColor.r + colorT * (endColor.r - startColor.r)); // cyan to pink red
+                        const g = Math.floor(startColor.g + colorT * (endColor.g - startColor.g)); // cyan to pink green
+                        const b = Math.floor(startColor.b + colorT * (endColor.b - startColor.b)); // cyan to pink blue
 
                         // Fill triangles with gradient colors
-                        const fillOpacity = finalOpacity * 0.15;
+                        const fillOpacity = finalOpacity * 0.3;
                         ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${fillOpacity})`;
                         ctx.beginPath();
                         ctx.moveTo(p1[0], p1[1]);
@@ -238,6 +242,7 @@
 
                         // Draw triangle outline
                         if (lineOpacity > 0.05) {
+                            ctx.lineWidth = 1;
                             ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${finalOpacity})`;
                             ctx.beginPath();
                             ctx.moveTo(p1[0], p1[1]);
@@ -258,14 +263,20 @@
                     const pointOpacity = (1 - (distanceFromCenter / maxDistance) * 0.3) * 0.8;
 
                     const colorT = (point[0] / width + point[1] / height) / 2;
-                    const r = Math.floor(6 + colorT * (236 - 6));
-                    const g = Math.floor(182 + colorT * (72 - 182));
-                    const b = Math.floor(212 + colorT * (191 - 212));
+                    const r = Math.floor(startColor.r + colorT * (endColor.r - startColor.r));
+                    const g = Math.floor(startColor.g + colorT * (endColor.g - startColor.g));
+                    const b = Math.floor(startColor.b + colorT * (endColor.b - startColor.b));
+
+                    ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${.2})`;
+                    ctx.arc(point[0], point[1], 8, 0, Math.PI * 2);
+                     ctx.fill();
 
                     ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${pointOpacity})`;
                     ctx.beginPath();
-                    ctx.arc(point[0], point[1], 1, 0, Math.PI * 2);
+                    ctx.arc(point[0], point[1], 2, 0, Math.PI * 2);
                     ctx.fill();
+
+
                 }
             } catch (e) {
                 console.error('Error drawing triangulation:', e);
