@@ -245,7 +245,7 @@
                         const b = Math.floor(startColor.b + colorT * (endColor.b - startColor.b)); // cyan to pink blue
 
                         // Fill triangles with gradient colors
-                        const fillOpacity = finalOpacity * 0.3;
+                        const fillOpacity = finalOpacity * 0.5;
                         ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${fillOpacity})`;
                         ctx.beginPath();
                         ctx.moveTo(p1[0], p1[1]);
@@ -257,7 +257,7 @@
                         // Draw triangle outline
                         if (lineOpacity > 0.05) {
                             ctx.lineWidth = 1;
-                            ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${finalOpacity})`;
+                            ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${.2})`;
                             ctx.beginPath();
                             ctx.moveTo(p1[0], p1[1]);
                             ctx.lineTo(p2[0], p2[1]);
