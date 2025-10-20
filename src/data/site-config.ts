@@ -43,7 +43,7 @@ const siteConfig: SiteConfig = {
   subtitle: "Data visualization developer",
   description: "The portfolio and blog of Caleb Diehl",
   image: {
-    src: "/profile_transparent.jpg",
+    src: "/social-share.webp",
     alt: "Caleb Diehl portfolio and blog",
   },
   headerNavLinks: [
@@ -76,11 +76,11 @@ const siteConfig: SiteConfig = {
   socialLinks: [
     {
       text: "Linkedin",
-      href: "https://dribbble.com/",
+      href: "https://www.linkedin.com/in/caleb-diehl-a93a6984",
     },
     {
       text: "Github",
-      href: "https://instagram.com/",
+      href: "https://github.com/csdiehl16",
     },
   ],
   hero: {
