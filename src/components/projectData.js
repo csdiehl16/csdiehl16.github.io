@@ -2,7 +2,7 @@ export const projectData = [
   {
     name: "Observable canvases",
     client: "Observable",
-    sourceLink: "https://observablehq.com",
+    sourceLink: "https://observablehq.com/platform/canvases",
     link: "/project-canvas",
     imageLink: "/canvas.webp",
     languages: ["React.js", "Typescript", "D3.js"],
@@ -37,7 +37,16 @@ export const projectData = [
       "A web app using a PostgreSQL database, SST, and AWS to create a search engine for the AP education reporting team to find current issues in hundreds of thousands of documents",
     featured: true,
   },
-
+  {
+    name: "Animal Sleep",
+    client: "AP News",
+    link: "https://apnews.com/projects/extreme-animal-sleep/",
+    imageLink: "/seal.webp",
+    languages: ["React.js", "Typescript", "D3.js"],
+    tag: ["Data journalism"],
+    description: "3d visualizations of animal sleep patterns",
+    featured: true,
+  },
   {
     name: "Carbon footprint explorer",
     client: "AP News",
@@ -48,6 +57,19 @@ export const projectData = [
     tag: ["Dashboards", "Data journalism"],
     description:
       "An interactive visualization tool for exploring how your income and consumer spending decisions affect your carbon footprint.",
+    featured: true,
+  },
+
+  {
+    name: "AP Wildfire Tracker",
+    client: "AP News",
+    link: "https://interactives.ap.org/ap-wildfire-tracker/?sort=acres",
+    imageLink: "/fire-tracker-screenshot.webp",
+    languages: ["React.js", "Typescript", "Mapbox GL JS"],
+    tag: ["Geospatial", "Dashboards", "Data journalism"],
+    description:
+      "An interactive dashboard that displays real-time fire incident information and surrounding demographics, updated every 15 minutes.",
+    cloudinaryId: "fire_tracker_ul6unw",
     featured: true,
   },
 
@@ -63,6 +85,18 @@ export const projectData = [
   },
 
   {
+    name: "Fitness data studio",
+    client: "Personal Project",
+    link: "https://fit-studio.csdiehl16.workers.dev/",
+    imageLink: "/fitness/studio_main.webp",
+    languages: ["React.js", "Typescript", "D3.js"],
+    tag: ["Dashboards"],
+    description:
+      "Analyze FIT files and Strava activities via rich, interactive maps and visulizations. Deployed on Cloudflare, with Strava Oauth",
+    featured: true,
+  },
+
+  {
     name: "AI Data Assistant",
     client: "Personal Project",
     link: "https://ai-data-assistant.vercel.app/login",
@@ -72,19 +106,6 @@ export const projectData = [
     tag: ["Dashboards", "Web development"],
     description:
       "Explore your data using conversational AI. A full-stack Next.js web app, using Vercel's AI SDK and a firebase backend, that allows users to chat with a database, save and load data snapshots, and use generative UI to build charts.",
-    featured: true,
-  },
-
-  {
-    name: "AP Wildfire Tracker",
-    client: "AP News",
-    link: "https://interactives.ap.org/ap-wildfire-tracker/?sort=acres",
-    imageLink: "/fire-tracker-screenshot.webp",
-    languages: ["React.js", "Typescript", "Mapbox GL JS"],
-    tag: ["Geospatial", "Dashboards", "Data journalism"],
-    description:
-      "An interactive dashboard that displays real-time fire incident information and surrounding demographics, updated every 15 minutes.",
-    cloudinaryId: "fire_tracker_ul6unw",
     featured: true,
   },
 

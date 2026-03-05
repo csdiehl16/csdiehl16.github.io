@@ -6,12 +6,12 @@ import ProjectSectionHeader from "./ProjectSectionHeader.astro"
 
 
 <div class="flex flex-col items-center justify-center">
-    <ProjectSectionHeader icon='magic' title="Selected Work" subtitle="My most awesome work that I was paid to develop, along with one or two personal projects that heavily influenced my professional work." />
+    <ProjectSectionHeader icon='magic' title="Selected Work" subtitle="Paid work or open-source contributions that I'm proud of" />
     <ProjectGridItems projects={projectData.slice(0,6)} />
 
-    <ProjectSectionHeader icon='archive' title="Older Projects" subtitle="Custom data viz I built from scratch for the Associated Press. Also, some web apps to visualize transit data that I built as a data analyst at a civil engineering consultancy." />
-    <ProjectGridItems projects={projectData.slice(6, 21)} />
+    <ProjectSectionHeader icon='magic' title="Selected Personal Projects" subtitle="Prototypes and experiments that heavily influenced my professional work" />
+    <ProjectGridItems projects={projectData.slice(6,9)} />
 
-    <ProjectSectionHeader title="School and personal projects" subtitle="Even older projects that represent early experiments in software development and data viz..." />
-    <ProjectGridItems projects={projectData.slice(21, projectData.length - 1)} />
+    <ProjectSectionHeader icon='archive' title="Older Projects" subtitle="Custom data viz I built from scratch for the Associated Press. Also, web apps to visualize transit data that I built as a data analyst at a civil engineering consultancy." />
+    <ProjectGridItems projects={projectData.slice(9, projectData.length - 1)} />
 </div>
