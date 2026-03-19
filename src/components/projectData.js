@@ -14,8 +14,7 @@ export const projectData = [
   {
     name: "Recharts Sunburst Chart",
     client: "Recharts Group",
-    sourceLink:
-      "https://master--63da8268a0da9970db6992aa.chromatic.com/?path=/story/api-chart-sunburstchart--sunburst",
+    sourceLink: "https://github.com/recharts/recharts/pull/4037",
     link: "/recharts",
     codeLink: "https://github.com/recharts/recharts/pull/4037",
     imageLink: "/recharts_sunburst.webp",
@@ -121,6 +120,17 @@ export const projectData = [
   },
 
   {
+    name: "What would your Olympic sport be?",
+    client: "AP News",
+    link: "https://apnews.com/what-would-your-best-olympic-sport-be-00000190a37adebeaff0fbffeb6e0000",
+    imageLink: "/olympic_sport_finder.webp",
+    languages: ["React.js", "D3.js"],
+    tag: ["Data journalism"],
+    description:
+      "Places you in your best olympic sport using your height, weight and more than 100 years of Olympic data.",
+  },
+
+  {
     name: "Draggable Migration Globe",
     client: "AP News",
     link: "https://apnews.com/projects/china-migration-thailand-mexico-japan-map/",
@@ -134,7 +144,7 @@ export const projectData = [
   {
     name: "Paris Olympics Interactive Graphics",
     client: "AP News, Time, FOX",
-    link: "https://www.ap.org/content/topics/sports/interactive-graphics/",
+    link: "https://apnews.com/olympics-u-s-hometown-heroes",
     imageLink: "/hometown_heroes.webp",
     languages: ["React.js"],
     tag: ["Data Journalism", "Geospatial"],
@@ -180,18 +190,6 @@ export const projectData = [
   },
 
   {
-    name: "CEO Pay Visualization",
-    client: "AP News",
-    link: "https://apnews.com/article/wildfires-forest-thinning-community-risk-biden-9d77309cb9e7520069b3c575d850aadc",
-    imageLink: "/ceo.webp",
-    languages: ["React.js", "D3.js"],
-    tag: ["Data journalism"],
-    description:
-      "An interactive scatterplot and diverging bar chart to visualize results of an AP survey on CEO performance and compensation.",
-    cloudinaryId: "fire_thinning_bzqrtp",
-  },
-
-  {
     name: "Maui Fires Timeline",
     client: "AP News",
     link: "https://interactives.ap.org/hawaii-timeline/",
@@ -228,6 +226,18 @@ export const projectData = [
   },
 
   {
+    name: "CEO Pay Visualization",
+    client: "AP News",
+    link: "https://apnews.com/article/ceo-pay-compensation-ratio-workers-fa25db3338b68ad9eb395dfd46190383",
+    imageLink: "/ceo.webp",
+    languages: ["React.js", "D3.js"],
+    tag: ["Data journalism"],
+    description:
+      "An interactive scatterplot and diverging bar chart to visualize results of an AP survey on CEO performance and compensation.",
+    cloudinaryId: "fire_thinning_bzqrtp",
+  },
+
+  {
     name: "Transit Segment Priority Finder",
     client: "MBTA Transit Agency",
     link: "https://ibi-group.github.io/mbta-transit-priority-finder/",
@@ -236,17 +246,6 @@ export const projectData = [
     tag: ["Geospatial", "Dashboards"],
     description:
       "Dashboard built for internal use at MBTA. Allows agency to filter and select stop-to-stop bus segments for transit priority measures such as bus-only lanes. Users can adjust the weights as needed to calculate a new weighted average score based on their priorities.",
-  },
-
-  {
-    name: "What would your Olympic sport be?",
-    client: "AP News",
-    link: "https://apnews.com/what-would-your-best-olympic-sport-be-00000190a37adebeaff0fbffeb6e0000",
-    imageLink: "/olympic_sport_finder.webp",
-    languages: ["React.js", "D3.js"],
-    tag: ["Data journalism"],
-    description:
-      "Places you in your best olympic sport using your height, weight and more than 100 years of Olympic data.",
   },
 
   {
