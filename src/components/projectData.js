@@ -45,6 +45,7 @@ export const projectData = [
     tag: ["Data journalism"],
     description: "3d visualizations of animal sleep patterns",
     featured: true,
+    award: "Bronze, SND47 Creative Competition",
   },
   {
     name: "Carbon footprint explorer",
@@ -163,6 +164,7 @@ export const projectData = [
       "A parallax scrolling experience. Data visualizations highlight the links between climate change and disease, including the migration of animal species and recent history of climate disasters.",
     cloudinaryId: "grist-disease_ygobl1",
     badge: "./iib_badge.webp",
+    award: "Longlist, Information is Beautiful 2023",
   },
 
   {

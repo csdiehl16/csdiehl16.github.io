@@ -8,6 +8,7 @@ type Project = {
     languages?: string[];
     tag?: string[];
     featured?: boolean;
+    award?: string;
 };
 
 type Props = {
@@ -31,6 +32,11 @@ const { projects } = Astro.props;
                         <p class="text-xs text-gray-300">{p.client}</p>
                         <p class="font-semibold text-gray-200">{p.name}</p>
                     </div>
+                    {p.award && (
+                        <div class="absolute top-2 right-2 bg-[#EF476F]/30 text-[#EF476F] text-xs font-semibold px-2 py-1 rounded-sm">
+                            {p.award}
+                        </div>
+                    )}
                 </div>
             </a>
         </div>
